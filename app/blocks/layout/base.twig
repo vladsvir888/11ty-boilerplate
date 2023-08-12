@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ page_data.meta.html_lang|default('ru') }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page_data.meta.description }}">
+  <title>{{ page_data.meta.title }}</title>
+
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link id="css-link" rel="stylesheet" href="./styles/styles.css">
+
+  <!-- Прописать нужный путь -->
+  <script src="./assets/sw.js"></script>
+
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      // прописать нужный путь
+      navigator.serviceWorker.register('./assets/sw.js')
+    }
+  </script>
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+  </script>
+
+  <script id="points" type="application/json">
+    [
+      {
+        "coord": [
+          55.75,
+          37.65
+        ],
+        "properties": {
+          "id": 1,
+          "heading": "г. Москва, ул Тараханская, д. 4",
+          "address": "ул. Трудовая, д. 10",
+          "phone": "+7 (499) 754-09-10",
+          "schedule": "с 09:00 до 18:00 по будням",
+          "metro": "Красносельская"
+        }
+      },
+      {
+        "coord": [
+          55.72,
+          37.65
+        ],
+        "properties": {
+          "id": 2,
+          "heading": "г. Москва, ул Тараханская, д. 4",
+          "address": "ул. Трудовая, д. 10",
+          "phone": "+7 (499) 754-09-10",
+          "schedule": "с 09:00 до 18:00 по будням",
+          "metro": "Красносельская"
+        }
+      },
+      {
+        "coord": [
+          55.71,
+          37.65
+        ],
+        "properties": {
+          "id": 3,
+          "heading": "г. Москва, ул Тараханская, д. 4",
+          "address": "ул. Трудовая, д. 10",
+          "phone": "+7 (499) 754-09-10",
+          "schedule": "с 09:00 до 18:00 по будням",
+          "metro": "Красносельская"
+        }
+      },
+      {
+        "coord": [
+          55.71,
+          38.65
+        ],
+        "properties": {
+          "id": 4,
+          "heading": "г. Москва, ул Тараханская, д. 4",
+          "address": "ул. Трудовая, д. 10",
+          "phone": "+7 (499) 754-09-10",
+          "schedule": "с 09:00 до 18:00 по будням",
+          "metro": "Красносельская"
+        }
+      }
+  ]
+  </script>
+
+</head>
+<body>
+  <div class="body-inner">
+    <noscript>
+      <div class="text-warning">
+        JavaScript выключен в Вашем браузере. Если Вы его включите, то эта надпись скроется. В противном случае, содержимое и функциональность веб-страницы могут быть ограничены или недоступны.
+      </div>
+    </noscript>
+
+    {% include "../&organisms/header/header.twig" %}
+
+    {% block content %}{% endblock %}
+
+    {% include "../&organisms/footer/footer.twig" %}
+
+    {% include "../&organisms/burger_menu/burger_menu.twig" %}
+
+    {% include "../^molecules/nav_bar/nav_bar.twig" %}
+
+    <!-- Форма авторизации -->
+    <sl-dialog id="auth" class="dialog" no-header>
+      {% include "../&organisms/form_block/form_block.twig" with {
+        form_block: {
+          class: "form-block-auth",
+          type: "auth",
+          title: {
+            text: "Войти"
+          }
+        }
+      } %}
+    </sl-dialog>
+    <!-- ./ Форма авторизации -->
+
+    <!-- Форма восстановление пароля -->
+    <sl-dialog id="forgot_password" class="dialog" no-header>
+      {% include "../&organisms/form_block/form_block.twig" with {
+        form_block: {
+          class: "form-block-forgot-password",
+          type: "forgot_password",
+          title: {
+            text: "Восстановить пароль"
+          }
+        }
+      } %}
+    </sl-dialog>
+    <!-- ./ Форма восстановление пароля -->
+
+    <!-- Форма восстановление пароля c двумя паролями -->
+    <sl-dialog id="forgot_password_2" class="dialog" no-header>
+      {% include "../&organisms/form_block/form_block.twig" with {
+        form_block: {
+          type: "forgot_password_2",
+          title: {
+            text: "Восстановить пароль"
+          }
+        }
+      } %}
+    </sl-dialog>
+    <!-- ./ Форма восстановление пароля c двумя паролями -->
+
+    <!-- Форма восстановление пароля при успехе -->
+    <sl-dialog id="forgot_password_3" class="dialog" no-header>
+      {% include "../&organisms/form_block/form_block.twig" with {
+        form_block: {
+          class: "form-block-success",
+          type: "forgot_password_3",
+          title: {
+            text: "Пароль изменен"
+          },
+          info: {
+            text: "Ваш пароль успешно изменен"
+          }
+        }
+      } %}
+    </sl-dialog>
+    <!-- ./ Форма восстановление пароля при успехе -->
+
+    <!-- Форма регистрация -->
+    <sl-dialog id="registration" class="dialog" no-header>
+      {% include "../&organisms/form_block/form_block.twig" with {
+        form_block: {
+          class: "form-block-registration",
+          type: "registration",
+          title: {
+            text: "Регистрация"
+          },
+          socials: true
+        }
+      } %}
+    </sl-dialog>
+    <!-- ./ Форма регистрация -->
+
+    <!-- Форма регистрация при успехе -->
+    <sl-dialog id="registration_2" class="dialog" no-header>
+      {% include "../&organisms/form_block/form_block.twig" with {
+        form_block: {
+          class: "form-block-success",
+          type: "registration_2",
+          title: {
+            text: "Регистрация"
+          },
+          info: {
+            text: "Мы выслали на указанный адрес электронной почты ссылку на «завершение регистрации»"
+          }
+        }
+      } %}
+    </sl-dialog>
+    <!-- ./ Форма регистрация при успехе -->
+
+    <sl-dialog id="age-confirm" class="dialog dialog--age-confirm" no-header>
+      {% include "../^molecules/age_confirm/age_confirm.twig" with {
+        age_confirm: {
+          title: "Вам есть 18 лет?",
+          text: "Информация на сайте не предназначена для посетителей младше 18 лет. Для доступа к ней подтвердите, пожалуйста, свое совершеннолетие"
+        }
+      } %}
+    </sl-dialog>
+  </div>
+
+  {% if page_data.ymaps %}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU"></script>
+  {% endif %}
+<script src="./scripts/main.js"></script>
+<script>
+  const mapNode = document.getElementById('map_with_balloon');
+
+  mapNode?.addEventListener('store-choice', (e) => {
+    console.log('do ajax', e.detail.id);
+  });
+</script>
+</body>
+</html>

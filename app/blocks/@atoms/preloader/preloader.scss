@@ -1,0 +1,11 @@
+.preloader {
+  --track-width: #{rem(5)};
+  --indicator-color: var(--pallette-international-orange);
+  --speed: 2.5s;
+
+  font-size: rem(60);
+
+  @include media('600', max) {
+    font-size: rem(45);
+  }
+}

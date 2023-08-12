@@ -1,0 +1,29 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "404",
+    "description": "404"
+  }
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "404"
+        }]
+      }
+    } %}
+  </div>
+  {% include "../blocks/^molecules/not_found/not_found.twig" %}
+</main>
+{% endblock %}

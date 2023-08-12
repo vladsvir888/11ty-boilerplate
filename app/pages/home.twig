@@ -1,0 +1,678 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Главная",
+    "description": "Главная"
+  }
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  {% include "../blocks/&organisms/hero/hero.twig" %}
+
+  {% include "../blocks/&organisms/category_products/category_products.twig" with {
+    category_products: {
+      section_header: {
+        class: "category-products__section-header",
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Категории товаров"
+        },
+        slider_btns: true,
+      },
+      content: {
+        items: [{
+          image: {
+            picture: {
+              class: "category-card__picture"
+            },
+            class: "category-card__image",
+            name: "category-card/01.png",
+            alt: "",
+            sizes: {
+              width: 245,
+              height: 326
+            }
+          },
+          title: {
+            level: 3,
+            class: "category-card__title",
+            text: "Вино",
+            link: true
+          }
+        }, {
+          image: {
+            picture: {
+              class: "category-card__picture"
+            },
+            class: "category-card__image",
+            name: "category-card/02.png",
+            alt: "",
+            sizes: {
+              width: 245,
+              height: 326
+            }
+          },
+          title: {
+            level: 3,
+            class: "category-card__title",
+            text: "Игристое вино",
+            link: true
+          }
+        }, {
+          image: {
+            picture: {
+              class: "category-card__picture"
+            },
+            class: "category-card__image",
+            name: "category-card/03.png",
+            alt: "",
+            sizes: {
+              width: 245,
+              height: 326
+            }
+          },
+          title: {
+            level: 3,
+            class: "category-card__title",
+            text: "Винный напиток",
+            link: true
+          }
+        }, {
+          image: {
+            picture: {
+              class: "category-card__picture"
+            },
+            class: "category-card__image",
+            name: "category-card/04.png",
+            alt: "",
+            sizes: {
+              width: 245,
+              height: 326
+            }
+          },
+          title: {
+            level: 3,
+            class: "category-card__title",
+            text: "Ликер",
+            link: true
+          }
+        }]
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/products/products.twig" with {
+    products: {
+      section_header: {
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Товары со скидкой"
+        },
+        slider_btns: true,
+      },
+      content: {
+        items: [{
+          image: {
+            name: "product-card/01.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Лыхны красное полусладкое",
+          },
+          price: {
+            current: "1 085 ₽",
+            old: "1 500 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.8"
+            }
+          },
+          tags: {
+            percent: {
+              text: "-15%"
+            },
+            type: {
+              text: "Новинка"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }, {
+          image: {
+            name: "product-card/02.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Beauroy Chablis 1er Cru AOC Maison Olivier Tricon",
+          },
+          price: {
+            current: "6 054 ₽",
+            old: "7 500 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.3"
+            }
+          },
+          tags: {
+            percent: {
+              text: "-15%"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }, {
+          image: {
+            name: "product-card/03.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Petit F... Pouilly-Fume AOC Michel Redde et Fils , 0.75 л",
+          },
+          price: {
+            current: "3 061 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.7"
+            }
+          },
+          tags: {
+            type: {
+              text: "Новинка"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-pink",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }, {
+          image: {
+            name: "product-card/04.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Grand Elevage Vieilles Vignes Arbois AOC Domaine",
+          },
+          price: {
+            current: "7 378 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.6"
+            }
+          },
+          tags: {
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }, {
+          image: {
+            name: "product-card/05.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Grand Elevage Vieilles Vignes Arbois AOC Domaine",
+          },
+          price: {
+            current: "1 085 ₽",
+            old: "1 500 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.3"
+            }
+          },
+          tags: {
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }]
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/news/news.twig" with {
+    news: {
+      section_header: {
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Новости"
+        },
+        link_another_page: true
+      },
+      content: {
+        items: [{
+          image: {
+            name: "news/01.png",
+            sizes: {
+              width: 540,
+              height: 662
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Как читать винную этикетку?",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/04.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/05.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Правильный коктейль",
+          }
+        }]
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/products/products.twig" with {
+    products: {
+      section_header: {
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Новинки"
+        },
+        slider_btns: true,
+      },
+      content: {
+        items: [{
+          image: {
+            name: "product-card/05.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Vaudesir Chablis Grand Cru AOC Jean-Paul & Benoît",
+          },
+          price: {
+            current: "20 043 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.7"
+            }
+          },
+          tags: {
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-pink",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }, {
+          image: {
+            name: "product-card/06.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Chardonnay Arbois AOC Domaine Rijckaert, 0.75л",
+          },
+          price: {
+            current: "5 385 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.2"
+            }
+          },
+          tags: {
+            type: {
+              text: "Новинка"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }, {
+          image: {
+            name: "product-card/07.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Les Romains Sancerre AOC Domaine Vacheron, 0.75л",
+          },
+          price: {
+            current: "12 157 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>3.6"
+            }
+          },
+          tags: {
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-white",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }, {
+          image: {
+            name: "product-card/08.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Chablis AОС Domaine Garnier & Fils, 0.75л",
+          },
+          price: {
+            current: "4 087 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.4"
+            }
+          },
+          tags: {
+            percent: {
+              text: "-15%"
+            },
+            type: {
+              text: "Новинка"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-pink",
+              text: "0.75л"
+            }
+          },
+          basket_btn: true,
+          favorite_btn: true
+        }]
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/promotional_offers/promotional_offers.twig" with {
+    promotional_offers: {
+      section_header: {
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Акционные предложения"
+        },
+        link_another_page: true
+      },
+      content: {
+        items: [{
+          tag: {
+            text: "Активная",
+            class: "tag--active"
+          },
+          image: {
+            name: "promotional-offers/01.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            text: "Действует до",
+            time: {
+              text: "01.08.2023",
+              datetime: "2023-08-01"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Фестиваль скидок",
+          }
+        }, {
+          tag: {
+            text: "Активная",
+            class: "tag--active"
+          },
+          image: {
+            name: "promotional-offers/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            text: "Действует до",
+            time: {
+              text: "01.08.2023",
+              datetime: "2023-08-01"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Фестиваль скидок",
+          }
+        }, {
+          type: "special"
+        }, {
+          tag: {
+            text: "Активная",
+            class: "tag--active"
+          },
+          image: {
+            name: "promotional-offers/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            text: "Действует до",
+            time: {
+              text: "01.08.2023",
+              datetime: "2023-08-01"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Фестиваль скидок",
+          }
+        }, {
+          tag: {
+            text: "Архивная",
+            class: "tag--archieve"
+          },
+          image: {
+            name: "promotional-offers/04.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            text: "Действует до",
+            time: {
+              text: "01.08.2023",
+              datetime: "2023-08-01"
+            }
+          },
+          title: {
+            level: 3,
+            text: "Фестиваль скидок",
+          }
+        }]
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/about/about.twig" with {
+    about: {
+      section_header: true
+    }
+  } %}
+
+  {% include "../blocks/&organisms/content_info/content_info.twig" with {
+    content_info: {
+      section_header: {
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Наши ПВЗ"
+        },
+        link_another_page: true
+      },
+      content: {
+        items: [{
+          image: {
+            name: "sales-rep-card/01.png",
+            class: "sales-rep-card__image",
+            alt: "",
+            sizes: {
+              width: 815,
+              height: 350
+            }
+          },
+          title: {
+            level: 3,
+            class: "sales-rep-card__title",
+            text: "Название торговой точки",
+            link: true,
+          }
+        }, {
+          image: {
+            name: "sales-rep-card/02.png",
+            class: "sales-rep-card__image",
+            alt: "",
+            sizes: {
+              width: 815,
+              height: 350
+            }
+          },
+          title: {
+            level: 3,
+            class: "sales-rep-card__title",
+            text: "Название торговой точки",
+            link: true,
+          }
+        }]
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/banner/banner.twig" %}
+</main>
+{% endblock %}

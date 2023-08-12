@@ -1,0 +1,15 @@
+.section {
+  padding-bottom: rem(112);
+
+  @include media('900', max) {
+    padding-bottom: rem(60);
+  }
+
+  &--portal {
+    padding-bottom: rem(56);
+  }
+
+  &__header {
+    margin-bottom: rem(24);
+  }
+}

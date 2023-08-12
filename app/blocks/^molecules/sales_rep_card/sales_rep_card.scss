@@ -1,0 +1,88 @@
+.sales-rep-card {
+  $this: &;
+
+  position: relative;
+  border: rem(1) solid var(--pallette-seashell);
+  background-color: var(--pallette-white);
+  border-radius: var(--bdrs15);
+
+  @media (hover: hover) {
+    &:hover {
+      #{$this}__title {
+        color: var(--pallette-international-orange);
+      }
+    }
+  }
+
+  &__image {
+    border-top-left-radius: var(--bdrs15);
+    border-top-right-radius: var(--bdrs15);
+  }
+
+  &__body {
+    display: grid;
+    row-gap: rem(16);
+    padding: rem(24) rem(32) rem(32);
+
+    @include media('1200', max) {
+      padding: rem(16) rem(12);
+    }
+
+    @include media('600', max) {
+      row-gap: rem(12);
+    }
+  }
+
+  &__title {
+    @include font-size(28, 42);
+    font-weight: 600;
+    transition: color var(--transition300ms);
+
+    @include media('600', max) {
+      @include font-size(18, 27);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: rem(15) rem(5);
+
+    @include media('600', max) {
+      @include font-size(14, 21);
+      grid-template-columns: 1fr;
+      gap: rem(12) rem(5);
+    }
+
+    a {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(6);
+
+    @include media('600', max) {
+      gap: rem(4);
+    }
+  }
+
+  &__term {
+    display: flex;
+    column-gap: rem(8);
+    font-weight: 700;
+
+    @include media('600', max) {
+      column-gap: rem(4);
+    }
+
+    &-icon {
+      width: rem(20);
+      height: rem(20);
+      fill: var(--pallette-biscay);
+    }
+  }
+}

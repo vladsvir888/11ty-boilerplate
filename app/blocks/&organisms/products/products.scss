@@ -1,0 +1,25 @@
+.products {
+  &__slider {
+    &:not(.swiper-initialized) {
+      > .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(#{rem(393)}, 1fr));
+        gap: rem(10);
+
+        @include media('600', max) {
+          display: block;
+
+          > * {
+            &:not(:last-child) {
+              margin-bottom: rem(10);
+            }
+          }
+        }
+      }
+    }
+
+    &-slide {
+      height: auto;
+    }
+  }
+}

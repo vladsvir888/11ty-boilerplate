@@ -1,0 +1,187 @@
+{% extends "../blocks/layout/base_3.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Рабочий стол",
+    "description": "Рабочий стол"
+  }
+} %}
+
+{% block content %}
+
+{% include "../blocks/&organisms/portal_header/portal_header.twig" with {
+  portal_header: {
+    class: "portal-block__header",
+    title: {
+      text: "Рабочий стол"
+    }
+  }
+} %}
+
+<main id="main" class="main portal-block__main">
+  {% include "../blocks/&organisms/category_products_portal/category_products_portal.twig" %}
+
+  {% include "../blocks/&organisms/reminders/reminders.twig" %}
+
+  {% include "../blocks/&organisms/news_slider/news_slider.twig" with {
+    news_slider: {
+      class: "section--portal",
+      section_header: {
+        class: "section-header--portal",
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Новости"
+        },
+        slider_btns: true,
+      },
+      items: [{
+        image: {
+          name: "news/02.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 3,
+          text: "Правильный коктейль",
+        }
+      }, {
+        image: {
+          name: "news/03.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 3,
+          text: "Правильный коктейль",
+        }
+      }, {
+        image: {
+          name: "news/04.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 3,
+          text: "Правильный коктейль",
+        }
+      }]
+    }
+  } %}
+
+  {% include "../blocks/&organisms/news_slider/news_slider.twig" with {
+    news_slider: {
+      class: "section--portal",
+      section_header: {
+        class: "section-header--portal",
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Акционные предложения"
+        },
+        slider_btns: true,
+      },
+      items: [{
+        tag: {
+          text: "Активная",
+          class: "tag--active"
+        },
+        image: {
+          name: "promotional-offers/01.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          text: "Действует до",
+          time: {
+            text: "01.08.2023",
+            datetime: "2023-08-01"
+          }
+        },
+        title: {
+          level: 3,
+          text: "Фестиваль скидок",
+        }
+      }, {
+        tag: {
+          text: "Активная",
+          class: "tag--active"
+        },
+        image: {
+          name: "promotional-offers/02.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          text: "Действует до",
+          time: {
+            text: "01.08.2023",
+            datetime: "2023-08-01"
+          }
+        },
+        title: {
+          level: 3,
+          text: "Фестиваль скидок",
+        }
+      }, {
+        tag: {
+          text: "Активная",
+          class: "tag--active"
+        },
+        image: {
+          name: "promotional-offers/03.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          text: "Действует до",
+          time: {
+            text: "01.08.2023",
+            datetime: "2023-08-01"
+          }
+        },
+        title: {
+          level: 3,
+          text: "Фестиваль скидок",
+        }
+      }]
+    }
+  } %}
+</main>
+{% endblock %}

@@ -1,0 +1,46 @@
+<article class="review-card">
+  <div class="review-card__header">
+    {% include "../../@atoms/image/image.twig" with {
+      image: review_card.image|default({})|merge({
+        picture: {
+          class: "review-card__picture",
+        },
+        class: "review-card__img",
+        sizes: {
+          width: 50,
+          height: 50
+        },
+        alt: ""
+      })
+    } %}
+
+    {% include "../../@atoms/title/title.twig" with {
+      title: review_card.title|default({})|merge({
+        class: "review-card__title"
+      })
+    } %}
+
+    {% include "../../@atoms/rating/rating.twig" with {
+      rating: review_card.rating|default({})|merge({
+        class: "review-card__rating"
+      })
+    } %}
+  </div>
+
+  <time class="review-card__time" datetime="2023-05-15">
+    15.05.2023
+  </time>
+
+  <div class="text-block">
+    {{ review_card.text }}
+  </div>
+
+  <div class="review-card__list">
+    <div class="review-card__list-item">
+      <span>{{ review_card.list.plus.key }}</span> {{ review_card.list.plus.value }}
+    </div>
+    <div class="review-card__list-item">
+      <span>{{ review_card.list.minus.key }}</span> {{ review_card.list.minus.value }}
+    </div>
+  </div>
+</article>

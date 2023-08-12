@@ -1,0 +1,182 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Бренды",
+    "description": "Бренды"
+  }
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "Бренды"
+        }]
+      }
+    } %}
+  </div>
+
+  {% include "../blocks/&organisms/page_top/page_top.twig" with {
+    page_top: {
+      class: "page-top--banner-stretched",
+      grid: true,
+      title: {
+        text: "Бренды"
+      },
+      sort_panel: {
+        select: {
+          view: "select",
+          select: {
+            label: "Сортировать по:",
+            initial_value: "option-1",
+            options: [{
+              value: "option-1",
+              text: "Алфавиту"
+            }, {
+              value: "option-2",
+              text: "Алфавиту 2"
+            }]
+          }
+        },
+        pagination: true
+      },
+    }
+  } %}
+
+  {% include "../blocks/&organisms/card_grid/card_grid.twig" with {
+    card_grid: {
+      type: "brand",
+      items: [{
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "150 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "6 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "150 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "6 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "150 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "6 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "150 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "6 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "150 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "6 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "150 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "6 наименований"
+        }
+      }, {
+        title: {
+          level: 2,
+          text: "10 наименований"
+        }
+      }]
+    }
+  } %}
+</main>
+{% endblock %}

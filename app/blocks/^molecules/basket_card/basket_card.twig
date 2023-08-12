@@ -1,0 +1,290 @@
+<article class="basket-card {{ basket_card.class }}">
+  <div class="basket-card__start">
+    <div class="basket-card__tags">
+      <div class="basket-card__tags-left">
+        {% if basket_card.tags.percent %}
+          {% include "../../@atoms/tag/tag.twig" with {
+            tag: basket_card.tags.percent|merge({
+              class: "tag--percent"
+            })
+          } %}
+        {% endif %}
+
+        {% if basket_card.tags.type %}
+          {% include "../../@atoms/tag/tag.twig" with {
+            tag: basket_card.tags.type|merge({
+              class: "tag--new"
+            })
+          } %}
+        {% endif %}
+      </div>
+      <div class="basket-card__tags-right">
+        {% include "../../@atoms/tag/tag.twig" with {
+          tag: basket_card.tags.volume
+        } %}
+      </div>
+    </div>
+    <div class="swiper product-slider basket-card__slider">
+      <div class="swiper-wrapper">
+        {% for item in basket_card.slider.items %}
+          <div class="swiper-slide product-slider__slide">
+            {% include "../../@atoms/image/image.twig" with {
+              image: item.image
+            } %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="product-slider__pagination"></div>
+    </div>
+  </div>
+
+  <div class="basket-card__end">
+    <div class="basket-card__content">
+      {% if basket_card.content.rating %}
+        {% include "../../@atoms/rating/rating.twig" with {
+          rating: {
+            class: "basket-card__rating",
+            text: {
+              text: "4.5"
+            }
+          }
+        } %}
+      {% endif %}
+
+      <div class="basket-card__content-wrap">
+        {% include "../../@atoms/title/title.twig" with {
+          title: basket_card.content.title|default({})|merge({
+            class: "basket-card__title",
+            link: {
+              class: "btn btn--link basket-card__title-link"
+            }
+          })
+        } %}
+
+        {% if basket_card.content.btns %}
+          <div class="basket-card__btns">
+            {% include "../../@atoms/button/button.twig" with {
+              button: {
+                href: "#",
+                class: "btn--favorite basket-card__btn basket-card__btn-favorite",
+                icons: [{
+                  class: "btn__icon--favorite basket-card__btn-icon",
+                  name: "sprite-mono.svg#heart"
+                }, {
+                  class: "btn__icon--favorite-fill basket-card__btn-icon",
+                  name: "sprite-mono.svg#heart-fill"
+                }],
+                attrs: "aria-label='Добавить в избранное'"
+              }
+            } %}
+
+            {% include "../../@atoms/button/button.twig" with {
+              button: {
+                href: "#",
+                class: "basket-card__btn basket-card__btn-remove",
+                icon: {
+                  class: "basket-card__btn-icon",
+                  name: "sprite-mono.svg#close"
+                },
+                attrs: "aria-label='Удалить товар'"
+              }
+            } %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if basket_card.content.text %}
+        <div class="basket-card__content-text">
+          Франция
+        </div>
+      {% endif %}
+
+      <div class="basket-card__prop">
+        <div class="basket-card__prop-key">
+          Артикул:
+        </div>
+        <div class="basket-card__prop-value">
+          4260470690309
+        </div>
+      </div>
+      <div class="basket-card__prop">
+        <div class="basket-card__prop-key">
+          Страна:
+        </div>
+        <div class="basket-card__prop-value">
+          Франция
+        </div>
+      </div>
+    </div>
+
+    {% if basket_card.price %}
+      <div class="basket-card__price">
+        {% include "../../@atoms/price_info/price_info.twig" with {
+          price_info: basket_card.price
+        } %}
+      </div>
+    {% endif %}
+
+    {% if basket_card.actions %}
+      <div class="basket-card__actions">
+        <div class="basket-card__label">
+          <div class="basket-card__label-item">
+            {% include "../../@atoms/icon/icon.twig" with {
+              icon: basket_card.actions.label.item_1.icon|default({})|merge({
+                class: "basket-card__label-icon"
+              })
+            } %}
+
+            {{ basket_card.actions.label.item_1.text }}
+          </div>
+
+          <div class="basket-card__label-item">
+            {% include "../../@atoms/icon/icon.twig" with {
+              icon: basket_card.actions.label.item_2.icon|default({})|merge({
+                class: "basket-card__label-icon"
+              })
+            } %}
+
+            {{ basket_card.actions.label.item_2.text }}
+          </div>
+        </div>
+
+        {% include "../../@atoms/quantity/quantity.twig" with {
+          quantity: basket_card.actions.quantity|default({})|merge({
+            btns: {
+              increase: {
+                class: "basket-card__quantity-btn"
+              },
+              decrease: {
+                class: "basket-card__quantity-btn"
+              }
+            },
+            input: {
+              class: "basket-card__quantity-input",
+            }
+          })
+        } %}
+
+        <div class="basket-card__total">
+          <div class="basket-card__total-text">
+            Итого
+          </div>
+
+          {% include "../../@atoms/price_info/price_info.twig" with {
+            price_info: basket_card.actions.total.price
+          } %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if basket_card.list %}
+      <div class="basket-card__list">
+        <div class="basket-card__label">
+          <div class="basket-card__label-item">
+            {% include "../../@atoms/icon/icon.twig" with {
+              icon: basket_card.list.label.item_1.icon|default({})|merge({
+                class: "basket-card__label-icon"
+              })
+            } %}
+
+            {{ basket_card.list.label.item_1.text }}
+          </div>
+
+          <div class="basket-card__label-item">
+            {% include "../../@atoms/icon/icon.twig" with {
+              icon: basket_card.list.label.item_2.icon|default({})|merge({
+                class: "basket-card__label-icon"
+              })
+            } %}
+
+            {{ basket_card.list.label.item_2.text }}
+          </div>
+        </div>
+
+        {% for item in basket_card.list.items %}
+          <div class="basket-card__total">
+            <div class="basket-card__total-text">
+              {{ item.text }}
+            </div>
+
+            {% include "../../@atoms/price_info/price_info.twig" with {
+              price_info: item.price
+            } %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if basket_card.price_block %}
+      <div class="basket-card__price-block">
+        {% include "../../@atoms/price_info/price_info.twig" with {
+          price_info: {
+            current: "4 042 ₽"
+          }
+        } %}
+
+        <div class="basket-card__inner">
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--btn btn--primary js-basket-btn basket-card__basket-btn",
+              text: {
+                text: "В корзину"
+              }
+            }
+          } %}
+
+          <div class="quantity-wrapper" hidden>
+            <div class="quantity-wrapper__item">
+              <div class="quantity-wrapper__text">
+                {% include "../../@atoms/icon/icon.twig" with {
+                  icon: {
+                    class: "quantity-wrapper__text-icon",
+                    name: "sprite-multi.svg#wine-piece"
+                  }
+                } %}
+                В штуках
+              </div>
+              {% include "../../@atoms/quantity/quantity.twig" with {
+                quantity: {
+                  class: "quantity--secondary",
+                }
+              } %}
+            </div>
+            <div class="quantity-wrapper__item">
+              <div class="quantity-wrapper__text">
+                {% include "../../@atoms/icon/icon.twig" with {
+                  icon: {
+                    class: "quantity-wrapper__text-icon",
+                    name: "sprite-multi.svg#box"
+                  }
+                } %}
+                В коробках
+              </div>
+              {% include "../../@atoms/quantity/quantity.twig" with {
+                quantity: {
+                  class: "quantity--secondary"
+                }
+              } %}
+            </div>
+          </div>
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--favorite btn--icon",
+              icons: [{
+                class: "btn__icon--favorite",
+                name: "sprite-mono.svg#heart"
+              }, {
+                class: "btn__icon--favorite-fill",
+                name: "sprite-mono.svg#heart-fill"
+              }],
+              attrs: "aria-label='Добавить в избранное'"
+            }
+          } %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</article>

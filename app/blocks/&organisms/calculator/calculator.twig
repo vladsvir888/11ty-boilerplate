@@ -1,0 +1,273 @@
+<section class="calculator section">
+  <div class="container calculator__container grid-block">
+    <form class="validation-form calculator__form grid-block__item grid-block__item--1" action="/" method="get">
+      <div class="card-block">
+        <div class="card-block__item">
+          <div class="card-block__header">
+            {% include "../../@atoms/title/title.twig" with {
+              title: {
+                class: "card-block__title",
+                level: 2,
+                text: "Параметры расчета (Все расчеты носят ориентировочный характер)"
+              }
+            } %}
+          </div>
+          <div class="card-block__footer">
+            {% set items = [{
+              class: "form-control--col",
+              name: "calc_input",
+              input: {
+                placeholder: "Введите количество гостей",
+                name: "num_guests",
+                attrs: "data-pristine-required-message='Это поле является обязательным' data-pristine-max-message='Максимальное значение - 9 999 999' data-pristine-min-message='Минимальное значение - 1' max='9999999' min='1' data-pristine-only-number required"
+              },
+              label: {
+                text: "Количество гостей *"
+              }
+            }, {
+              class: "form-control--col",
+              name: "calc_input",
+              input: {
+                placeholder: "Введите количество пьющих мужчин",
+                name: "num_men",
+                attrs: "data-pristine-required-message='Это поле является обязательным' data-pristine-max-message='Максимальное значение - 9 999 999' data-pristine-min-message='Минимальное значение - 1' max='9999999' min='1' data-pristine-only-number required"
+              },
+              label: {
+                text: "Количество пьющих мужчин *"
+              }
+            }, {
+              class: "form-control--col",
+              name: "calc_input",
+              input: {
+                placeholder: "Введите количество пьющих женщин",
+                name: "num_women",
+                attrs: "data-pristine-required-message='Это поле является обязательным' data-pristine-max-message='Максимальное значение - 9 999 999' data-pristine-min-message='Минимальное значение - 1' max='9999999' min='1' data-pristine-only-number required"
+              },
+              label: {
+                text: "Количество пьющих женщин *"
+              }
+            }, {
+              view: "select",
+              select: {
+                class: "calculator__select",
+                label: "Как много пьют гости *",
+                initial_value: "option-1",
+                options: [{
+                  value: "option-1",
+                  text: "Средне"
+                }, {
+                  value: "option-2",
+                  text: "Много"
+                }, {
+                  value: "option-3",
+                  text: "Мало"
+                }],
+                attrs: "name='how_much_do_guests_drink'"
+              }
+            }, {
+              view: "select",
+              select: {
+                class: "calculator__select",
+                label: "Продолжительность мероприятия *",
+                initial_value: "option-3",
+                options: [{
+                  value: "option-1",
+                  text: "1 час"
+                }, {
+                  value: "option-2",
+                  text: "2 часа"
+                }, {
+                  value: "option-3",
+                  text: "6 часов"
+                }],
+                attrs: "name='event_duration'"
+              }
+            }, {
+              view: "select",
+              select: {
+                class: "calculator__select",
+                label: "Время года *",
+                initial_value: "option-1",
+                options: [{
+                  value: "option-1",
+                  text: "Лето"
+                }, {
+                  value: "option-2",
+                  text: "Зима"
+                }, {
+                  value: "option-3",
+                  text: "Осень/весна"
+                }],
+                attrs: "name='season'"
+              }
+            }, {
+              type: "check_btn",
+              items: [{
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Вино"
+                },
+                input: {
+                  name: "calc_check_1",
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Вино игристое"
+                },
+                input: {
+                  name: "calc_check_2",
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Винный напиток"
+                },
+                input: {
+                  name: "calc_check_3",
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Ликер"
+                },
+                input: {
+                  name: "calc_check_4",
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Виски"
+                },
+                input: {
+                  name: "calc_check_5",
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Текила"
+                },
+                input: {
+                  name: "calc_check_6"
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Коньяк"
+                },
+                input: {
+                  name: "calc_check_7"
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Водка"
+                },
+                input: {
+                  name: "calc_check_8"
+                }
+              }, {
+                view: "check_btn",
+                name: "calc_checkbox",
+                label: {
+                  text: "Пиво"
+                },
+                input: {
+                  name: "calc_check_9"
+                }
+              }]
+            }] %}
+
+            {% for item in items %}
+              <div class="card-block__col{% if item.type == 'check_btn' %} card-block__box card-block__col--w100{% endif %}">
+                {% if item.type == 'check_btn' %}
+                  <div class="card-block__box-label">Какие алкогольные напитки будут *</div>
+                  <div class="card-block__box-wrap">
+                    {% for item in item.items %}
+                      {% include "../../@atoms/form_control/form_control.twig" with {
+                        form_control: item
+                      } %}
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  {% include "../../@atoms/form_control/form_control.twig" with {
+                    form_control: item
+                  } %}
+
+                  {% if item.view == 'select' %}
+                    <noscript>
+                      <label class="form-control__label ">Заголовок</label>
+                      <div class="select-wrapper">
+                        <select class="select select--no-js" name="sort">
+                          <option value="option-1">Опция 1</option>
+                          <option value="option-2">Опция 2</option>
+                        </select>
+                      </div>
+                    </noscript>
+                  {% endif %}
+                {% endif %}
+              </div>
+            {% endfor %}
+
+            <div class="card-block__col">
+              {% include "../../@atoms/button/button.twig" with {
+                button: {
+                  class: "btn--btn btn--primary calculator__btn",
+                  text: {
+                    text: "Рассчитать"
+                  }
+                }
+              } %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="calculator__result grid-block__item grid-block__item--2">
+      <div class="card-block">
+        <div class="card-block__item">
+          <div class="card-block__header">
+            {% include "../../@atoms/title/title.twig" with {
+              title: {
+                class: "card-block__title",
+                level: 2,
+                text: "Итоги расчета"
+              }
+            } %}
+          </div>
+          <div class="card-block__result-block">
+            <div class="card-block__info">
+              Данный расчет носит исключительно информационный характер и основывается на средних неоффициальных величинах статистики в России
+            </div>
+            <div class="card-block__result">
+              <div class="card-block__result-item">
+                <div class="card-block__result-text">
+                  Количество бутылок <span>крепкого</span> алкоголя
+                </div>
+                <div class="card-block__result-num">
+                  10
+                </div>
+              </div>
+              <div class="card-block__result-item">
+                <div class="card-block__result-text">
+                  Количество бутылок <span>слабоалкогольных</span> напитков
+                </div>
+                <div class="card-block__result-num">
+                  15
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

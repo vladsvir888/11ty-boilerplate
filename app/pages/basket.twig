@@ -1,0 +1,333 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Корзина",
+    "description": "Корзина"
+  }
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "Корзина"
+        }]
+      }
+    } %}
+  </div>
+
+  {% include "../blocks/&organisms/page_top/page_top.twig" with {
+    page_top: {
+      grid: {
+        btn: {
+          class: "btn--btn btn--secondary page-top__banner-btn",
+          text: {
+            text: "Очистить всю корзину"
+          },
+          icon: {
+            name: "sprite-mono.svg#basket-shopping"
+          }
+        },
+        attention: true,
+        num_product: true
+      },
+      prev_btn: {
+        text: {
+          text: "Назад в каталог"
+        },
+      },
+      title: {
+        text: "Моя корзина",
+        label: "1500 товаров"
+      },
+    }
+  } %}
+
+  {% include "../blocks/&organisms/basket/basket.twig" with {
+    basket: {
+      items: [{
+        tags: {
+          type: {
+            text: "Новинка"
+          },
+          volume: {
+            type: "with_round",
+            class: "tag--volume tag--type-red",
+            text: "0.75л"
+          }
+        },
+        slider: {
+          items: [{
+            image: {
+              name: "basket/01.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }, {
+            image: {
+              name: "basket/01.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }]
+        },
+        content: {
+          title: {
+            level: 2,
+            text: "Вино Лыхны красное полусладкое"
+          },
+          btns: true,
+        },
+        price: {
+          current: "1 085 ₽"
+        },
+        actions: {
+          total: {
+            price: {
+              current: "26 040 ₽"
+            }
+          },
+          quantity: {
+            class: "basket-card__quantity",
+            btns: {
+              increase: {
+                attrs: "disabled"
+              }
+            },
+            info: true
+          },
+          label: {
+            item_1: {
+              text: "В коробках (12 бутылок) - 4 шт.",
+              icon: {
+                name: "sprite-multi.svg#box"
+              }
+            },
+            item_2: {
+              text: "В штуках - 3 шт.",
+              icon: {
+                name: "sprite-multi.svg#wine-piece"
+              }
+            }
+          },
+        },
+      }, {
+        tags: {
+          type: {
+            text: "Новинка"
+          },
+          volume: {
+            type: "with_round",
+            class: "tag--volume tag--type-white",
+            text: "0.75л"
+          }
+        },
+        slider: {
+          items: [{
+            image: {
+              name: "basket/02.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }, {
+            image: {
+              name: "basket/02.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }]
+        },
+        content: {
+          title: {
+            level: 2,
+            text: "Вино Chateau De La Thebaudiere Muscadet De"
+          },
+          btns: true,
+        },
+        price: {
+          current: "6 541 ₽"
+        },
+        actions: {
+          total: {
+            price: {
+              current: "235 476 ₽"
+            }
+          },
+          quantity: {
+            class: "basket-card__quantity",
+          },
+          label: {
+            item_1: {
+              text: "В коробках (12 бутылок) - 4 шт.",
+              icon: {
+                name: "sprite-multi.svg#box"
+              }
+            },
+            item_2: {
+              text: "В штуках - 3 шт.",
+              icon: {
+                name: "sprite-multi.svg#wine-piece"
+              }
+            }
+          },
+        }
+      }, {
+        tags: {
+          percent: {
+            text: "-35%"
+          },
+          volume: {
+            type: "with_round",
+            class: "tag--volume tag--type-white",
+            text: "0.75л"
+          }
+        },
+        slider: {
+          items: [{
+            image: {
+              name: "basket/03.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }, {
+            image: {
+              name: "basket/03.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }]
+        },
+        content: {
+          title: {
+            level: 2,
+            text: "Вино Petit Chablis AOC Domaine Garnier & Fils"
+          },
+          btns: true,
+        },
+        price: {
+          current: "4 042 ₽",
+          old: "5 500 ₽"
+        },
+        actions: {
+          total: {
+            price: {
+              current: "12 126 ₽"
+            }
+          },
+          quantity: {
+            class: "basket-card__quantity",
+          },
+          label: {
+            item_1: {
+              text: "В коробках (12 бутылок) - 4 шт.",
+              icon: {
+                name: "sprite-multi.svg#box"
+              }
+            },
+            item_2: {
+              text: "В штуках - 3 шт.",
+              icon: {
+                name: "sprite-multi.svg#wine-piece"
+              }
+            }
+          },
+        }
+      }, {
+        tags: {
+          percent: {
+            text: "-35%"
+          },
+          volume: {
+            type: "with_round",
+            class: "tag--volume tag--type-red",
+            text: "0.75л"
+          }
+        },
+        slider: {
+          items: [{
+            image: {
+              name: "basket/04.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }, {
+            image: {
+              name: "basket/04.png",
+              sizes: {
+                width: 157,
+                height: 200
+              },
+              alt: ""
+            },
+          }]
+        },
+        content: {
+          title: {
+            level: 2,
+            text: "Вино Chardonnay Bourgogne AOC Lugny L’aurore, 0.75л"
+          },
+          btns: true,
+        },
+        price: {
+          current: "27 778 ₽",
+          old: "31 458 ₽"
+        },
+        actions: {
+          total: {
+            price: {
+              current: "1 000 008 ₽"
+            }
+          },
+          quantity: {
+            class: "basket-card__quantity",
+          },
+          label: {
+            item_1: {
+              text: "В коробках (12 бутылок) - 4 шт.",
+              icon: {
+                name: "sprite-multi.svg#box"
+              }
+            },
+            item_2: {
+              text: "В штуках - 3 шт.",
+              icon: {
+                name: "sprite-multi.svg#wine-piece"
+              }
+            }
+          },
+        }
+      }]
+    }
+  } %}
+</main>
+{% endblock %}

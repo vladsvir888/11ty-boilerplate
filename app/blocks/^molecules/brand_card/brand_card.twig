@@ -1,0 +1,21 @@
+<article class="brand-card">
+  {% include "../../@atoms/image/image.twig" with {
+    image: {
+      name: "brand/01.png",
+      sizes: {
+        width: 215,
+        height: 105,
+      },
+      alt: ""
+    }
+  } %}
+
+  {% include "../../@atoms/title/title.twig" with {
+    title: brand_card.title|default({})|merge({
+      class: "brand-card__title",
+      link: {
+        attrs: "target='_blank'"
+      }
+    })
+  } %}
+</article>

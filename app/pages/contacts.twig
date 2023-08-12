@@ -1,0 +1,39 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Контакты",
+    "description": "Контакты"
+  },
+  "ymaps": true
+} %}
+
+{% block content %}
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "Контакты"
+        }]
+      }
+    } %}
+  </div>
+
+  {% include "../blocks/&organisms/page_top/page_top.twig" with {
+    page_top: {
+      class: "page-top--banner-stretched",
+      grid: true,
+      title: {
+        text: "Контакты"
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/contacts_block/contacts_block.twig" %}
+{% endblock %}

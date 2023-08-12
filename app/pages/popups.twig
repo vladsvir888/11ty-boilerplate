@@ -1,0 +1,227 @@
+{% extends "../blocks/layout/base_2.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Модальные окна с формой",
+    "description": "Модальные окна с формой"
+  }
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  <div style="display: flex; flex-wrap: wrap; gap: 12px; padding: 20px;">
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Восстановить пароль"
+        },
+        attrs: "data-dialog='forgot_password'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Восстановить пароль 2"
+        },
+        attrs: "data-dialog='forgot_password_2'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Успешное восстановление пароля"
+        },
+        attrs: "data-dialog='forgot_password_3'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Регистрация"
+        },
+        attrs: "data-dialog='registration'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Успешная регистрация"
+        },
+        attrs: "data-dialog='registration_2'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Авторизация"
+        },
+        attrs: "data-dialog='auth'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Ваш отзыв (о компании)"
+        },
+        attrs: "data-dialog='review-company'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Ваш отзыв (товар)"
+        },
+        attrs: "data-dialog='review-product'"
+      }
+    } %}
+
+    {% include "../blocks/@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary",
+        text: {
+          text: "Подтверждение возраста"
+        },
+        attrs: "data-dialog='age-confirm'"
+      }
+    } %}
+  </div>
+
+  <sl-dialog id="forgot_password" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-forgot-password",
+        type: "forgot_password",
+        title: {
+          text: "Восстановить пароль"
+        }
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="forgot_password_2" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        type: "forgot_password_2",
+        title: {
+          text: "Восстановить пароль"
+        }
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="forgot_password_3" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-success",
+        type: "forgot_password_3",
+        title: {
+          text: "Пароль изменен"
+        },
+        info: {
+          text: "Ваш пароль успешно изменен"
+        }
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="registration" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-registration",
+        type: "registration",
+        title: {
+          text: "Регистрация"
+        },
+        socials: true
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="registration_2" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-success",
+        type: "registration_2",
+        title: {
+          text: "Регистрация"
+        },
+        info: {
+          text: "Мы выслали на указанный адрес электронной почты ссылку на «завершение регистрации»"
+        }
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="registration_3" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-registration",
+        type: "registration_ur",
+        title: {
+          text: "Регистрация"
+        },
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="auth" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-auth",
+        type: "auth",
+        title: {
+          text: "Войти"
+        }
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="review-company" class="dialog" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-review",
+        type: "review_company",
+        title: {
+          text: "Ваш отзыв"
+        }
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="review-product" class="dialog dialog--review-product" no-header>
+    {% include "../blocks/&organisms/form_block/form_block.twig" with {
+      form_block: {
+        class: "form-block-review",
+        type: "review_product",
+        title: {
+          text: "Ваш отзыв"
+        }
+      }
+    } %}
+  </sl-dialog>
+
+  <sl-dialog id="age-confirm" class="dialog dialog--age-confirm" no-header>
+    {% include "../blocks/^molecules/age_confirm/age_confirm.twig" with {
+      age_confirm: {
+        title: "Вам есть 18 лет?",
+        text: "Информация на сайте не предназначена для посетителей младше 18 лет. Для доступа к ней подтвердите, пожалуйста, свое совершеннолетие"
+      }
+    } %}
+  </sl-dialog>
+</main>
+{% endblock %}

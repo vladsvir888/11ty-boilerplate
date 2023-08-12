@@ -1,0 +1,117 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Детальная страница новости",
+    "description": "Детальная страница новости"
+  }
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "Новости"
+        }]
+      }
+    } %}
+  </div>
+
+  {% include "../blocks/&organisms/page_top/page_top.twig" with {
+    page_top: {
+      class: "page-top--banner-stretched",
+      grid: true,
+      title: {
+        text: "Зинфандель: удивительные приключения американца?"
+      },
+      prev_btn: {
+        text: {
+          text: "Назад в новости"
+        },
+      },
+    }
+  } %}
+
+  {% include "../blocks/&organisms/detail_news/detail_news.twig" %}
+
+  {% include "../blocks/&organisms/news_slider/news_slider.twig" with {
+    news_slider: {
+      section_header: {
+        class: "section-header--secondary",
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Похожие статьи"
+        },
+        slider_btns: true,
+      },
+      items: [{
+        image: {
+          name: "promotional-offers/01.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 2,
+          text: "Правильный коктейль",
+        }
+      }, {
+        image: {
+          name: "promotional-offers/02.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 2,
+          text: "Правильный коктейль",
+        }
+      }, {
+        image: {
+          name: "promotional-offers/03.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 2,
+          text: "Правильный коктейль",
+        }
+      }]
+    }
+  } %}
+</main>
+{% endblock %}

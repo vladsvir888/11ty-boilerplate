@@ -1,0 +1,136 @@
+<section class="feedback section">
+  <div class="container feedback__container grid-block">
+    <form action="/" method="get" class="validation-form feedback__form grid-block__item grid-block__item--1">
+      <div class="card-block feedback__card-block">
+        <div class="card-block__item">
+          <div class="card-block__header">
+            {% include "../../@atoms/title/title.twig" with {
+              title: {
+                class: "card-block__title",
+                level: 2,
+                text: "Заполните поля ниже и наш менджер свяжется с вами в ближайшее время"
+              }
+            } %}
+          </div>
+
+          <div class="card-block__footer">
+            <div class="card-block__col">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  class: "form-control--col",
+                  name: "personal_info_name",
+                  input: {
+                    placeholder: "Введите ваше имя",
+                    name: "name",
+                    attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='50' data-pristine-hyphen data-pristine-space data-pristine-only-letters required"
+                  },
+                  label: {
+                    text: "Ваше имя *"
+                  }
+                }
+              } %}
+            </div>
+
+            <div class="card-block__col">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  class: "form-control--col",
+                  name: "personal_info_phone",
+                  input: {
+                    type: "tel",
+                    class: "phone-mask",
+                    placeholder: "+7 (__)___-__-__",
+                    name: "phone",
+                    attrs: "data-pristine-required-message='Это поле является обязательным' data-pristine-phone required"
+                  },
+                  label: {
+                    text: "Номер телефона *"
+                  }
+                }
+              } %}
+            </div>
+
+            <div class="card-block__col">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  class: "form-control--col",
+                  name: "personal_info_email",
+                  input: {
+                    type: "text",
+                    placeholder: "Введите ваш e-mail",
+                    name: "email",
+                    attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='100' data-pristine-minlength-message='Минимальная длина - 5 символов' minlength='5' data-pristine-custom-email required"
+                  },
+                  label: {
+                    text: "E-mail *"
+                  }
+                }
+              } %}
+            </div>
+
+            <div class="card-block__col form-control form-control--checkbox">
+              <span class="fake-element"></span>
+              <div class="card-block__col-checkbox">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    view: "check",
+                    name: "check_policy",
+                    input: {
+                      type: "checkbox",
+                      name: "check_policy",
+                      attrs: "data-pristine-required-message='Чекбокс не отмечен' checked required"
+                    },
+                    label: {
+                      class: "card-block__col-checkbox-label",
+                      text: "Я ознакомлен и соглашаюсь с условиями <a class='btn btn--link' href='#'>Политики обработки персональных данных</a>"
+                    }
+                  }
+                } %}
+              </div>
+            </div>
+
+            <div class="card-block__col card-block__col--w100 feedback__textarea">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  view: "textarea",
+                  class: "form-control--col",
+                  name: "order_comment",
+                  input: {
+                    placeholder: "Текст сообщения",
+                    name: "order_comment",
+                    attrs: "rows='4' maxlength='1000' data-pristine-required-message='Это поле является обязательным' required"
+                  },
+                  label: {
+                    text: "Текст сообщения *"
+                  }
+                }
+              } %}
+            </div>
+
+            <div class="card-block__col">
+              {% include "../../@atoms/button/button.twig" with {
+                button: {
+                  class: "btn--btn btn--primary feedback__form-btn",
+                  text: {
+                    text: "Отправить"
+                  }
+                }
+              } %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="feedback__info grid-block__item grid-block__item--2">
+      {% include "../../^molecules/text_card/text_card.twig" with {
+        text_card: {
+          title: {
+            level: 2,
+            text: "По каким вопросам можете обращаться?"
+          },
+          text: "<p>Не знаете какой алкоголь выбрать? Сомневаетесь? Есть пожелания или предложения? Вам неудобно звонить? Вы можете задать свой вопрос нашему менеджеру письменно.</p><p>Мы будем рады обратной связи! Заполните форму обратной связи, и мы свяжемся с вами в ближайшее время</p>",
+        }
+      } %}
+    </div>
+  </div>
+</section>

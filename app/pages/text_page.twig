@@ -1,0 +1,271 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Текстовая страница (как шаблон)",
+    "description": "Текстовая страница (как шаблон)"
+  }
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "Новости"
+        }]
+      }
+    } %}
+  </div>
+
+  {% include "../blocks/&organisms/page_top/page_top.twig" with {
+    page_top: {
+      class: "page-top--banner-stretched",
+      grid: true,
+      title: {
+        text: "Зинфандель: удивительные приключения американца?"
+      },
+      prev_btn: {
+        text: {
+          text: "Назад в новости"
+        },
+      },
+    }
+  } %}
+
+  {% include "../blocks/&organisms/detail_news/detail_news.twig" with {
+    detail_news: {
+      type: "template"
+    }
+  } %}
+
+  {% include "../blocks/&organisms/products/products.twig" with {
+    products: {
+      section_header: {
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Новинки"
+        },
+        slider_btns: true,
+      },
+      content: {
+        items: [{
+          image: {
+            name: "product-card/01.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Лыхны красное полусладкое",
+          },
+          price: {
+            current: "1 085 ₽",
+            old: "1 500 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.8"
+            }
+          },
+          tags: {
+            percent: {
+              text: "-15%"
+            },
+            type: {
+              text: "Новинка"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          }
+        }, {
+          image: {
+            name: "product-card/02.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Beauroy Chablis 1er Cru AOC Maison Olivier Tricon",
+          },
+          price: {
+            current: "6 054 ₽",
+            old: "7 500 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.3"
+            }
+          },
+          tags: {
+            percent: {
+              text: "-15%"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          }
+        }, {
+          image: {
+            name: "product-card/03.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Petit F... Pouilly-Fume AOC Michel Redde et Fils , 0.75 л",
+          },
+          price: {
+            current: "3 061 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.7"
+            }
+          },
+          tags: {
+            type: {
+              text: "Новинка"
+            },
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-pink",
+              text: "0.75л"
+            }
+          }
+        }, {
+          image: {
+            name: "product-card/04.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Grand Elevage Vieilles Vignes Arbois AOC Domaine",
+          },
+          price: {
+            current: "7 378 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.6"
+            }
+          },
+          tags: {
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          }
+        }, {
+          image: {
+            name: "product-card/05.png",
+          },
+          title: {
+            level: 3,
+            text: "Вино Grand Elevage Vieilles Vignes Arbois AOC Domaine",
+          },
+          price: {
+            current: "1 085 ₽",
+            old: "1 500 ₽",
+          },
+          rating: {
+            href: "#",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.3"
+            }
+          },
+          tags: {
+            volume: {
+              type: "with_round",
+              class: "tag--volume tag--type-red",
+              text: "0.75л"
+            }
+          }
+        }]
+      }
+    }
+  } %}
+
+  {% include "../blocks/&organisms/news_slider/news_slider.twig" with {
+    news_slider: {
+      section_header: {
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Вам может понравиться"
+        },
+        slider_btns: true,
+      },
+      items: [{
+        image: {
+          name: "promotional-offers/01.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 2,
+          text: "Правильный коктейль",
+        }
+      }, {
+        image: {
+          name: "promotional-offers/02.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 2,
+          text: "Правильный коктейль",
+        }
+      }, {
+        image: {
+          name: "promotional-offers/03.png",
+          sizes: {
+            width: 540,
+            height: 240
+          },
+          alt: ""
+        },
+        date: {
+          time: {
+            text: "21.03.2017",
+            datetime: "2017-03-21"
+          }
+        },
+        title: {
+          level: 2,
+          text: "Правильный коктейль",
+        }
+      }]
+    }
+  } %}
+</main>
+{% endblock %}

@@ -1,0 +1,26 @@
+.title {
+  &__link {
+    &::before {
+      position: absolute;
+      inset: 0;
+      content: '';
+    }
+  }
+
+  &__label {
+    @include font-size(12, 16);
+    font-weight: 600;
+    color: var(--pallette-white);
+    padding: rem(8) rem(16);
+    background-color: var(--pallette-international-orange);
+    border-radius: var(--bdrs10);
+    white-space: nowrap;
+
+    @include media('600', max) {
+      position: relative;
+      top: rem(-5);
+      font-size: rem(11);
+      padding: rem(8);
+    }
+  }
+}

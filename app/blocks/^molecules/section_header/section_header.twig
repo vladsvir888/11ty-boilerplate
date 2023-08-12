@@ -1,0 +1,123 @@
+<div class="section-header {{ section_header.class }}">
+  {% include "../../@atoms/title/title.twig" with {
+    title: section_header.title
+  } %}
+
+  {% if section_header.clean_basket_btn %}
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn section-header__clean-basket-btn",
+        text: {
+          text: "Очистить всю корзину"
+        },
+        icon: {
+          class: "section-header__clean-basket-icon",
+          name: "sprite-mono.svg#basket-shopping"
+        }
+      }
+    } %}
+  {% endif %}
+
+  {% if section_header.toggle_group %}
+    <div
+      class="toggle-group section-header__toggle-group"
+      role="group"
+      aria-label="Выбор алкогольных напитков"
+    >
+      {% for item in section_header.toggle_group.items %}
+        {% include "../../@atoms/button/button.twig" with {
+          button: item|default({})|merge({
+            class: "toggle-group__btn section-header__toggle-btn",
+          })
+        } %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if section_header.slider_btns %}
+    <div class="section-header__btns">
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "section-header__btn section-header__btn--prev",
+          attrs: "aria-label='Предыдущий слайд'",
+          icon: {
+            class: "section-header__btn-icon",
+            name: "sprite-mono.svg#arrow-prev"
+          }
+        }
+      } %}
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "section-header__btn section-header__btn--next",
+          attrs: "aria-label='Следующий слайд'",
+          icon: {
+            class: "section-header__btn-icon",
+            name: "sprite-mono.svg#arrow-next"
+          }
+        }
+      } %}
+    </div>
+  {% endif %}
+
+  {% if section_header.link_another_page %}
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        href: "#",
+        class: "btn--arrow btn--link",
+        text: {
+          text: "Узнать больше",
+        },
+        right_icon: {
+          name: "sprite-mono.svg#arrow-next"
+        }
+      }
+    } %}
+  {% endif %}
+
+  {% if section_header.select %}
+    {% include "../../@atoms/form_control/form_control.twig" with {
+      form_control: {
+        view: "select",
+        select: {
+          label: "Сортировать по:",
+          initial_value: "option-4",
+          options: [{
+            value: "option-1",
+            text: "По популярности"
+          }, {
+            value: "option-2",
+            text: "Сначала дорогие"
+          }, {
+            value: "option-3",
+            text: "Сначала дешевые"
+          }, {
+            value: "option-4",
+            text: "По новизне"
+          }]
+        }
+      }
+    } %}
+
+    <noscript>
+      <form class="no-js-form" action="/" method="get">
+        <div class="select-wrapper">
+          <select class="select select--no-js" name="sort">
+            <option value="option-1">По популярности</option>
+            <option value="option-2">Сначала дорогие</option>
+            <option value="option-3">Сначала дешевые</option>
+            <option value="option-4">По новизне</option>
+          </select>
+        </div>
+        {% include "../../@atoms/button/button.twig" with {
+          button: {
+            class: "btn--link no-js-form__btn",
+            text: {
+              text: "Отсортировать"
+            }
+          }
+        } %}
+      </form>
+    </noscript>
+  {% endif %}
+</div>

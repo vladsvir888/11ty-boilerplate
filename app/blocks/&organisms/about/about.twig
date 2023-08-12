@@ -1,0 +1,51 @@
+<section class="section about">
+  <div class="container">
+    {% if about.section_header %}
+      {% include "../../^molecules/section_header/section_header.twig" with {
+        section_header: {
+          title: {
+            level: 2,
+            class: "section-header__title",
+            text: "О компании"
+          },
+          link_another_page: true
+        }
+      } %}
+    {% endif %}
+
+    <div class="about__grid">
+      <div class="about__card">
+        <img class="about__card-logo" src="./assets/images/icons/logo-company.svg" alt="" width="205" height="50">
+        <div class="about__card-text">
+          Vintegra - это лидер в области поставок алкогольных продуктов на российском рынке. Более 25 лет мы предлагаем широкий ассортимент вин, крепких напитков от ведущих производителей со всего мира. Наша команда профессионалов всегда готова помочь в выборе продукции и обеспечивает быструю доставку в любую точку России. Мы стремимся к постоянному развитию и улучшению, чтобы оправдать доверие наших клиентов.
+        </div>
+      </div>
+      <div class="about__benefits">
+        <div class="about__benefit">
+          <div class="about__benefit-num">
+            <span>25</span> лет
+          </div>
+          <div class="about__benefit-text">
+            Работаем на рынке алкогольной продукции
+          </div>
+        </div>
+        <div class="about__benefit">
+          <div class="about__benefit-num">
+            <span>4000+</span> товаров
+          </div>
+          <div class="about__benefit-text">
+            Работаем на рынке алкогольной продукции
+          </div>
+        </div>
+        <div class="about__benefit">
+          <div class="about__benefit-num">
+            <span>14+</span> категорий
+          </div>
+          <div class="about__benefit-text">
+            Работаем на рынке алкогольной продукции
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

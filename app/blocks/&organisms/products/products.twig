@@ -1,0 +1,23 @@
+<section class="section products {{ products.class }}">
+  <div class="container{% if products.is_preloader %} ajax-wrap{% endif %}">
+    {% include "../../^molecules/section_header/section_header.twig" with {
+      section_header: products.section_header
+    } %}
+
+    <div class="swiper products__slider">
+      <div class="swiper-wrapper">
+        {% for item in products.content.items %}
+          <div class="swiper-slide products__slider-slide">
+            {% include "../../^molecules/product_card/product_card.twig" with {
+              product_card: item
+            } %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if products.is_preloader %}
+      <sl-spinner class="preloader ajax-wrap__preloader"></sl-spinner>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,258 @@
+.basket-card {
+  $this: &;
+
+  display: grid;
+  grid-template-columns: rem(265) 1fr;
+  border: rem(1) solid var(--pallette-seashell);
+  border-radius: var(--bdrs15);
+
+  @include media('600', max) {
+    grid-template-columns: rem(78) 1fr;
+  }
+
+  &--secondary {
+    #{$this}__title {
+      margin-bottom: rem(4);
+    }
+
+    #{$this}__slider {
+      row-gap: rem(12);
+    }
+  }
+
+  &--tertiary {
+    grid-template-columns: 27% 1fr;
+
+    #{$this}__end {
+      display: grid;
+      grid-template-columns: 1fr rem(380);
+    }
+  }
+
+  &__start {
+    @include flex-column;
+    padding: rem(12) rem(12) rem(8);
+    border-radius: var(--bdrs15);
+    background-color: var(--pallette-athens-gray);
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: rem(3);
+    gap: rem(10);
+
+    @include media('600', max) {
+      display: none;
+    }
+  }
+
+  &__slider {
+    height: 100%;
+  }
+
+  &__end {
+    position: relative;
+    display: grid;
+    row-gap: rem(20);
+    padding: rem(20) rem(24) rem(28) rem(10);
+    grid-template-rows: min-content;
+
+    @include media('600', max) {
+      padding: rem(10) rem(10) rem(18);
+      row-gap: rem(8);
+    }
+  }
+
+  &__content {
+    @include flex-column;
+    row-gap: rem(8);
+
+    @include media('600', max) {
+      row-gap: rem(4);
+    }
+
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: rem(5);
+
+      @include media('600', max) {
+        margin-bottom: rem(4);
+      }
+    }
+
+    &-text {
+      @include font-size(14, 21);
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__title {
+    @include font-size(18, 25);
+    font-weight: 600;
+
+    @include media('600', max) {
+      @include font-size(12, 18);
+    }
+  }
+
+  &__prop {
+    @include font-size(14, 19);
+    display: flex;
+    column-gap: rem(8);
+
+    @include media('600', max) {
+      @include font-size(12, 18);
+    }
+
+    &-key {
+      font-weight: 600;
+    }
+  }
+
+  &__total {
+    &-text {
+      @include font-size(14, 19);
+      color: var(--pallette-silver);
+
+      @include media('600', max) {
+        @include font-size(12, 18);
+      }
+    }
+  }
+
+  &__actions {
+    @include flex-center-y;
+    flex-wrap: wrap;
+    gap: rem(10) rem(20);
+
+    @include media('600', max) {
+      gap: rem(12) rem(16);
+    }
+  }
+
+  &__btns {
+    @include flex-center-y;
+    position: relative;
+    column-gap: rem(24);
+
+    @include media('600', max) {
+      column-gap: rem(16);
+    }
+  }
+
+  &__btn {
+    display: flex;
+
+    &-remove {
+      #{$this}__btn-icon {
+        fill: var(--pallette-silver);
+      }
+    }
+
+    &-favorite {
+      #{$this}__btn-icon {
+        width: rem(24);
+        height: rem(24);
+        fill: var(--pallette-biscay);
+
+        @include media('600', max) {
+          width: rem(18);
+          height: rem(18);
+        }
+      }
+    }
+
+    &-icon {
+      width: rem(20);
+      height: rem(20);
+
+      @include media('600', max) {
+        width: rem(16);
+        height: rem(16);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10) rem(80);
+
+    @include media('600', max) {
+      gap: rem(12);
+    }
+  }
+
+  &__label {
+    @include flex-column;
+    @include font-size(12, 18);
+    row-gap: rem(6);
+    font-weight: 600;
+    padding: rem(9) rem(26) rem(9) rem(16);
+    border: rem(1) solid var(--pallette-athens-gray-2);
+    border-radius: var(--bdrs10);
+
+    @include media('600', max) {
+      @include font-size(10, 15);
+      padding: rem(10) rem(12);
+      row-gap: rem(5);
+    }
+
+    &-item {
+      @include flex-center-y;
+      column-gap: rem(6);
+    }
+
+    &-icon {
+      width: rem(18);
+      height: rem(18);
+
+      @include media('600', max) {
+        width: rem(14);
+        height: rem(14);
+      }
+    }
+  }
+
+  &__quantity {
+    &-btn {
+      @include media('600', max) {
+        width: rem(40);
+        height: rem(40);
+      }
+    }
+
+    &-input {
+      @include media('600', max) {
+        height: rem(40);
+      }
+    }
+  }
+
+  &__rating {
+    margin-bottom: rem(4);
+  }
+
+  &__price-block {
+    @include flex-column;
+    row-gap: rem(38);
+    position: relative;
+    padding: rem(20);
+    border-radius: var(--bdrs15);
+    border: rem(1) solid var(--pallette-seashell);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-end;
+    column-gap: rem(16);
+  }
+
+  &__basket-btn {
+    flex-grow: 1;
+  }
+}

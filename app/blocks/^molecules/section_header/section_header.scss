@@ -1,0 +1,149 @@
+.section-header {
+  $this: &;
+
+  @include flex-center-between;
+  flex-wrap: wrap;
+  gap: rem(4);
+  margin-bottom: rem(28);
+
+  @include media('600', max) {
+    margin-bottom: rem(20);
+  }
+
+  &--secondary {
+    #{$this}__title {
+      @include font-size(36, 54);
+
+      @include media('600', max) {
+        @include font-size(24, 36);
+      }
+    }
+  }
+
+  &--tertiary {
+    @include media('600', max) {
+      width: calc(100% + var(--container-padding) * 2);
+      margin-left: calc(var(--container-padding) * -1);
+      padding-left: var(--container-padding);
+    }
+
+    #{$this}__title {
+      margin-right: auto;
+
+      @include media('600', max) {
+        @include font-size(22, 33);
+        order: 0;
+        max-width: rem(220);
+      }
+    }
+
+    #{$this}__btns {
+      @include media('600', max) {
+        order: 1;
+        padding-right: var(--container-padding);
+      }
+    }
+
+    #{$this}__toggle-group {
+      @include media('600', max) {
+        order: 3;
+        margin-top: rem(32);
+        overflow-x: auto;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        > * {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+
+  &--portal {
+    margin-bottom: rem(16);
+
+    #{$this}__title {
+      @include font-size(24, 36);
+    }
+  }
+
+  &__title {
+    @include flex-center-y;
+    @include font-size(45, 61);
+    font-weight: 600;
+    gap: rem(10) rem(16);
+    flex-wrap: wrap;
+
+    @include media('600', max) {
+      @include font-size(24, 36);
+    }
+  }
+
+  &__btns {
+    @include flex-center-y;
+    column-gap: rem(12);
+
+    @include media('600', max) {
+      column-gap: rem(8);
+    }
+  }
+
+  &__btn {
+    @include flex-center;
+    width: rem(48);
+    height: rem(48);
+    flex-shrink: 0;
+    border: rem(1) solid var(--pallette-mercury);
+    border-radius: 50%;
+    color: var(--pallette-gray);
+
+    @include media('600', max) {
+      width: rem(48);
+      height: rem(48);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        &:not(:disabled) {
+          border-color: var(--pallette-international-orange);
+          color: var(--pallette-international-orange);
+        }
+      }
+    }
+
+    &-icon {
+      width: rem(20);
+      height: rem(20);
+      fill: currentColor;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.35;
+      pointer-events: none;
+      cursor: auto;
+    }
+  }
+
+  &__toggle-group {
+    margin-right: rem(40);
+
+    @include media('600', max) {
+      margin-right: 0;
+    }
+  }
+
+  &__toggle-btn {
+    @include media('600', max) {
+      @include font-size(14, 21);
+    }
+  }
+
+  &__clean-basket-btn {
+    color: var(--pallette-mine-shaft);
+    border: rem(1) solid var(--pallette-athens-gray-2);
+  }
+
+  .swiper-button-lock {
+    display: none;
+  }
+}

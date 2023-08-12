@@ -1,0 +1,50 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Оформление заказа",
+    "description": "Оформление заказа"
+  },
+  "ymaps": true
+} %}
+
+{% block content %}
+<main id="main" class="main">
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "Оформление заказа"
+        }]
+      }
+    } %}
+  </div>
+
+  {% include "../blocks/&organisms/page_top/page_top.twig" with {
+    page_top: {
+      class: "page-top--banner-stretched",
+      grid: true,
+      prev_btn: {
+        text: {
+          text: "Назад в корзину"
+        },
+      },
+      title: {
+        text: "Оформление заказа"
+      },
+    }
+  } %}
+
+  {% include "../blocks/&organisms/ordering/ordering.twig" with {
+    ordering: {
+      type: "ur_person"
+    }
+  } %}
+</main>
+{% endblock %}

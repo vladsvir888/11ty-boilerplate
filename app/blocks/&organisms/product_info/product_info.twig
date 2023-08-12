@@ -1,0 +1,471 @@
+{% set product_info = {
+  tags: [{
+    text: "Франция",
+  }, {
+    text: "0,75л",
+  }, {
+    text: "Крепость: 13%",
+  }],
+  list: [{
+    term: "Категория",
+    descr: "Вино защищенного наименования"
+  }, {
+    term: "Страна",
+    descr: "Франция"
+  }, {
+    term: "Объем",
+    descr: "0,75л"
+  }, {
+    term: "Крепость%",
+    descr: "13"
+  }, {
+    term: "Артикул",
+    descr: "4260470690309"
+  }]
+} %}
+
+<section class="section product-info">
+  <div class="container product-info__container">
+    <div class="product-info__slider-wrap">
+      <div class="swiper product-slider product-info__slider">
+        <div class="product-info__slider-tags">
+          {% include "../../@atoms/tag/tag.twig" with {
+            tag: {
+              class: "tag--percent",
+              text: "-15%"
+            }
+          } %}
+
+          {% include "../../@atoms/tag/tag.twig" with {
+            tag: {
+              class: "tag--new",
+              text: "Новинка"
+            }
+          } %}
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide product-slider__slide">
+            {% include "../../@atoms/image/image.twig" with {
+              image: {
+                name: "product-info/01.png",
+                sizes: {
+                  width: 320,
+                  height: 460
+                }
+              }
+            } %}
+          </div>
+          <div class="swiper-slide product-slider__slide">
+            {% include "../../@atoms/image/image.twig" with {
+              image: {
+                name: "product-info/01.png",
+                sizes: {
+                  width: 320,
+                  height: 460
+                }
+              }
+            } %}
+          </div>
+        </div>
+        <div class="product-slider__pagination"></div>
+      </div>
+    </div>
+
+    <div class="product-info__content">
+      <div class="product-info__content-header">
+        <div class="product-info__content-wrap">
+          {% include "../../@atoms/rating/rating.twig" with {
+            rating: {
+              class: "product-info__rating",
+              text: {
+                text: 4.5
+              }
+            }
+          } %}
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              class: "btn--dotted btn--link product-info__content-btn",
+              href: "#tabs-block",
+              text: {
+                text: "13 оценок"
+              }
+            }
+          } %}
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              class: "btn--dotted btn--link product-info__content-btn",
+              href: "#tabs-block",
+              text: {
+                text: "Оставить отзыв"
+              }
+            }
+          } %}
+        </div>
+        {% include "../../@atoms/title/title.twig" with {
+          title: {
+            class: "product-info__title",
+            text: "Вино Hanewald Schwerdt Grauburgunder белое сухое, 0,75 л."
+          }
+        } %}
+
+        <div class="product-info__inner">
+          <div class="product-info__article">
+            Артикул: 6261986230
+          </div>
+          <!-- product-info__availability--no, если 0 шт. в наличии -->
+          <div class="product-info__availability product-info__availability--yes">
+            25 шт. в наличии
+          </div>
+        </div>
+      </div>
+
+      <ul class="product-info__tags">
+        {% for tag in product_info.tags %}
+          <li class="product-info__tag">
+            {% include "../../@atoms/tag/tag.twig" with {
+              tag: tag|default({})|merge({
+                class: "tag--product"
+              })
+            } %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="product-info__price">
+        {% include "../../@atoms/price_info/price_info.twig" with {
+          price_info: {
+            class: "product-info__price-block",
+            current: "1085 ₽",
+            old: "1590 ₽"
+          }
+        } %}
+
+        <div class="product-info__price-note">
+          Для корпоративных клиентов мы предоставляем особые
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--link",
+              text: {
+                text: "условия работы"
+              }
+            }
+          } %}
+        </div>
+      </div>
+
+      <div class="product-info__content-footer">
+        <form action="/" method="get" class="product-info__form">
+          {% include "../../@atoms/form_control/form_control.twig" with {
+            form_control: {
+              view: "select",
+              select: {
+                class: "select--icon product-info__select",
+                choice_icon: true,
+                initial_value: "option-1",
+                options: [{
+                  value: "option-1",
+                  text: "Выбор в коробках (12шт.)",
+                  icon: {
+                    name: "sprite-multi.svg#box"
+                  }
+                }, {
+                  value: "option-2",
+                  text: "Выбор в штуках",
+                  icon: {
+                    name: "sprite-multi.svg#wine-piece"
+                  }
+                }],
+                attrs: "name='choice'"
+              }
+            }
+          } %}
+
+          <noscript class="product-info__select">
+            <div class="select-wrapper">
+              <select class="select select--no-js" name="choice">
+                <option value="option-1">Выбор в коробках</option>
+                <option value="option-2">Выбор в штуках</option>
+              </select>
+            </div>
+          </noscript>
+
+          {% include "../../@atoms/quantity/quantity.twig" %}
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              class: "btn--btn btn--primary",
+              text: {
+                text: "В корзину"
+              }
+            }
+          } %}
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              class: "btn--icon product-info__favorite-btn",
+              attrs: "aria-label='Добавить в избранное'",
+              icon: {
+                name: "sprite-mono.svg#heart"
+              },
+              text: {
+                text: "Добавить в избранное"
+              }
+            }
+          } %}
+        </form>
+      </div>
+    </div>
+
+    <div id="tabs-block" class="product-info__tabs-block">
+      {% include "../../@atoms/title/title.twig" with {
+        title: {
+          class: "product-info__tabs-title",
+          level: 2,
+          text: "Подробнее о товаре"
+        }
+      } %}
+
+      <sl-tab-group class="tabs product-info__tabs">
+        <sl-tab class="tabs__tab product-info__tab" slot="nav" panel="description">Описание</sl-tab>
+
+        <sl-tab-panel class="tabs__panel product-info__tab-panel" name="description">
+          <div class="product-info__tabs-content">
+            <dl class="product-info__list">
+              {% for list_item in product_info.list %}
+                <div class="product-info__list-item">
+                  <dt class="product-info__list-term">
+                    {{ list_item.term }}
+                  </dt>
+                  <dd class="product-info__list-descr">
+                    {{ list_item.descr }}
+                  </dd>
+                </div>
+              {% endfor %}
+            </dl>
+
+            <div class="product-info__info">
+              <div class="text-block">
+                <p>
+                  Вино от семейной винодельни Ханевальд Швердт из Пфальца, большая часть виноградников которой официально классифицирована ассоциацией VDP как Erste Lage и Grosse Lage, но сама винодельня не входит в ассоциацию.
+                </p>
+                <p>
+                  Главный секрет – это доисторический известняковый риф возрастом 55 млн лет, который составляет основу почв вокруг Лейштадта, а также старые лозы, комфортно себя чувствующие под защитой гор Хаардт, создающих уникальный микроклимат. Этот Граубургундер (Пино гри) выращивается на глинистых почвах в окрестностях Бад Дюркхайма. 10% вина ферментируется в новом французском дубе, остальное – в стальных чанах. Вино проходит малолактическую ферментацию. В аромате дыня, ноты шиповника, косточковых и пряностей. Во вкусе акценты на косточковые фрукты с цитрусовыми и кремовыми нотами, продолжающимися тонами свежего ананаса и специй. Хорошая кислотность
+                </p>
+              </div>
+            </div>
+          </div>
+        </sl-tab-panel>
+
+        <sl-tab class="tabs__tab product-info__tab" slot="nav" panel="reviews" active>Отзывы</sl-tab>
+
+        <sl-tab-panel class="tabs__panel product-info__tab-panel" name="reviews">
+          <div class="product-info__tabs-content">
+            <div class="product-info__reviews">
+              {% include "../../^molecules/review_card/review_card.twig" with {
+                review_card: {
+                  image: {
+                    name: "review-card/01.png",
+                  },
+                  title: {
+                    level: 3,
+                    text: "Коваленко Марина"
+                  },
+                  rating: {
+                    text: {
+                      text: 4.5
+                    }
+                  },
+                  text: "<p>Я купил бутылку вина в вашем магазине и остался очень доволен. Вино было отличного качества и имело приятный аромат. Я рекомендую ваш магазин всем своим друзьям и знакомым, которые любят настоящее вино. Спасибо за отличный продукт и качественное обслуживание!</p>",
+                  list: {
+                    plus: {
+                      key: "Плюсы",
+                      value: "Приятный аромат"
+                    },
+                    minus: {
+                      key: "Минусы",
+                      value: "Нету"
+                    }
+                  }
+                }
+              } %}
+
+              {% include "../../^molecules/review_card/review_card.twig" with {
+                review_card: {
+                  image: {
+                    name: "review-card/02.png",
+                  },
+                  title: {
+                    level: 3,
+                    text: "Григорьев Николай"
+                  },
+                  rating: {
+                    text: {
+                      text: 4.6
+                    }
+                  },
+                  text: "<p>Красное вино, которое я приобрел в вашем магазине, оказалось просто потрясающим! Я выбрал его по рекомендации вашего персонала и не пожалел ни разу. Вино имело насыщенный и глубокий цвет, аромат был насыщенный и сложный, с нотками специй и фруктов. Вкус был богатым и гармоничным, с оттенками черной смородины и ванили. Я наслаждался каждым глотком и был впечатлен качеством этого вина. Я уверен, что это одно из лучших вин, которые я когда-либо пробовал. Большое спасибо за рекомендацию и за то, что вы предоставляете такие высококачественные напитки в вашем магазине. Я обязательно вернусь за еще одной бутылкой!</p>",
+                  list: {
+                    plus: {
+                      key: "Плюсы",
+                      value: "Хорошо подошло для мяса"
+                    },
+                    minus: {
+                      key: "Минусы",
+                      value: "Нету"
+                    }
+                  }
+                }
+              } %}
+
+              {% include "../../^molecules/review_card/review_card.twig" with {
+                review_card: {
+                  image: {
+                    name: "review-card/01.png",
+                  },
+                  title: {
+                    level: 3,
+                    text: "Коваленко Марина"
+                  },
+                  rating: {
+                    text: {
+                      text: 4.5
+                    }
+                  },
+                  text: "<p>Я купил бутылку вина в вашем магазине и остался очень доволен. Вино было отличного качества и имело приятный аромат. Я рекомендую ваш магазин всем своим друзьям и знакомым, которые любят настоящее вино. Спасибо за отличный продукт и качественное обслуживание!</p>",
+                  list: {
+                    plus: {
+                      key: "Плюсы",
+                      value: "Приятный аромат"
+                    },
+                    minus: {
+                      key: "Минусы",
+                      value: "Нету"
+                    }
+                  }
+                }
+              } %}
+
+              {% include "../../^molecules/review_card/review_card.twig" with {
+                review_card: {
+                  image: {
+                    name: "review-card/02.png",
+                  },
+                  title: {
+                    level: 3,
+                    text: "Григорьев Николай"
+                  },
+                  rating: {
+                    text: {
+                      text: 4.6
+                    }
+                  },
+                  text: "<p>Красное вино, которое я приобрел в вашем магазине, оказалось просто потрясающим! Я выбрал его по рекомендации вашего персонала и не пожалел ни разу. Вино имело насыщенный и глубокий цвет, аромат был насыщенный и сложный, с нотками специй и фруктов. Вкус был богатым и гармоничным, с оттенками черной смородины и ванили. Я наслаждался каждым глотком и был впечатлен качеством этого вина. Я уверен, что это одно из лучших вин, которые я когда-либо пробовал. Большое спасибо за рекомендацию и за то, что вы предоставляете такие высококачественные напитки в вашем магазине. Я обязательно вернусь за еще одной бутылкой!</p>",
+                  list: {
+                    plus: {
+                      key: "Плюсы",
+                      value: "Хорошо подошло для мяса"
+                    },
+                    minus: {
+                      key: "Минусы",
+                      value: "Нету"
+                    }
+                  }
+                }
+              } %}
+
+              {% include "../../^molecules/review_card/review_card.twig" with {
+                review_card: {
+                  image: {
+                    name: "review-card/01.png",
+                  },
+                  title: {
+                    level: 3,
+                    text: "Коваленко Марина"
+                  },
+                  rating: {
+                    text: {
+                      text: 4.5
+                    }
+                  },
+                  text: "<p>Я купил бутылку вина в вашем магазине и остался очень доволен. Вино было отличного качества и имело приятный аромат. Я рекомендую ваш магазин всем своим друзьям и знакомым, которые любят настоящее вино. Спасибо за отличный продукт и качественное обслуживание!</p>",
+                  list: {
+                    plus: {
+                      key: "Плюсы",
+                      value: "Приятный аромат"
+                    },
+                    minus: {
+                      key: "Минусы",
+                      value: "Нету"
+                    }
+                  }
+                }
+              } %}
+
+              {% include "../../^molecules/review_card/review_card.twig" with {
+                review_card: {
+                  image: {
+                    name: "review-card/02.png",
+                  },
+                  title: {
+                    level: 3,
+                    text: "Григорьев Николай"
+                  },
+                  rating: {
+                    text: {
+                      text: 4.6
+                    }
+                  },
+                  text: "<p>Красное вино, которое я приобрел в вашем магазине, оказалось просто потрясающим! Я выбрал его по рекомендации вашего персонала и не пожалел ни разу. Вино имело насыщенный и глубокий цвет, аромат был насыщенный и сложный, с нотками специй и фруктов. Вкус был богатым и гармоничным, с оттенками черной смородины и ванили. Я наслаждался каждым глотком и был впечатлен качеством этого вина. Я уверен, что это одно из лучших вин, которые я когда-либо пробовал. Большое спасибо за рекомендацию и за то, что вы предоставляете такие высококачественные напитки в вашем магазине. Я обязательно вернусь за еще одной бутылкой!</p>",
+                  list: {
+                    plus: {
+                      key: "Плюсы",
+                      value: "Хорошо подошло для мяса"
+                    },
+                    minus: {
+                      key: "Минусы",
+                      value: "Нету"
+                    }
+                  }
+                }
+              } %}
+
+              {% include "../../@atoms/button/button.twig" with {
+                button: {
+                  class: "btn--btn btn--tertiary product-info__reviews-more",
+                  text: {
+                    text: "Показать еще"
+                  }
+                }
+              } %}
+            </div>
+            <div class="product-info__info">
+              <h3 class="product-info__info-title">
+                Оставьте свой отзыв на товар
+              </h3>
+
+              <div class="text-block">
+                <p>
+                  Мы очень ценим ваше мнение и хотели бы услышать отзыв о нашем товаре! Ваше мнение поможет нам улучшить нашу продукцию и обеспечить лучший сервис для наших клиентов. Оставляя отзыв, вы также можете помочь другим покупателям сделать правильный выбор и выбрать товар, который идеально подойдет им. Мы гарантируем, что ваш отзыв будет прочитан и учтен, и мы будем рады получить любые комментарии и предложения от вас. Пожалуйста, не стесняйтесь оставлять отзывы - они очень важны для нас!
+                </p>
+              </div>
+
+              {% include "../../@atoms/button/button.twig" with {
+                button: {
+                  class: "btn--btn btn--tertiary product-info__info-btn",
+                  text: {
+                    text: "Оставить отзыв"
+                  },
+                  attrs: "data-dialog='review-product'"
+                }
+              } %}
+            </div>
+          </div>
+        </sl-tab-panel>
+      </sl-tab-group>
+    </div>
+  </div>
+</section>

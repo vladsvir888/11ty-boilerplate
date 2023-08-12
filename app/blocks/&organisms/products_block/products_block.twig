@@ -1,0 +1,98 @@
+<section
+  class="products-block{% if products_block.container %} section{% endif %} {{ products_block.class }}">
+
+  {% if products_block.container %}
+  <div class="container">
+  {% endif %}
+
+    {% if products_block.section_header %}
+      {% include "../../^molecules/section_header/section_header.twig" with {
+        section_header: products_block.section_header
+      } %}
+    {% endif %}
+
+    {% if products_block.list %}
+      <ul class="products-block__list">
+        {% for item in products_block.list.items %}
+          <li>
+            {% include "../../^molecules/product_card/product_card.twig" with {
+              product_card: item
+            } %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if products_block.list2 %}
+      <ul class="products-block__grid-list">
+        {% for i in 0..11 %}
+          <li>
+            {% include "../../^molecules/basket_card/basket_card.twig" with {
+              basket_card: {
+                class: "basket-card--tertiary",
+                tags: {
+                  type: {
+                    text: "Новинка"
+                  },
+                  volume: {
+                    type: "with_round",
+                    class: "tag--volume tag--type-red",
+                    text: "0.75л"
+                  }
+                },
+                slider: {
+                  items: [{
+                    image: {
+                      name: "basket/01.png",
+                      sizes: {
+                        width: 157,
+                        height: 200
+                      },
+                      alt: ""
+                    },
+                  }, {
+                    image: {
+                      name: "basket/01.png",
+                      sizes: {
+                        width: 157,
+                        height: 200
+                      },
+                      alt: ""
+                    },
+                  }]
+                },
+                content: {
+                  title: {
+                    level: 2,
+                    text: "Вино Лыхны красное полусладкое"
+                  },
+                  text: true,
+                  rating: true
+                },
+                price_block: true
+              }
+            } %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if products_block.more %}
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "btn--btn btn--tertiary products-block__more",
+          text: {
+            text: "Показать еще"
+          }
+        }
+      } %}
+    {% endif %}
+
+    {% if products_block.more_and_pagination_block %}
+      {% include "../../^molecules/more_and_pagination_block/more_and_pagination_block.twig" %}
+    {% endif %}
+
+  {% if products_block.container %}
+  </div>
+  {% endif %}
+</section>

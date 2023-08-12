@@ -1,0 +1,348 @@
+{% set details = [{
+  summary: "Страна",
+  show_more: {
+    text: {
+      text: "Показать все 21"
+    }
+  },
+  counter: true,
+  items: [{
+    name: "country",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Новая Зеландия",
+    },
+    num: 30
+  }, {
+    name: "country",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Россия",
+    },
+    num: 29
+  }, {
+    name: "country",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Австралия",
+    },
+    num: 24
+  }, {
+    name: "country",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Венгрия",
+    },
+    num: 109
+  }, {
+    name: "country",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Шотландия",
+    },
+    num: 115
+  }, {
+    name: "country",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Австрия",
+    },
+    num: 36
+  }, {
+    name: "country",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Чили",
+    },
+    num: 80,
+    attrs: "hidden"
+  }]
+}, {
+  summary: "Ценовой диапазон",
+  range: {
+    class: "range-slider--price",
+    data: {
+      start: 3000,
+      end: 5000,
+      min: 1000,
+      max: 10000,
+    }
+  },
+}, {
+  summary: "Крепость",
+  range: {
+    class: "range-slider--alcohol-strength",
+    data: {
+      start: 10,
+      end: 20,
+      min: 0,
+      max: 60,
+    }
+  },
+}, {
+  summary: "Объем",
+  show_more: {
+    text: {
+      text: "Показать все 15"
+    }
+  },
+  counter: true,
+  items: [{
+    name: "volume",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "0.187л",
+    },
+    num: 9
+  }, {
+    name: "volume",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "0.25л",
+    },
+    num: 13
+  }, {
+    name: "volume",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "0.2л",
+    },
+    num: 2
+  }, {
+    name: "volume",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "0.375л",
+    },
+    num: 10
+  }, {
+    name: "volume",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "0.5л",
+    },
+    num: 19
+  }, {
+    name: "volume",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "0.62л",
+    },
+    num: 5
+  }, {
+    name: "volume",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "0.83л",
+    },
+    num: 10,
+    attrs: "hidden"
+  }]
+}, {
+  summary: "Бренд",
+  show_more: {
+    text: {
+      text: "Показать все 300"
+    }
+  },
+  counter: true,
+  items: [{
+    name: "brand",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "1924",
+    },
+    num: 16
+  }, {
+    name: "brand",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Adega de Favaios",
+    },
+    num: 25
+  }, {
+    name: "brand",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Afrikaa Park",
+    },
+    num: 110
+  }, {
+    name: "brand",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Albert Schoech",
+    },
+    num: 98
+  }, {
+    name: "brand",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Alma Mora",
+    },
+    num: 34
+  }, {
+    name: "brand",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Albert Bichot",
+    },
+    num: 22
+  }, {
+    name: "brand",
+    label: {
+      class: "catalog-filter__checkbox-label",
+      text: "Torres",
+    },
+    num: 12,
+    attrs: "hidden"
+  }]
+}] %}
+
+<aside class="catalog-filter {{ catalog_filter.class }}">
+  {% if catalog_filter.header.type == 'online-shop' %}
+    <div class="catalog-filter__header">
+      <div class="catalog-filter__header-text">
+        {% include "../../@atoms/icon/icon.twig" with {
+          icon: {
+            class: "catalog-filter__header-icon",
+            name: "sprite-mono.svg#filter"
+          }
+        } %}
+        Фильтры
+      </div>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "catalog-filter__close",
+          icon: {
+            class: "catalog-filter__close-icon",
+            name: "sprite-mono.svg#close"
+          }
+        }
+      } %}
+    </div>
+  {% else %}
+    <div class="catalog-filter__title-wrap">
+      {% include "../../@atoms/icon/icon.twig" with {
+        icon: {
+          class: "catalog-filter__title-icon",
+          name: "sprite-mono.svg#filter"
+        },
+      } %}
+
+      {% include "../../@atoms/title/title.twig" with {
+        title: {
+          level: 2,
+          class: "catalog-filter__title",
+          text: "Фильтры"
+        }
+      } %}
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "catalog-filter__close js-drawer-close",
+          icon: {
+            class: "catalog-filter__close-icon",
+            name: "sprite-mono.svg#close"
+          }
+        }
+      } %}
+    </div>
+  {% endif %}
+  <form class="catalog-filter__form" action="/" method="get">
+    <div class="catalog-filter__wrap">
+      {% for detail in details %}
+        <sl-details
+          class="catalog-filter__item"
+        >
+          <div class="catalog-filter__summary" slot="summary">
+            {{ detail.summary }}
+
+            {% if detail.counter %}
+              <span class="catalog-filter__counter"></span>
+            {% endif %}
+          </div>
+
+          {% include "../../@atoms/icon/icon.twig" with {
+            icon: {
+              class: "catalog-filter__icon",
+              name: "sprite-mono.svg#arrow-down",
+              attrs: "slot='expand-icon'"
+            }
+          } %}
+
+          {% include "../../@atoms/icon/icon.twig" with {
+            icon: {
+              class: "catalog-filter__icon",
+              name: "sprite-mono.svg#arrow-up",
+              attrs: "slot='collapse-icon'"
+            }
+          } %}
+
+          <div class="catalog-filter__body {{ detail.body.class }}">
+            {% if detail.range %}
+              {% include "../../^molecules/range_slider/range_slider.twig" with {
+                range_slider: detail.range
+              } %}
+            {% endif %}
+
+            {% for item in detail.items %}
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  view: "check",
+                  input: {
+                    type: "checkbox",
+                  }
+                }|merge(item)
+              } %}
+            {% endfor %}
+          </div>
+
+          {% if detail.show_more %}
+            {% include "../../@atoms/button/button.twig" with {
+              button: detail.show_more|merge({
+                class: "btn--btn btn--low-visible catalog-filter__show-more",
+                attrs: "type='button'"
+              })
+            } %}
+          {% endif %}
+
+          <div class="catalog-filter__result">
+            <div class="catalog-filter__result-text">Подобрано: 10</div>
+
+            {% include "../../@atoms/button/button.twig" with {
+              button: {
+                href: "#",
+                class: "btn--btn btn--tertiary catalog-filter__result-btn",
+                text: {
+                  text: "Показать"
+                }
+              }
+            } %}
+          </div>
+        </sl-details>
+      {% endfor %}
+    </div>
+
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--tertiary catalog-filter__btn",
+        text: {
+          text: "Применить фильтр"
+        },
+        attrs: "type='submit'",
+      }
+    } %}
+
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--outline catalog-filter__btn",
+        text: {
+          text: "Сбросить фильтр"
+        },
+        attrs: "type='submit'",
+      }
+    } %}
+  </form>
+</aside>

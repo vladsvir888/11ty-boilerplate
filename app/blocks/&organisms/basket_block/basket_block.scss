@@ -1,0 +1,12 @@
+.basket-block {
+  border-bottom: rem(1) solid var(--pallette-athens-gray-2);
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: all var(--transition300ms);
+
+  &__title {
+    @include font-size(24, 36);
+  }
+}

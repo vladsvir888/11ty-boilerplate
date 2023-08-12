@@ -1,0 +1,578 @@
+<section class="section ordering">
+  <form action="/" method="get" class="container ordering__container grid-block validation-form">
+    <div class="ordering__info grid-block__item grid-block__item--1">
+      <ol class="card-block card-block--counter">
+        <li class="card-block__item">
+          <div class="card-block__header">
+            {% include "../../@atoms/title/title.twig" with {
+              title: {
+                class: "card-block__title",
+                level: 2,
+                text: "Персональные данные"
+              }
+            } %}
+          </div>
+          <div class="card-block__footer">
+            <div class="card-block__col">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  class: "form-control--col",
+                  name: "personal_info_name",
+                  input: {
+                    placeholder: "Введите ваше имя",
+                    name: "name",
+                    attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='50' data-pristine-hyphen data-pristine-space data-pristine-only-letters required"
+                  },
+                  label: {
+                    text: "Ваше имя *"
+                  }
+                }
+              } %}
+            </div>
+
+            {% if ordering.type == 'ur_person' %}
+              <div class="card-block__col">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    class: "form-control--col",
+                    name: "personal_info_surname",
+                    input: {
+                      placeholder: "Введите вашу фамилию",
+                      name: "surname",
+                      attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='50' data-pristine-hyphen data-pristine-space data-pristine-only-letters required"
+                    },
+                    label: {
+                      text: "Ваша фамилия *"
+                    }
+                  }
+                } %}
+              </div>
+            {% endif %}
+
+            {% if ordering.type == 'ur_person' %}
+              <div class="card-block__col">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    class: "form-control--col",
+                    name: "personal_info_patronymic",
+                    input: {
+                      placeholder: "Введите ваше отчество",
+                      name: "patronymic",
+                      attrs: "maxlength='50' data-pristine-hyphen data-pristine-space data-pristine-only-letters"
+                    },
+                    label: {
+                      text: "Ваше отчество"
+                    }
+                  }
+                } %}
+              </div>
+            {% endif %}
+
+            <div class="card-block__col">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  class: "form-control--col",
+                  name: "personal_info_phone",
+                  input: {
+                    type: "tel",
+                    class: "phone-mask",
+                    placeholder: "+7 (__)___-__-__",
+                    name: "phone",
+                    attrs: "data-pristine-required-message='Это поле является обязательным' data-pristine-phone required"
+                  },
+                  label: {
+                    text: "Номер телефона *"
+                  }
+                }
+              } %}
+            </div>
+
+            <div class="card-block__col">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  class: "form-control--col",
+                  name: "personal_info_email",
+                  input: {
+                    type: "text",
+                    placeholder: "Введите ваш e-mail",
+                    name: "email",
+                    attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='100' data-pristine-custom-email required"
+                  },
+                  label: {
+                    text: "E-mail *"
+                  }
+                }
+              } %}
+            </div>
+
+            {% if ordering.type == 'ur_person' %}
+              <div class="card-block__col">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    class: "form-control--col",
+                    name: "personal_info_payer",
+                    input: {
+                      placeholder: "Введите плательщика",
+                      name: "payer",
+                      attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='100' required"
+                    },
+                    label: {
+                      text: "Плательщик (юридическое наименование) *"
+                    }
+                  }
+                } %}
+              </div>
+              <div class="card-block__col">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    class: "form-control--col",
+                    name: "personal_info_inn",
+                    input: {
+                      placeholder: "Введите ИНН",
+                      name: "inn",
+                      attrs: "data-pristine-required-message='Это поле является обязательным' data-pristine-minlength-message='Минимальная длина - 10 символов' data-pristine-maxlength-message='Максимальная длина - 10 символов' minlength='10' maxlength='10' data-pristine-only-number required"
+                    },
+                    label: {
+                      text: "ИНН *"
+                    }
+                  }
+                } %}
+              </div>
+              <div class="card-block__col">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    class: "form-control--col",
+                    name: "personal_info_kpp",
+                    input: {
+                      placeholder: "Введите КПП",
+                      name: "kpp",
+                      attrs: "data-pristine-required-message='Это поле является обязательным' data-pristine-minlength-message='Минимальная длина - 9 символов' data-pristine-maxlength-message='Максимальная длина - 9 символов' minlength='9' maxlength='9' data-pristine-only-number required"
+                    },
+                    label: {
+                      text: "КПП *"
+                    }
+                  }
+                } %}
+              </div>
+              <div class="card-block__col">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    class: "form-control--col",
+                    name: "personal_info_ur_address",
+                    input: {
+                      placeholder: "Введите юридический адрес",
+                      name: "ur_address",
+                      attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='300' required"
+                    },
+                    label: {
+                      text: "Юридический адрес*"
+                    }
+                  }
+                } %}
+              </div>
+            {% endif %}
+
+            <div class="card-block__col card-block__col--w50 form-control form-control--checkbox">
+              <div class="card-block__col-checkbox">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    view: "check",
+                    name: "check_policy",
+                    input: {
+                      type: "checkbox",
+                      name: "check_policy",
+                      attrs: "data-pristine-required-message='Чекбокс не отмечен' checked required"
+                    },
+                    label: {
+                      class: "card-block__col-checkbox-label",
+                      text: "Я ознакомлен и соглашаюсь с условиями <a class='btn btn--link' href='#'>Политики обработки персональных данных</a>"
+                    }
+                  }
+                } %}
+              </div>
+            </div>
+
+            <div class="card-block__col card-block__checkbox-agreement form-control form-control--checkbox">
+              <div class="card-block__col-checkbox">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    view: "check",
+                    name: "check_user_agreement",
+                    input: {
+                      type: "checkbox",
+                      name: "check_user_agreement",
+                      attrs: "data-pristine-required-message='Чекбокс не отмечен' checked required"
+                    },
+                    label: {
+                      class: "card-block__col-checkbox-label",
+                      text: "Я ознакомлен и соглашаюсь с условиями <a class='btn btn--link' href='#'>Пользовательского соглашения</a>"
+                    }
+                  }
+                } %}
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="card-block__item">
+          <div class="card-block__header">
+            {% include "../../@atoms/title/title.twig" with {
+              title: {
+                class: "card-block__title",
+                level: 2,
+                text: "Способы оплаты"
+              }
+            } %}
+          </div>
+          <div class="card-block__footer card-block__footer--radio">
+            <div class="card-block__col card-block__col--radio">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  view: "check",
+                  name: "payment_first_method",
+                  input: {
+                    type: "radio",
+                    name: "payment_methods",
+                  },
+                  label: {
+                    text: "Оплата онлайн"
+                  }
+                }
+              } %}
+
+              <div class="card-block__text">
+                Вы можете оплатить свой заказ онлайн с помощью банковской карты. Мы принимаем к оплате карты Visa, MasterCard. Оплата проходит через безопасный шлюз платежной системы, что гарантирует сохранность ваших данных. После оплаты вы получите уведомление о том, что заказ был успешно оплачен.
+              </div>
+            </div>
+
+            <div class="card-block__col card-block__col--radio">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  view: "check",
+                  name: "payment_second_method",
+                  input: {
+                    type: "radio",
+                    name: "payment_methods",
+                    attrs: "checked"
+                  },
+                  label: {
+                    text: "Оплатить на кассе ПВЗ"
+                  }
+                }
+              } %}
+
+              <div class="card-block__text">
+                Вы можете оплатить свой заказ наличными или банковской картой при получении товара. При выборе этого варианта оплаты, пожалуйста, убедитесь, что у вас есть достаточное количество денег наличными или на карте.
+              </div>
+            </div>
+          </div>
+        </li>
+
+        {% if ordering.type == 'ur_person' %}
+          <li class="card-block__item">
+            <div class="card-block__header">
+              {% include "../../@atoms/title/title.twig" with {
+                title: {
+                  class: "card-block__title",
+                  level: 2,
+                  text: "Способ доставки"
+                }
+              } %}
+            </div>
+            <div class="card-block__footer">
+              <div class="card-block__col">
+                {% include "../../@atoms/form_control/form_control.twig" with {
+                  form_control: {
+                    class: "form-control--col",
+                    name: "personal_info_delivery_address",
+                    input: {
+                      placeholder: "Введите адрес доставки",
+                      name: "delivery_address",
+                      attrs: "data-pristine-required-message='Это поле является обязательным' maxlength='300' required"
+                    },
+                    label: {
+                      text: "Адрес доставки *"
+                    }
+                  }
+                } %}
+              </div>
+              <div class="card-block__col form-control form-control--checkbox">
+                <span class="fake-element"></span>
+                <div class="card-block__col-checkbox">
+                  {% include "../../@atoms/form_control/form_control.twig" with {
+                    form_control: {
+                      view: "check",
+                      name: "check_pick_myself",
+                      input: {
+                        type: "checkbox",
+                        name: "check_pick_myself",
+                        attrs: "data-pristine-required-message='Чекбокс не отмечен' checked required"
+                      },
+                      label: {
+                        class: "card-block__col-checkbox-label",
+                        text: "Заберу самостоятельно"
+                      }
+                    }
+                  } %}
+                </div>
+              </div>
+            </div>
+          </li>
+        {% endif %}
+
+        <li class="card-block__item js-toggle-group-block">
+          <div class="card-block__header card-block__header--toggle-group">
+            <div class="card-block__header-start">
+              {% include "../../@atoms/title/title.twig" with {
+                title: {
+                  class: "card-block__title",
+                  level: 2,
+                  text: "Выбор пункта выдачи заказа"
+                }
+              } %}
+            </div>
+
+            <div class="card-block__header-end">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  view: "select",
+                  select: {
+                    label: "Город:",
+                    class: "card-block__select",
+                    initial_value: "option-1",
+                    options: [{
+                      value: "option-1",
+                      text: "Москва и МО"
+                    }, {
+                      value: "option-2",
+                      text: "Санкт-Петербург"
+                    }]
+                  }
+                }
+              } %}
+
+              <div class="toggle-group toggle-group--without-border card-block__toggle-group" role="group" aria-label="Выбор торгового представителя">
+                {% include "../../@atoms/button/button.twig" with {
+                  button: {
+                    class: "js-toggle-group-block__btn card-block__toggle-btn",
+                    text: {
+                      text: "Список"
+                    },
+                    icon: {
+                      class: "card-block__toggle-icon",
+                      name: "sprite-mono.svg#list"
+                    },
+                    attrs: "aria-pressed='true' type='button'"
+                  }
+                } %}
+
+                {% include "../../@atoms/button/button.twig" with {
+                  button: {
+                    class: "js-toggle-group-block__btn card-block__toggle-btn",
+                    text: {
+                      text: "Карта"
+                    },
+                    icon: {
+                      class: "card-block__toggle-icon",
+                      name: "sprite-mono.svg#map"
+                    },
+                    attrs: "aria-pressed='false' type='button'"
+                  }
+                } %}
+              </div>
+            </div>
+          </div>
+          <div class="js-toggle-group-block__content card-block__footer card-block__footer--toggle-group">
+            {% include "../../&organisms/search_box/search_box.twig" with {
+              search_box: {
+                class: "search-box--secondary",
+                num_product_result: "Найдено 0 торговых представителей",
+                placeholder: "Введите ваш поисковый запрос",
+                num_product_result_mobile: "Найдено 0 торговых представителей"
+              }
+            } %}
+
+            {% for i in 0..4 %}
+              <div class="card-block__card">
+                {% include "../../@atoms/image/image.twig" with {
+                  image: {
+                    picture: {
+                      class: "card-block__card-picture"
+                    },
+                    class: "card-block__card-img",
+                    name: "ordering/01.png",
+                    sizes: {
+                      width: 125,
+                      height: 100,
+                    },
+                    alt: "",
+                  }
+                } %}
+
+                <div class="card-block__card-title">
+                  г. Москва, ул. Тарханская, д. 4
+                </div>
+
+                <div class="card-block__card-props">
+                  <div class="card-block__card-prop">
+                    <div class="card-block__card-key">
+                      Адрес:
+                    </div>
+                    <div class="card-block__card-value">
+                      ул. Трудовая, д. 10
+                    </div>
+                  </div>
+
+                  <div class="card-block__card-prop">
+                    <div class="card-block__card-key">
+                      Время работы:
+                    </div>
+                    <div class="card-block__card-value">
+                      с 09:00 до 18:00 по будням
+                    </div>
+                  </div>
+
+                  <div class="card-block__card-prop">
+                    <div class="card-block__card-key">
+                      Телефон:
+                    </div>
+                    <div class="card-block__card-value">
+                      {% include "../../@atoms/button/button.twig" with {
+                        button: {
+                          class: "btn--link",
+                          href: "tel:+74997540910",
+                          text: {
+                            text: "+7 (499) 754-09-10"
+                          }
+                        }
+                      } %}
+                    </div>
+                  </div>
+
+                  <div class="card-block__card-prop">
+                    <div class="card-block__card-key">
+                      Станция метро:
+                    </div>
+                    <div class="card-block__card-value">
+                      Красносельская
+                    </div>
+                  </div>
+                </div>
+
+                {% include "../../@atoms/button/button.twig" with {
+                  button: {
+                    class: "btn--btn btn--outline card-block__card-btn",
+                    text: {
+                      text: "Выбрать"
+                    }
+                  }
+                } %}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="js-toggle-group-block__content card-block__footer card-block__footer--toggle-group" hidden>
+            <div id="map_with_balloon" class="map card-block__map"></div>
+            <template id="balloon">
+              <div id="$[properties.id]" class="balloon">
+                <h2 class="balloon__title">$[properties.heading]</h2>
+
+                <dl class="balloon__list">
+                  <div class="balloon__property">
+                    <div class="balloon__key">
+                      Адрес:
+                    </div>
+                    <div class="balloon__value">
+                      $[properties.address]
+                    </div>
+                  </div>
+                  <div class="balloon__property">
+                    <div class="balloon__key">
+                      Телефон:
+                    </div>
+                    <div class="balloon__value">
+                      <a class="btn btn--link" href="tel:+74997540910">
+                        $[properties.phone]
+                      </a>
+                    </div>
+                  </div>
+                  <div class="balloon__property">
+                    <div class="balloon__key">
+                      Время работы:
+                    </div>
+                    <div class="balloon__value">
+                      $[properties.schedule]
+                    </div>
+                  </div>
+                  <div class="balloon__property">
+                    <div class="balloon__key">
+                      Станция метро:
+                    </div>
+                    <div class="balloon__value">
+                      $[properties.metro]
+                    </div>
+                  </div>
+                </dl>
+
+                <button class="btn btn--btn btn--primary balloon__btn" type="button">Выбрать</button>
+
+                <button class="btn balloon__close" aria-label="Закрыть"></button>
+              </div>
+            </template>
+          </div>
+        </li>
+
+        <li class="card-block__item">
+          <div class="card-block__header">
+            {% include "../../@atoms/title/title.twig" with {
+              title: {
+                class: "card-block__title",
+                level: 2,
+                text: "Комментарий к заказу"
+              }
+            } %}
+          </div>
+          <div class="card-block__footer">
+            <div class="card-block__col card-block__col--w100">
+              {% include "../../@atoms/form_control/form_control.twig" with {
+                form_control: {
+                  view: "textarea",
+                  class: "form-control--col",
+                  name: "order_comment",
+                  input: {
+                    class: "card-block__textarea",
+                    placeholder: "Введите ваш комментарий",
+                    name: "order_comment",
+                    attrs: "rows='4' maxlength='500'"
+                  },
+                  label: {
+                    text: "Ваш комментарий к заказу"
+                  }
+                }
+              } %}
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "btn--btn btn--primary ordering__btn",
+          text: {
+            text: "Оформить заказ"
+          }
+        }
+      } %}
+    </div>
+
+    {% include "../../^molecules/order_card/order_card.twig" with {
+      order_card: {
+        class: "ordering__results grid-block__item grid-block__item--2",
+        btn: {
+          text: {
+            text: "Оформить заказ"
+          }
+        }
+      }
+    } %}
+  </form>
+</section>

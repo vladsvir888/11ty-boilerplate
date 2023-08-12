@@ -1,0 +1,165 @@
+.contacts-block {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      'title-1 title-1 title-1 title-1 title-1 title-1 title-1 title-1 title-1 title-1 title-1 title-1'
+      'map map map map map map map map info info info info'
+      'title-2 title-2 title-2 title-2 title-2 title-2 title-2 title-2 title-2 title-2 title-2 title-2'
+      'list list list list list list list list list list list list'
+      '. . . . more more more more pagination pagination pagination pagination';
+    gap: rem(28);
+
+    @include media('1400', max) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        'title-1 title-1 title-1 title-1'
+        'map map info info'
+        'title-2 title-2 title-2 title-2'
+        'list list list list'
+        'more more more more'
+        'pagination pagination pagination pagination';
+    }
+
+    @include media('1024', max) {
+      display: block;
+    }
+  }
+
+  &__title {
+    @include font-size(36, 54);
+    font-weight: 600;
+
+    @include media('600', max) {
+      @include font-size(24, 36);
+    }
+
+    &--1 {
+      grid-area: title-1;
+
+      @include media('1024', max) {
+        margin-bottom: rem(12);
+      }
+    }
+
+    &--2 {
+      grid-area: title-2;
+      margin-top: rem(84);
+
+      @include media('1024', max) {
+        margin-top: 0;
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__list {
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(24) rem(10);
+
+    @include media('1024', max) {
+      margin-bottom: rem(32);
+    }
+
+    @include media('767', max) {
+      grid-template-columns: 1fr;
+      gap: rem(10);
+    }
+  }
+
+  &__map {
+    grid-area: map;
+
+    @include media('1024', max) {
+      height: rem(600);
+      margin-bottom: rem(24);
+    }
+
+    @include media('600', max) {
+      width: calc(100% + (var(--container-padding) * 2));
+      margin-left: calc(var(--container-padding) * -1);
+    }
+  }
+
+  &__info {
+    grid-area: info;
+    padding: rem(25) rem(44) rem(39) rem(24);
+    border: rem(1) solid var(--pallette-seashell);
+    border-radius: var(--bdrs15);
+
+    @include media('1024', max) {
+      margin-bottom: rem(60);
+    }
+
+    @include media('600', max) {
+      padding: rem(16) rem(16) rem(21);
+    }
+
+    &-title {
+      @include font-size(20, 30);
+      font-weight: 600;
+      margin-bottom: rem(17);
+    }
+  }
+
+  &__properties {
+    display: grid;
+    row-gap: rem(20);
+
+    @include media('600', max) {
+      row-gap: rem(16);
+    }
+  }
+
+  &__key {
+    @include font-size(14, 21);
+    font-weight: 600;
+    color: var(--pallette-silver);
+  }
+
+  &__value {
+    font-size: rem(24);
+    font-weight: 700;
+
+    @include media('600', max) {
+      font-size: rem(18);
+    }
+  }
+
+  &__more {
+    grid-area: more;
+    justify-self: center;
+    min-width: rem(320);
+    margin-top: rem(28);
+
+    @include media('1400', max) {
+      margin-top: 0;
+    }
+
+    @include media('1024', max) {
+      margin: 0 auto rem(24);
+    }
+
+    @include media('600', max) {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+
+  &__pagination {
+    grid-area: pagination;
+    justify-self: end;
+    margin-top: rem(28);
+
+    @include media('1400', max) {
+      margin-top: 0;
+      justify-self: center;
+    }
+
+    @include media('1024', max) {
+      @include flex-center;
+    }
+  }
+}

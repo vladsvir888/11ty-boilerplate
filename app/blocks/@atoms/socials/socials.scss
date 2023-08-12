@@ -1,0 +1,35 @@
+.socials {
+  display: grid;
+  row-gap: rem(4);
+
+  &__text {
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(16);
+  }
+
+  &__btn {
+    @include flex-center;
+    width: rem(40);
+    height: rem(40);
+    border-radius: 50%;
+    background-color: var(--pallette-cadet-blue);
+    transition: transform var(--transition300ms);
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__icon {
+    width: rem(16);
+    height: rem(16);
+    fill: var(--pallette-biscay);
+  }
+}

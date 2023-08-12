@@ -1,0 +1,133 @@
+.info-card-grid {
+  margin-top: rem(48);
+
+  @include media('600', max) {
+    margin-top: rem(24);
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "select select select select toggle-group toggle-group toggle-group toggle-group pagination-top pagination-top pagination-top pagination-top"
+      "content content content content content content content content content content content content"
+      ". . . . more more more more pagination-bottom pagination-bottom pagination-bottom pagination-bottom";
+    gap: rem(40) rem(10);
+    align-items: center;
+
+    @include media('1400', max) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(24) rem(10);
+      grid-template-areas:
+        'select select toggle-group toggle-group'
+        'pagination-top pagination-top pagination-top pagination-top'
+        'content content content content'
+        'more more more more'
+        'pagination-bottom pagination-bottom pagination-bottom pagination-bottom';
+    }
+
+    @include media('767', max) {
+      grid-template-areas:
+        'toggle-group toggle-group toggle-group toggle-group'
+        'select select select select'
+        'content content content content'
+        'more more more more'
+        'pagination-bottom pagination-bottom pagination-bottom pagination-bottom';
+    }
+  }
+
+  &__content {
+    grid-area: content;
+
+    @include media('600', max) {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(10);
+
+    @include media('1024', max) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media('767', max) {
+      grid-template-columns: 1fr;
+    }
+
+    &--1 {
+      > * {
+        &:first-child {
+          grid-row: span 2;
+        }
+      }
+    }
+  }
+
+  &__select {
+    grid-area: select;
+  }
+
+  &__pagination {
+    &--top {
+      grid-area: pagination-top;
+      justify-self: end;
+
+      @include media('1400', max) {
+        justify-self: start;
+      }
+
+      @include media('767', max) {
+        display: none;
+      }
+    }
+
+    &--bottom {
+      margin-top: rem(16);
+      grid-area: pagination-bottom;
+      justify-self: end;
+
+      @include media('1400', max) {
+        margin-top: 0;
+        justify-self: center;
+      }
+    }
+  }
+
+  &__toggle-group {
+    grid-area: toggle-group;
+    justify-self: center;
+
+    @include media('1400', max) {
+      justify-self: end;
+    }
+
+    @include media('767', max) {
+      justify-self: start;
+    }
+  }
+
+  &__more {
+    grid-area: more;
+    justify-self: center;
+    min-width: rem(320);
+    margin-top: rem(16);
+
+    @include media('1400', max) {
+      margin-top: 0;
+    }
+
+    @include media('600', max) {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    @include font-size(20, 27);
+    margin-bottom: rem(18);
+    font-weight: 600;
+  }
+}

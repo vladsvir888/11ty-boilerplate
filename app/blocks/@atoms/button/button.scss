@@ -1,0 +1,213 @@
+.btn {
+  $this: &;
+
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    color var(--transition300ms),
+    border-color var(--transition300ms),
+    background-color var(--transition300ms);
+
+  &--btn {
+    @include flex-center;
+    column-gap: rem(8);
+    padding: rem(19) rem(25);
+    border-radius: var(--bdrs10);
+    font-weight: 600;
+    text-align: center;
+    color: var(--pallette-white);
+
+    @include media('600', max) {
+      @include font-size(14, 20);
+    }
+
+    #{$this}__icon {
+      width: rem(20);
+      height: rem(20);
+      fill: currentColor;
+    }
+  }
+
+  &--primary {
+    background-color: var(--pallette-biscay);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pallette-international-orange);
+        color: var(--pallette-white);
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: var(--pallette-san-juan);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pallette-white);
+        color: var(--pallette-biscay);
+      }
+    }
+  }
+
+  &--tertiary {
+    background-color: var(--pallette-international-orange);
+
+    &:focus-visible {
+      outline-color: var(--pallette-biscay);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pallette-alto);
+        color: var(--pallette-biscay);
+      }
+    }
+  }
+
+  &--fouternary {
+    @include font-size(14, 20);
+    padding: rem(14) rem(25);
+    border: rem(1) solid var(--pallette-alto);
+    color: var(--pallette-gray);
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--pallette-international-orange);
+      }
+    }
+  }
+
+  &--quinary {
+    background-color: var(--pallette-biscay);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pallette-white);
+        color: var(--pallette-biscay);
+      }
+    }
+  }
+
+  &--sixanary {
+    color: var(--pallette-biscay);
+    background-color: var(--pallette-white);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--pallette-white);
+        background-color: var(--pallette-international-orange);
+      }
+    }
+  }
+
+  &--icon {
+    @include flex-center;
+    min-width: rem(60);
+    min-height: rem(60);
+    border-radius: var(--bdrs10);
+    background-color: var(--pallette-athens-gray);
+    color: var(--pallette-biscay);
+
+    @include media('600', max) {
+      @include font-size(14, 20);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--pallette-white);
+        background-color: var(--pallette-biscay);
+      }
+    }
+
+    #{$this}__icon {
+      width: rem(20);
+      height: rem(20);
+      fill: currentColor;
+    }
+  }
+
+  &--arrow {
+    @include flex-center-y;
+    @include font-size(18, 20);
+    column-gap: rem(4);
+    color: var(--pallette-gray);
+    font-weight: 600;
+
+    @include media('600', max) {
+      @include font-size(16, 24);
+    }
+
+    #{$this}__icon {
+      width: rem(20);
+      height: rem(20);
+      fill: currentColor;
+    }
+  }
+
+  &--link {
+    transition: color var(--transition300ms);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--pallette-international-orange);
+      }
+    }
+  }
+
+  &--outline {
+    border: rem(1) solid var(--pallette-athens-gray-2);
+    color: var(--pallette-mine-shaft);
+  }
+
+  &--low-visible {
+    @include font-size(14, 20);
+    padding: rem(14);
+    background-color: var(--pallette-athens-gray);
+    color: var(--pallette-gray);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pallette-international-orange);
+        color: var(--pallette-white);
+      }
+    }
+  }
+
+  &--dotted {
+    @include font-size(14, 19);
+    font-weight: 600;
+    border-bottom: rem(1) dotted currentColor;
+  }
+
+  #{$this}__text {
+    pointer-events: none;
+  }
+
+  #{$this}__icon {
+    pointer-events: none;
+  }
+
+  &--favorite {
+    &.fill {
+      #{$this}__icon {
+        &--favorite {
+          display: none;
+        }
+
+        &--favorite-fill {
+          display: block;
+          fill: var(--pallette-international-orange);
+        }
+      }
+    }
+
+    #{$this}__icon {
+      &--favorite-fill {
+        display: none;
+      }
+    }
+  }
+}

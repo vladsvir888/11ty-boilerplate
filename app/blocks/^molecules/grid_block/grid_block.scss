@@ -1,0 +1,23 @@
+.grid-block {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: rem(10);
+
+  @include media('1024', max) {
+    display: block;
+  }
+
+  &__item {
+    &--1 {
+      @include flex-column;
+      grid-column: 1 / 9;
+    }
+
+    &--2 {
+      position: sticky;
+      top: rem(90);
+      grid-column: 9 / -1;
+      align-self: flex-start;
+    }
+  }
+}

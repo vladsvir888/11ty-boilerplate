@@ -1,0 +1,422 @@
+.card-block {
+  $this: &;
+
+  display: grid;
+  row-gap: rem(10);
+  counter-reset: ordered-list;
+
+  &--counter {
+    #{$this}__title {
+      &::before {
+        @include font-size(20, 27);
+        @include flex-center;
+        flex-shrink: 0;
+        font-weight: 600;
+        min-width: rem(36);
+        min-height: rem(36);
+        border-radius: 50%;
+        background-color: var(--pallette-wild-sand);
+        counter-increment: ordered-list;
+        content: counter(ordered-list);
+      }
+    }
+  }
+
+  &__item {
+    border: rem(1) solid var(--pallette-seashell);
+    border-radius: var(--bdrs15);
+  }
+
+  &__header {
+    padding: rem(22) rem(24);
+    border-bottom: rem(1) solid var(--pallette-seashell);
+
+    @include media('600', max) {
+      padding: rem(13) rem(16);
+    }
+
+    &-end {
+      @include flex-center-y;
+      gap: rem(28) rem(32);
+
+      @include media('600', max) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &--toggle-group {
+      @include flex-center-between;
+      gap: rem(10);
+      padding: rem(14) rem(24);
+      flex-wrap: wrap;
+
+      @include media('600', max) {
+        width: calc(100% + #{rem(32)});
+        margin-left: rem(-16);
+        padding: rem(13) rem(16) 0;
+        gap: rem(16);
+        border-bottom: 0;
+
+        #{$this}__header-start {
+          width: 100%;
+          padding: 0 rem(16) rem(13);
+          border-bottom: rem(1) solid var(--pallette-seashell);
+        }
+
+        #{$this}__header-end {
+          width: 100%;
+          padding: 0 rem(16);
+        }
+      }
+    }
+  }
+
+  &__select {
+    &::part(combobox) {
+      padding: rem(15) rem(16);
+    }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+    padding: rem(24);
+
+    @include media('600', max) {
+      grid-template-columns: 1fr;
+      padding: rem(16);
+      gap: rem(20);
+    }
+
+    &--radio {
+      @include media('600', max) {
+        gap: rem(12);
+      }
+    }
+
+    &--toggle-group {
+      grid-template-columns: 1fr;
+      gap: rem(10);
+
+      @include media('600', max) {
+        gap: rem(10);
+      }
+    }
+
+    &--file {
+      @include flex-center-column;
+      padding: rem(36) rem(90);
+
+      @include media('1400', max) {
+        padding: rem(24);
+      }
+    }
+  }
+
+  &__title {
+    @include font-size(20, 27);
+    @include flex-center-y;
+    column-gap: rem(16);
+    font-weight: 600;
+
+    @include media('600', max) {
+      @include font-size(16, 24);
+      column-gap: rem(12);
+    }
+  }
+
+  &__col {
+    &-checkbox {
+      display: flex;
+      min-height: rem(60);
+      padding: rem(10) rem(16);
+      border-radius: var(--bdrs10);
+      background-color: var(--pallette-athens-gray);
+
+      &-label {
+        @include media('600', max) {
+          @include font-size(12, 17);
+        }
+      }
+    }
+
+    &--w50 {
+      grid-column: 1 / 2;
+    }
+
+    &--w100 {
+      grid-column: 1 / -1;
+    }
+
+    &--radio {
+      padding: rem(20);
+      border-radius: var(--bdrs10);
+      border: rem(1) solid var(--pallette-seashell);
+
+      @include media('600', max) {
+        padding: rem(16);
+      }
+
+      .form-check {
+        &__label {
+          @include font-size(16, 24);
+          font-weight: 600;
+        }
+      }
+
+      &:has(.form-check__input:checked) {
+        border-color: var(--pallette-biscay);
+      }
+    }
+  }
+
+  &__text {
+    @include font-size(14, 20);
+    margin: rem(10) 0 0 rem(30);
+
+    @include media('600', max) {
+      @include font-size(12, 17);
+    }
+  }
+
+  &__toggle-group {
+    display: flex;
+    column-gap: rem(8);
+  }
+
+  &__toggle-btn {
+    @include flex-center-y;
+    @include font-size(14, 19);
+    padding: rem(12);
+    column-gap: rem(8);
+    border: rem(1) solid var(--pallette-athens-gray-2);
+    border-radius: var(--bdrs10);
+
+    &[aria-pressed="true"] {
+      background-color: transparent;
+      border: rem(2) solid var(--pallette-biscay);
+      color: var(--pallette-biscay);
+      font-weight: 600;
+
+      #{$this}__toggle-icon {
+        fill: var(--pallette-biscay);
+      }
+    }
+  }
+
+  &__toggle-icon {
+    width: rem(24);
+    height: rem(24);
+    fill: var(--pallette-mercury);
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: rem(125) 1fr minmax(rem(200), max-content);
+    grid-template-areas:
+      'img title btn'
+      'img props btn';
+    gap: rem(20);
+    align-items: center;
+    padding: rem(20);
+    border-radius: rem(10);
+    border: rem(1) solid var(--pallette-seashell);
+
+    @include media('1200', max) {
+      grid-template-columns: rem(125) 1fr;
+      grid-template-areas:
+        'img title'
+        'props props'
+        'btn btn';
+    }
+
+    @include media('600', max) {
+      grid-template-columns: rem(75) 1fr;
+      padding: rem(16);
+      gap: rem(10);
+    }
+
+    &-picture {
+      grid-area: img;
+    }
+
+    &-img {
+      border-radius: rem(5);
+    }
+
+    &-content {
+      display: grid;
+      row-gap: rem(16);
+    }
+
+    &-title {
+      font-weight: 600;
+      grid-area: title;
+
+      @include media('600', max) {
+        @include font-size(14, 21);
+      }
+    }
+
+    &-btn {
+      @include font-size(14, 19);
+      padding: rem(14);
+      border-color: var(--pallette-biscay);
+      color: var(--pallette-biscay);
+      grid-area: btn;
+    }
+
+    &-props {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: rem(8);
+      grid-area: props;
+
+      @include media('600', max) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-prop {
+      @include font-size(14, 19);
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(4);
+    }
+
+    &-key {
+      font-weight: 700;
+    }
+  }
+
+  &__search {
+    position: relative;
+    background-color: var(--pallette-athens-gray);
+    border-radius: rem(10);
+
+    &-input {
+      @include font-size(14, 19);
+      width: 100%;
+      padding: rem(14) rem(14) rem(14) rem(42);
+      border: none;
+    }
+
+    &-btn {
+      position: absolute;
+      display: flex;
+      top: rem(14);
+      left: rem(14);
+      fill: var(--pallette-gray);
+
+      .btn__icon {
+        width: rem(20);
+        height: rem(20);
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      display: flex;
+      top: rem(14);
+      left: rem(14);
+      fill: var(--pallette-gray);
+      width: rem(20);
+      height: rem(20);
+    }
+  }
+
+  &__select-wrapper {
+    display: grid;
+    row-gap: rem(8);
+  }
+
+  &__map {
+    height: rem(430);
+
+    @include media('600', max) {
+      height: rem(530);
+    }
+  }
+
+  &__box {
+    &-label {
+      @include font-size(14, 19);
+      font-weight: 600;
+      margin-bottom: rem(8);
+    }
+
+    &-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(8);
+    }
+  }
+
+  &__result-block {
+    padding: rem(24);
+
+    @include media('600', max) {
+      padding: rem(16);
+    }
+  }
+
+  &__result {
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: rem(26);
+      }
+    }
+
+    &-num {
+      @include flex-center;
+      @include font-size(56, 84);
+      font-weight: 700;
+      color: var(--pallette-biscay);
+      min-height: rem(144);
+      padding: rem(10);
+      border: rem(1) solid var(--pallette-athens-gray-2);
+      border-radius: var(--bdrs10);
+    }
+
+    &-text {
+      @include font-size(14, 21);
+      font-weight: 600;
+      margin-bottom: rem(8);
+      text-align: center;
+
+      @include media('600', max) {
+        text-align: left;
+      }
+
+      span {
+        color: var(--pallette-international-orange);
+      }
+    }
+  }
+
+  &__info {
+    @include font-size(14, 21);
+    padding: rem(14) rem(15) rem(14) rem(50);
+    margin-bottom: rem(20);
+    color: var(--pallette-biscay);
+    background-color: var(--pallette-athens-gray);
+    border-radius: var(--bdrs10);
+    background-image: url('../assets/images/icons/info-circle.svg');
+    background-repeat: no-repeat;
+    background-position: top rem(14) left rem(14);
+  }
+
+  &__textarea {
+    @include media('600', max) {
+      height: rem(280);
+    }
+  }
+
+  &__checkbox-agreement {
+    @include media('600', max) {
+      margin-top: rem(-12);
+    }
+  }
+}

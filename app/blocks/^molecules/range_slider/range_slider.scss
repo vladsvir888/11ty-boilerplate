@@ -1,0 +1,94 @@
+.range-slider {
+  $this: &;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(16) rem(8);
+  margin: rem(2) 0 0 rem(2);
+
+  &--price {
+    #{$this}__control {
+      &--from,
+      &--to {
+        background-image: url('../assets/images/icons/ruble.svg');
+        background-repeat: no-repeat;
+        background-position: right rem(16) center;
+      }
+    }
+  }
+
+  &--alcohol-strength {
+    #{$this}__control {
+      &--from,
+      &--to {
+        background-image: url('../assets/images/icons/percent.svg');
+        background-repeat: no-repeat;
+        background-position: right rem(16) center;
+      }
+    }
+  }
+
+  &__control {
+    position: relative;
+
+    &::before,
+    &::after {
+      @include font-size(14, 20);
+      font-weight: 600;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--pallette-silver);
+    }
+
+    &--from {
+      &::before {
+        content: 'от';
+        left: rem(16);
+      }
+    }
+
+    &--to {
+      &::after {
+        content: 'до';
+        left: rem(16);
+      }
+    }
+  }
+
+  &__input {
+    padding: rem(14) rem(30) rem(14) rem(44);
+    font-weight: 600;
+    // width: 100%;
+  }
+
+  &__element {
+    grid-column: 1 / -1;
+    height: rem(4);
+    padding-right: rem(16);
+    box-shadow: none;
+    border: none;
+    background: var(--pallette-athens-gray);
+    border-radius: var(--bdrs100);
+  }
+
+  .noUi-connect {
+    background: var(--pallette-biscay);
+  }
+
+  .noUi-handle {
+    right: rem(-15);
+    width: rem(16);
+    height: rem(16);
+    box-shadow: none;
+    border: rem(4) solid var(--pallette-biscay);
+    background: var(--pallette-white);
+    border-radius: 50%;
+
+    &::after,
+    &::before {
+      content: none;
+    }
+  }
+}

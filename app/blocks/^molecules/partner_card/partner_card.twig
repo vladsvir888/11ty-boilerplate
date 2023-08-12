@@ -1,0 +1,21 @@
+<article class="partner-card">
+  {% include "../../@atoms/image/image.twig" with {
+    image: {
+      name: "partner/01.png",
+      sizes: {
+        width: 360,
+        height: 160,
+      },
+      alt: ""
+    }
+  } %}
+
+  {% include "../../@atoms/title/title.twig" with {
+    title: partner_card.title|default({})|merge({
+      class: "partner-card__title",
+      link: {
+        attrs: "target='_blank'"
+      }
+    })
+  } %}
+</article>

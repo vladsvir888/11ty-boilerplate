@@ -1,0 +1,263 @@
+.no-js {
+  .search-box {
+    &__close {
+      display: none;
+    }
+
+    &__num-product-result {
+      display: none;
+    }
+
+    &__input {
+      padding: rem(18) rem(48) !important;
+    }
+  }
+
+  .hero {
+    &__slider-btn {
+      display: none;
+    }
+  }
+
+  .section-header {
+    &__btn {
+      display: none;
+    }
+  }
+
+  .quantity {
+    &__btn {
+      display: none;
+    }
+
+    &__input {
+      border: rem(1) solid var(--pallette-alto);
+    }
+  }
+
+  .range-slider {
+    margin: rem(2);
+
+    &__element {
+      display: none;
+    }
+
+    &__control {
+      &--from {
+        &::before {
+          content: none;
+        }
+      }
+
+      &--to {
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    &__input {
+      padding: rem(14) rem(30) rem(14) rem(14);
+    }
+  }
+
+  .catalog {
+    &__cards-more {
+      display: none;
+    }
+  }
+
+  .catalog-filter {
+    &__show-more {
+      display: none;
+    }
+
+    &__body {
+      .form-check {
+        &[hidden] {
+          display: flex !important;
+        }
+      }
+    }
+
+    &__result {
+      display: none;
+    }
+  }
+
+  .page-top {
+    &__view {
+      display: none;
+    }
+
+    &__banner-btn {
+      &[data-dialog] {
+        display: none;
+      }
+    }
+  }
+
+  .dialog {
+    display: block;
+    margin: rem(20) auto;
+    max-width: rem(560);
+
+    &--review-product {
+      max-width: rem(1011);
+    }
+
+    .form-block {
+      &__close {
+        display: none;
+      }
+    }
+  }
+
+  sl-select {
+    display: none;
+  }
+
+  .card-block {
+    &__search-icon {
+      display: none;
+    }
+
+    &__toggle-group {
+      display: none;
+    }
+  }
+
+  .info-card-grid {
+    &__toggle-group {
+      display: none;
+    }
+
+    &__list {
+      &[hidden] {
+        display: grid !important;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: rem(35);
+      }
+    }
+
+    &__more {
+      display: none;
+    }
+  }
+
+  .photo-gallery {
+    &__btn {
+      display: none;
+    }
+  }
+
+  .no-js-form {
+    @include flex-center-y;
+    gap: rem(10);
+    flex-wrap: wrap;
+
+    &__btn {
+      font-weight: 600;
+      text-align: left;
+
+      @include media('600', max) {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  .card-grid {
+    &__more {
+      display: none;
+    }
+  }
+
+  .sales-rep-grid {
+    &__more {
+      display: none;
+    }
+
+    &__toggle-group {
+      display: none;
+    }
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  .form-control {
+    &__password-btn {
+      display: none;
+    }
+  }
+
+  .product-info {
+    &__info-btn {
+      display: none;
+    }
+
+    &__reviews-more {
+      display: none;
+    }
+  }
+
+  .contacts-block {
+    &__more {
+      display: none;
+    }
+  }
+
+  .personal-account {
+    &__filter-btn {
+      display: none;
+    }
+  }
+
+  .personal-account-drawer {
+    &__close {
+      display: none;
+    }
+  }
+
+  .header {
+    &__dropdown {
+      display: none;
+    }
+
+    &__burger {
+      display: none;
+    }
+
+    &__meta-btn {
+      &--search {
+        display: none;
+      }
+    }
+  }
+
+  .choice-town {
+    display: none;
+  }
+
+  .category-products {
+    &__slider {
+      @include media('600', max) {
+        padding-left: 0;
+      }
+    }
+
+    &__container {
+      @include media('600', max) {
+        width: unset;
+        margin-left: unset;
+      }
+    }
+
+    &__section-header {
+      padding: 0;
+    }
+  }
+}

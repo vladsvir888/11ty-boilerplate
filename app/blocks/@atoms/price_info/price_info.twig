@@ -1,0 +1,11 @@
+<div class="price-info {{ price_info.class }}">
+  <div class="price-info__current">
+    {{ price_info.current }}
+  </div>
+
+  {% if price_info.old %}
+    <div class="price-info__old">
+      {{ price_info.old }}
+    </div>
+  {% endif %}
+</div>

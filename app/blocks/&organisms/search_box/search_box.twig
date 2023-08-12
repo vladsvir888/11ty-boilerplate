@@ -1,0 +1,183 @@
+{% set dropdown = {
+  popular_items: [{
+    text: {
+      text: "Красное вино"
+    }
+  }, {
+    text: {
+      text: "Розовое вино"
+    }
+  }, {
+    text: {
+      text: "Белое вино"
+    }
+  }, {
+    text: {
+      text: "Хороший виски"
+    }
+  }, {
+    text: {
+      text: "Бюджетное пиво"
+    }
+  }],
+} %}
+
+<div class="search-box {{ search_box.class }}">
+  {% if search_box.form %}
+  <form action="/" method="get" class="search-box__form" autocomplete="off">
+  {% endif %}
+
+    {% include "../../@atoms/form_control/form_control.twig" with {
+      form_control: {
+        class: "search-box__form-control",
+        input: {
+          class: "search-box__input",
+          placeholder: search_box.placeholder,
+          name: "q",
+          type: "search",
+          attrs: "maxlength='300'"
+        },
+        search_box: {
+          loupe_btn: {
+            class: "search-box__btn"
+          },
+          loupe_icon: {
+            class: "search-box__icon"
+          },
+          num_product_result: search_box.num_product_result,
+          close: true,
+        }
+      }
+    } %}
+
+    {% if search_box.num_product_result_mobile %}
+      <div class="search-box__num-product-result-mobile">
+        {{ search_box.num_product_result_mobile }}
+      </div>
+    {% endif %}
+
+
+  {% if search_box.form %}
+  </form>
+  {% endif %}
+</div>
+
+{% if search_box.dropdown %}
+<div class="search-box-dropdown {{ search_box.dropdown.class }}">
+  <div class="search-box-dropdown__container">
+    <div class="container">
+      {% if search_box.dropdown.categories %}
+        <!-- Этот же блок используй в случае отсутствия результатов -->
+        <div class="search-box-dropdown__wrap">
+          <div class="search-box-dropdown__text">
+            Найденные категории
+          </div>
+        </div>
+        <!-- ./ -->
+        <ul class="search-box-dropdown__popular">
+          {% for popular_item in dropdown.popular_items %}
+            <li class="search-box-dropdown__popular-item">
+              {% include "../../@atoms/button/button.twig" with {
+                button: popular_item|default({})|merge({
+                  class: "search-box-dropdown__popular-btn",
+                  href: "#",
+                })
+              } %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <div class="search-box-dropdown__wrap">
+        <div class="search-box-dropdown__text">
+          Найденные товары
+        </div>
+
+        {% include "../../@atoms/button/button.twig" with {
+          button: {
+            href: "#",
+            class: "btn--arrow btn--link search-box-dropdown__more",
+            text: {
+              text: "Посмотреть все результаты",
+            },
+            right_icon: {
+              name: "sprite-mono.svg#arrow-next"
+            }
+          }
+        } %}
+      </div>
+
+      <ul class="search-box-dropdown__results">
+        {% for item in 0..7 %}
+          <li class="search-box-dropdown__result">
+            {% if loop.last %}
+              {% include "../../^molecules/result_card/result_card.twig" with {
+                result_card: {
+                  tooltip: true
+                }
+              } %}
+            {% else %}
+              {% include "../../^molecules/result_card/result_card.twig" %}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if search_box.dropdown.orders %}
+        <div class="search-box-dropdown__wrap">
+          <div class="search-box-dropdown__text">
+            Найденные заказы
+          </div>
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--arrow btn--link search-box-dropdown__more",
+              text: {
+                text: "Посмотреть все результаты",
+              },
+              right_icon: {
+                name: "sprite-mono.svg#arrow-next"
+              }
+            }
+          } %}
+        </div>
+
+        <div class="search-box-dropdown__orders">
+          {% include "../../^molecules/search_order_card/search_order_card.twig" %}
+          {% include "../../^molecules/search_order_card/search_order_card.twig" %}
+          {% include "../../^molecules/search_order_card/search_order_card.twig" %}
+        </div>
+      {% endif %}
+
+      {% if search_box.dropdown.point_sales %}
+        <div class="search-box-dropdown__wrap">
+          <div class="search-box-dropdown__text">
+            Точки продаж
+          </div>
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--arrow btn--link search-box-dropdown__more",
+              text: {
+                text: "Посмотреть все результаты",
+              },
+              right_icon: {
+                name: "sprite-mono.svg#arrow-next"
+              }
+            }
+          } %}
+        </div>
+
+        <div class="search-box-dropdown__point-sales">
+          {% include "../../^molecules/point_sale_card/point_sale_card.twig" %}
+          {% include "../../^molecules/point_sale_card/point_sale_card.twig" %}
+          {% include "../../^molecules/point_sale_card/point_sale_card.twig" %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="overlay header__overlay"></div>
+</div>
+{% endif %}

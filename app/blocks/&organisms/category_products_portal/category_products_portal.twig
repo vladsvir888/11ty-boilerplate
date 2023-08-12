@@ -1,0 +1,125 @@
+{% set items = [{
+  title: {
+    level: 3,
+    text: "Вино"
+  },
+  image: {
+    name: "category-card/01.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Игристое вино"
+  },
+  image: {
+    name: "category-card/02.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Игристое вино"
+  },
+  image: {
+    name: "category-card/03.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Ликер"
+  },
+  image: {
+    name: "category-card/04.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Виски"
+  },
+  image: {
+    name: "category-card/01.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Текила"
+  },
+  image: {
+    name: "category-card/02.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Вино"
+  },
+  image: {
+    name: "category-card/01.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Игристое вино"
+  },
+  image: {
+    name: "category-card/02.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Игристое вино"
+  },
+  image: {
+    name: "category-card/03.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Ликер"
+  },
+  image: {
+    name: "category-card/04.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Виски"
+  },
+  image: {
+    name: "category-card/01.png"
+  }
+}, {
+  title: {
+    level: 3,
+    text: "Текила"
+  },
+  image: {
+    name: "category-card/02.png"
+  }
+}] %}
+
+<section class="category-products-portal section--portal">
+  <div class="container">
+    {% include "../../^molecules/section_header/section_header.twig" with {
+      section_header: {
+        class: "section-header--portal",
+        title: {
+          level: 2,
+          class: "section-header__title",
+          text: "Категории товаров"
+        },
+        slider_btns: true,
+      },
+    } %}
+
+    <div class="swiper category-products-portal__slider">
+      <div class="swiper-wrapper">
+        {% for item in items %}
+          <div class="swiper-slide">
+            {% include "../../^molecules/category_portal_card/category_portal_card.twig" with {
+              category_portal_card: item
+            } %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

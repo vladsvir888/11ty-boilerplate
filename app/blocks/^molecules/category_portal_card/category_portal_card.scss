@@ -1,0 +1,29 @@
+.category-portal-card {
+  $this: &;
+
+  @include flex-between;
+  column-gap: rem(5);
+  position: relative;
+  padding: rem(8);
+  color: var(--pallette-biscay);
+  border-radius: var(--bdrs15);
+  background-color: var(--pallette-athens-gray);
+  transition: background-color var(--transition300ms);
+  background-image: url('../assets/images/category-portal-card/decorative-element.svg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--pallette-biscay);
+      color: var(--pallette-white);
+    }
+  }
+
+  &__title {
+    @include font-size(16, 24);
+    font-weight: 600;
+    padding: rem(20) 0 0 rem(12);
+    transition: color var(--transition300ms);
+  }
+}

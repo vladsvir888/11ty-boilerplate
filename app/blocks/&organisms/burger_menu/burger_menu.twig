@@ -1,0 +1,477 @@
+<sl-drawer class="burger-menu" placement="top" no-header>
+  <div class="container burger-menu__container">
+    <div class="burger-menu__btns">
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "burger-menu__auth-btn",
+          text: {
+            text: "Войти"
+          },
+          attrs: 'data-dialog="auth"'
+        }
+      } %}
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "burger-menu__auth-btn",
+          text: {
+            text: "Регистрация"
+          },
+          attrs: 'data-dialog="registration"'
+        }
+      } %}
+    </div>
+
+    <!-- Этот блок должен появиться после авторизации пользователя
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        href: "#",
+        class: "burger-menu__user-link",
+        text: {
+          text: "Добро пожаловать, Александр"
+        },
+        right_icon: {
+          class: "burger-menu__toggle-icon",
+          name: "sprite-mono.svg#arrow-right"
+        }
+      }
+    } %}
+    -->
+
+    <div class="burger-menu__town">
+      <div class="burger-menu__town-text">Санкт-Петербург</div>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "burger-menu__toggle",
+          icon: {
+            class: "burger-menu__toggle-icon",
+            name: "sprite-mono.svg#arrow-right"
+          }
+        }
+      } %}
+
+      {% include "../../&organisms/submenu/submenu.twig" with {
+        submenu: {
+          towns: true
+        }
+      } %}
+    </div>
+
+    {% set sections = [{
+      class: "burger-menu__section--menu",
+      cols: [{
+        title: {
+          text: "Каталог"
+        },
+        items: [{
+          button: {
+            text: {
+              text: "Вино"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Игристое вино"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Винный напиток"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Ликер"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Виски"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Текила"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Коньяк"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Водка"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Пиво"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Бренди"
+            },
+          },
+          arrow_button: true,
+        }]
+      }, {
+        items: [{
+          button: {
+            text: {
+              text: "Самогон"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Джин"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Бальзам"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Кагор"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Портвейн"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Настойка"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Ром"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Вермут"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Аперитив"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Энергетики"
+            },
+          },
+          arrow_button: true,
+        }, {
+          button: {
+            text: {
+              text: "Слабый алкоголь"
+            },
+          },
+          arrow_button: true,
+        }]
+      }, {
+        items: [{
+          button: {
+            text: {
+              text: "Сироп"
+            },
+          }
+        }, {
+          button: {
+            text: {
+              text: "Жвачка"
+            },
+          }
+        }, {
+          button: {
+            text: {
+              text: "Конфеты"
+            },
+          }
+        }, {
+          button: {
+            text: {
+              text: "Лапша"
+            },
+          }
+        }, {
+          button: {
+            text: {
+              text: "Чипсы"
+            },
+          }
+        }, {
+          button: {
+            text: {
+              text: "Печенье и бисквиты"
+            },
+          }
+        }, {
+          button: {
+            text: {
+              text: "Консервы"
+            },
+          }
+        }, {
+          button: {
+            text: {
+              text: "Шоколад"
+            },
+          }
+        }]
+      }]
+    }, {
+      cols: [{
+        title: {
+          text: "О Vintegra"
+        },
+        items: [{
+          button: {
+            text: {
+              text: "О компании"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Новости"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Статьи"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Контакты"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Пункты выдачи заказов"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Бренды"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Партнеры"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Отзывы"
+            }
+          }
+        }]
+      }]
+    }, {
+      cols: [{
+        title: {
+          text: "Покупателям"
+        },
+        items: [{
+          button: {
+            text: {
+              text: "Корпоративным клиентам"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Программа лояльности"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Калькулятор"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Обратная связь"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Акционные предложения"
+            }
+          }
+        }, {
+          button: {
+            text: {
+              text: "Вопрос-ответ"
+            }
+          }
+        }]
+      }]
+    }] %}
+
+    {% for section in sections %}
+      <section class="burger-menu__section {{ section.class }}">
+        {% for col in section.cols %}
+          <div class="burger-menu__col">
+            {% if col.title %}
+              {% include "../../@atoms/title/title.twig" with {
+                title: col.title|default({})|merge({
+                  level: 2,
+                  class: "burger-menu__title"
+                })
+              } %}
+            {% endif %}
+
+            <ul class="burger-menu__list">
+              {% for item in col.items %}
+                <li class="burger-menu__item">
+                  {% include "../../@atoms/button/button.twig" with {
+                    button: item.button|default({})|merge({
+                      href: "#",
+                      class: "btn--link burger-menu__link"
+                    })
+                  } %}
+
+                  {% if item.arrow_button %}
+                    {% include "../../@atoms/button/button.twig" with {
+                      button: {
+                        class: "burger-menu__toggle",
+                        icon: {
+                          class: "burger-menu__toggle-icon",
+                          name: "sprite-mono.svg#arrow-right"
+                        }
+                      }
+                    } %}
+
+                    {% include "../../&organisms/submenu/submenu.twig" with {
+                      submenu: {
+                        all_products_link: true,
+                        cards: true
+                      }
+                    } %}
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </section>
+    {% endfor %}
+
+    <section class="burger-menu__section">
+      <div class="burger-menu__col burger-menu__col--last">
+        <div class="burger-menu__item">
+          {% include "../../@atoms/title/title.twig" with {
+            title: {
+              level: 2,
+              class: "burger-menu__title",
+              text: "Получить консультацию"
+            }
+          } %}
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--btn btn--primary burger-menu__btn",
+              text: {
+                text: "Обратная связь"
+              }
+            }
+          } %}
+        </div>
+
+        <div class="burger-menu__item">
+          {% include "../../@atoms/title/title.twig" with {
+            title: {
+              level: 2,
+              class: "burger-menu__title",
+              text: "Наше мобильное приложение"
+            }
+          } %}
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--btn btn--secondary btn--quinary burger-menu__btn",
+              text: {
+                text: "Скачать в Google Play"
+              },
+              icon: {
+                name: "sprite-mono.svg#google-play"
+              }
+            }
+          } %}
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "btn--btn btn--secondary btn--quinary burger-menu__btn",
+              text: {
+                text: "Скачать в App Store"
+              },
+              icon: {
+                name: "sprite-mono.svg#app-store"
+              }
+            }
+          } %}
+        </div>
+      </div>
+    </section>
+  </div>
+</sl-drawer>

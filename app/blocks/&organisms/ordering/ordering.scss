@@ -1,0 +1,29 @@
+.ordering {
+  $this: &;
+
+  &__info {
+    row-gap: rem(28);
+
+    @include media('1024', max) {
+      margin-bottom: rem(60);
+    }
+
+    @include media('600', max) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__btn {
+    min-width: rem(476);
+    align-self: flex-start;
+
+    @include media('600', max) {
+      display: none;
+    }
+  }
+
+  &__toggle-group {
+    padding: 0;
+    border: none;
+  }
+}

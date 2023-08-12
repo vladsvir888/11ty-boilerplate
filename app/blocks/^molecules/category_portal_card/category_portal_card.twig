@@ -1,0 +1,19 @@
+<article class="category-portal-card">
+  {% include "../../@atoms/title/title.twig" with {
+    title: category_portal_card.title|default({})|merge({
+      class: "category-portal-card__title",
+      link: true
+    })
+  } %}
+
+  {% include "../../@atoms/image/image.twig" with {
+    image: category_portal_card.image|default({})|merge({
+      class: "category-portal-card__image",
+      sizes: {
+        width: 85,
+        height: 98
+      },
+      alt: ""
+    })
+  } %}
+</article>

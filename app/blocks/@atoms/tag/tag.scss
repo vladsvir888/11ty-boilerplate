@@ -1,0 +1,81 @@
+.tag {
+  $this: &;
+
+  @include font-size(12, 16);
+  font-weight: 600;
+  padding: rem(4) rem(8);
+  border-radius: var(--bdrs3);
+  color: var(--pallette-white);
+  min-width: rem(60);
+  text-align: center;
+
+  @include media('600', max) {
+    min-width: unset;
+  }
+
+  // новинка
+  &--new {
+    background-color: var(--pallette-international-orange);
+  }
+
+  // скидка
+  &--percent {
+    background-color: var(--pallette-biscay);
+  }
+
+  // активный
+  &--active {
+    background-color: var(--pallette-green-haze);
+  }
+
+  // архивный
+  &--archieve {
+    background-color: var(--pallette-athens-gray);
+    color: var(--pallette-gray);
+  }
+
+  // объем напитка
+  &--volume {
+    @include flex-center-y;
+    column-gap: rem(8);
+    position: relative;
+    color: var(--pallette-biscay);
+    min-width: unset;
+    border-radius: unset;
+    padding: 0;
+
+    #{$this}__text {
+      padding: rem(4) rem(8);
+      background-color: var(--pallette-geyser);
+      border-radius: var(--bdrs100);
+    }
+  }
+
+  // читать
+  &--read {
+    @include font-size(16, 22);
+    padding: rem(5) rem(12) rem(5) rem(35);
+    color: var(--pallette-biscay);
+    border-radius: var(--bdrs10);
+    background-color: var(--pallette-athens-gray);
+    background-image: url('../assets/images/icons/book.svg');
+    background-repeat: no-repeat;
+    background-position: center left rem(12);
+    font-weight: 400;
+
+    @include media('600', max) {
+      @include font-size(14, 20);
+    }
+  }
+
+  // продукт (карточка)
+  &--product {
+    @include font-size(14, 20);
+    display: flex;
+    column-gap: rem(8);
+    padding: rem(10) rem(16);
+    background-color: var(--pallette-whisper);
+    color: var(--pallette-mine-shaft);
+    border-radius: var(--bdrs10);
+  }
+}

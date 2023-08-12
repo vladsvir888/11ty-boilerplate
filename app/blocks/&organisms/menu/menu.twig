@@ -1,0 +1,202 @@
+{% set items = [{
+  text: "Страна",
+  img: "01.svg",
+  list: {
+    items: [{
+      text: {
+        text: "Франция (41)"
+      }
+    }, {
+      text: {
+        text: "Италия (69)"
+      }
+    }, {
+      text: {
+        text: "Испания (168)"
+      }
+    }, {
+      text: {
+        text: "Россия (256)"
+      }
+    }, {
+      text: {
+        text: "Грузия (143)"
+      }
+    }]
+  }
+}, {
+  text: "Стоимость",
+  img: "02.svg",
+  list: {
+    items: [{
+      text: {
+        text: "До 500 руб. (99)"
+      }
+    }, {
+      text: {
+        text: "От 500 до 1000 руб. (350)"
+      }
+    }, {
+      text: {
+        text: "От 1000 до 2000 руб. (41)"
+      }
+    }, {
+      text: {
+        text: "От 2000 до 3000 руб. (13)"
+      }
+    }, {
+      text: {
+        text: "От 2000 до 3000 руб. (4)"
+      }
+    }]
+  }
+}, {
+  text: "Крепость",
+  img: "03.svg",
+  list: {
+    items: [{
+      text: {
+        text: "14% (16)"
+      }
+    }, {
+      text: {
+        text: "15% (45)"
+      }
+    }, {
+      text: {
+        text: "16% (40)"
+      }
+    }, {
+      text: {
+        text: "17% (198)"
+      }
+    }, {
+      text: {
+        text: "18% (28)"
+      }
+    }]
+  }
+}, {
+  text: "Объем",
+  img: "04.svg",
+  list: {
+    items: [{
+      text: {
+        text: "0.187л (184)"
+      }
+    }, {
+      text: {
+        text: "0.25л (90)"
+      }
+    }, {
+      text: {
+        text: "0.2л (34)"
+      }
+    }, {
+      text: {
+        text: "0.375л (66)"
+      }
+    }, {
+      text: {
+        text: "0.5л (4)"
+      }
+    }]
+  }
+}, {
+  text: "Бренд",
+  img: "05.svg",
+  list: {
+    items: [{
+      text: {
+        text: "SENSI (10)"
+      }
+    }, {
+      text: {
+        text: "TOSTI (69)"
+      }
+    }, {
+      text: {
+        text: "ALDO MARENCO (71)"
+      }
+    }, {
+      text: {
+        text: "August Eser (33)"
+      }
+    }, {
+      text: {
+        text: "Balbi Soprani (2)"
+      }
+    }]
+  }
+}, {
+  type: "all"
+}] %}
+
+<div
+  {% if menu.id %}id="{{ menu.id }}"{% endif %}
+  class="menu"
+>
+  {% if menu.is_skip_link %}
+    {% include "../../@atoms/skip_link/skip_link.twig" with {
+      skip_link: {
+        href: "#choice-town",
+        text: {
+          text: "Пропустить меню"
+        }
+      }
+    } %}
+  {% endif %}
+
+  <ul class="menu__list">
+    {% for item in items %}
+      {% if item.type == "all" %}
+        <li class="menu__item menu__item--all">
+          <img class="menu__item-img" src="./assets/images/menu/06.svg" alt="" width="40" height="40">
+
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "menu__item-link menu__item-link--all",
+              text: {
+                text: "Показать все вина (1500)"
+              }
+            }
+          } %}
+        </li>
+      {% else %}
+        <li class="menu__item">
+          <div class="menu__item-header">
+            <div class="menu__item-text">
+              {{ item.text }}
+            </div>
+
+            <img class="menu__item-img" src="./assets/images/menu/{{ item.img }}" alt="" width="40" height="40">
+          </div>
+
+          <div class="menu__item-body">
+            {% for list_item in item.list.items %}
+              {% include "../../@atoms/button/button.twig" with {
+                button: list_item|default({})|merge({
+                  class: "btn--link menu__item-link",
+                  href: "#",
+                })
+              } %}
+            {% endfor %}
+          </div>
+
+          <div class="menu__item-footer">
+            {% include "../../@atoms/button/button.twig" with {
+              button: {
+                href: "#",
+                class: "btn--btn btn--fouternary",
+                text: {
+                  text: "Показать все"
+                }
+              }
+            } %}
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

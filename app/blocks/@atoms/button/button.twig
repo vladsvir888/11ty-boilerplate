@@ -1,0 +1,64 @@
+<{{ button.href is defined ? "a" : "button" }}
+  {% if button.href %}href="{{ button.href }}"{% endif %}
+  class="btn {{ button.class }}"
+  {% if button.id %}id="{{ button.id }}"{% endif %}
+  {% if button.attrs %}{{ button.attrs }}{% endif %}
+>
+  {% if button.icon %}
+    {% include "../../@atoms/icon/icon.twig" with {
+      icon: button.icon|default({})|merge({
+        class: "btn__icon" ~ (button.icon.class is defined ? " " ~ button.icon.class : "")
+      })
+    } %}
+  {% endif %}
+
+  {% if button.icons %}
+    {% for icon in button.icons %}
+      {% include "../../@atoms/icon/icon.twig" with {
+        icon: icon|default({})|merge({
+          class: "btn__icon" ~ (icon.class is defined ? " " ~ icon.class : "")
+        })
+      } %}
+    {% endfor %}
+  {% endif %}
+
+  {% if button.image %}
+    {% include "../../@atoms/image/image.twig" with {
+      image: button.image
+    } %}
+  {% endif %}
+
+  {% if button.svg_icon %}
+    {{ button.svg_icon }}
+  {% endif %}
+
+  {% if button.text %}
+    <span class="btn__text {{ button.text.class }}">
+      {{ button.text.text }}
+    </span>
+  {% endif %}
+
+  {% if button.right_icon %}
+    {% include "../../@atoms/icon/icon.twig" with {
+      icon: button.right_icon|default({})|merge({
+        class: "btn__icon" ~ (button.right_icon.class is defined ? " " ~ button.right_icon.class : "")
+      })
+    } %}
+  {% endif %}
+
+  {% if button.svg_icon_right %}
+    {% include "../../@atoms/svg_icon/svg_icon.twig" with {
+      svg_icon: button.svg_icon_right
+    } %}
+  {% endif %}
+
+  {% if button.right_icons %}
+    {% for icon in button.right_icons %}
+      {% include "../../@atoms/icon/icon.twig" with {
+        icon: icon|default({})|merge({
+          class: "btn__icon" ~ (icon.class is defined ? " " ~ icon.class : "")
+        })
+      } %}
+    {% endfor %}
+  {% endif %}
+</{{ button.href is defined ? "a" : "button" }}>

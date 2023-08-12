@@ -1,0 +1,66 @@
+{% set items = [{
+  summary: "Доставка",
+}, {
+  summary: "Оплата и возврат",
+}, {
+  summary: "Как сделать заказ",
+}] %}
+
+<section class="faq">
+  <div class="container faq__container grid-block">
+    <div class="faq__accordion grid-block__item grid-block__item--1">
+      {% for item in items %}
+        <sl-details class="details">
+          <div class="details__summary" slot="summary">
+            <div class="details__summary-start">
+              {% include "../../@atoms/title/title.twig" with {
+                title: {
+                  level: 2,
+                  class: "details__title",
+                  text: item.summary
+                }
+              } %}
+            </div>
+          </div>
+          <div class="text-block details__text">
+            <p>
+              1. Вы вправе отказаться от заказа частично или полностью при оплате забронированного товара в магазине, если товар имеет перечисленные выши недостатки. Внимательно осмотрите все товары и укажите нашему сотруднику на выявленные дефекты. Вы можете отказаться от товара или попросить заменить его. В случае отсутствия нужного товара в магазине, с вами свяжутся менеджеры клиентского сервиса и предложат варианты решения проблемы.
+            </p>
+            <p>
+              2. Если вы обнаружили дефект забронированного товара после оплаты в магазине, вы можете оформить возврат в Vintegra в течение 14  календарных дней. Напишите о проблемах с товаром на hello@vintegra.ru или позвоните по номеру +7 (499) 754-09-10.
+            </p>
+          </div>
+
+          <div class="details__icon" slot="expand-icon">
+            {% include "../../@atoms/icon/icon.twig" with {
+              icon: {
+                name: "sprite-mono.svg#arrow-down",
+              }
+            } %}
+          </div>
+
+          <div class="details__icon" slot="collapse-icon">
+            {% include "../../@atoms/icon/icon.twig" with {
+              icon: {
+                name: "sprite-mono.svg#arrow-up",
+              }
+            } %}
+          </div>
+        </sl-details>
+      {% endfor %}
+    </div>
+
+    <div class="faq__info grid-block__item grid-block__item--2">
+      {% include "../../^molecules/text_card/text_card.twig" with {
+        text_card: {
+          title: {
+            level: 2,
+            text: "Хотите получить консультацию?"
+          },
+          text: "<p>Не знаете какой алкоголь выбрать? Сомневаетесь? Есть пожелания или предложения? Вам неудобно звонить? Вы можете задать свой вопрос нашему менеджеру письменно.</p><p>Мы будем рады обратной связи! Заполните форму обратной связи, и мы свяжемся с вами в ближайшее время</p>",
+          btn: true
+        }
+      } %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+<article class="result-card">
+  <div class="result-card__start">
+    {% include "../../@atoms/image/image.twig" with {
+      image: {
+        picture: {
+          class: "result-card__picture"
+        },
+        name: "result-card/01.png",
+        sizes: {
+          width: 91,
+          height: 68
+        },
+        alt: "",
+      }
+    } %}
+
+    <div class="result-card__content">
+      <div class="result-card__content-wrap">
+        {% include "../../@atoms/button/button.twig" with {
+          button: {
+            href: "#rating",
+            class: "result-card__rating",
+            text: {
+              text: "<span class='visually-hidden'>Рейтинг:</span>4.5"
+            }
+          }
+        } %}
+
+        {% include "../../@atoms/tag/tag.twig" with {
+          tag: {
+            type: "with_round",
+            class: "tag--volume tag--type-red result-card__tag",
+            text: "0.75л"
+          }
+        } %}
+      </div>
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "btn--link result-card__link",
+          href: "#",
+          text: {
+            text: "Вино Chateau De La Thebaudiere Muscadet De"
+          },
+        }
+      } %}
+      <div class="result-card__text">Франция</div>
+
+      {% include "../../@atoms/price_info/price_info.twig" with {
+        price_info: {
+          class: "result-card__price",
+          current: "1 085 ₽",
+          old: "1 500 ₽"
+        }
+      } %}
+    </div>
+  </div>
+  <div class="result-card__end">
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--primary result-card__basket-btn js-basket-btn",
+        text: {
+          text: "В корзину"
+        }
+      }
+    } %}
+
+    <div class="quantity-wrapper" hidden>
+      <div class="quantity-wrapper__item">
+        {% include "../../@atoms/quantity/quantity.twig" with {
+          quantity: {
+            class: "quantity--secondary",
+          }
+        } %}
+      </div>
+    </div>
+
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "btn--icon result-card__favorite-btn",
+        attrs: "aria-label='Добавить в избранное'",
+        icon: {
+          name: "sprite-mono.svg#heart"
+        }
+      }
+    } %}
+
+    {% if result_card.tooltip %}
+      <div class="tooltip result-card__tooltip" role="tooltip">
+        Невозможно добавить больше, так как товара не хватает в наличии
+      </div>
+    {% endif %}
+  </div>
+</article>

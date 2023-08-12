@@ -1,0 +1,28 @@
+<div
+  class="range-slider {{ range_slider.class }}"
+  data-range-start="{{ range_slider.data.start }}"
+  data-range-end="{{ range_slider.data.end }}"
+  data-range-min="{{ range_slider.data.min }}"
+  data-range-max="{{ range_slider.data.max }}"
+>
+  {% include "../../@atoms/form_control/form_control.twig" with {
+    form_control: {
+      class: "range-slider__control range-slider__control--from",
+      input: {
+        class: "range-slider__input",
+        placeholder: "от"
+      }
+    }
+  } %}
+
+  {% include "../../@atoms/form_control/form_control.twig" with {
+    form_control: {
+      class: "range-slider__control range-slider__control--to",
+      input: {
+        class: "range-slider__input",
+        placeholder: "до"
+      }
+    }
+  } %}
+  <div class="range-slider__element"></div>
+</div>

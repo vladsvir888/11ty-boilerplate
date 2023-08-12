@@ -1,0 +1,17 @@
+.skip-link {
+  position: absolute;
+  top: 0;
+  color: var(--pallette-international-orange);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: rem(5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition300ms);
+
+  &:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+    outline: none;
+  }
+}

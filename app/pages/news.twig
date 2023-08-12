@@ -1,0 +1,637 @@
+{% extends "../blocks/layout/base.twig" %}
+
+{% set page_data = {
+  "meta": {
+    "title": "Новости",
+    "description": "Новости"
+  }
+} %}
+
+{% block content %}
+  <div class="container">
+    {% include "../blocks/^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "Новости"
+        }]
+      }
+    } %}
+  </div>
+
+  {% include "../blocks/&organisms/page_top/page_top.twig" with {
+    page_top: {
+      class: "page-top--banner-stretched",
+      grid: true,
+      title: {
+        text: "Новости"
+      }
+    }
+  } %}
+
+  {% include "../blocks/^molecules/info_card_grid/info_card_grid.twig" with {
+    info_card_grid: {
+      lists: [{
+        class: "info-card-grid__list--1",
+        items: [{
+          image: {
+            name: "news/01.png",
+            sizes: {
+              width: 540,
+              height: 662
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Как читать винную этикетку?",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/04.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/05.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/06.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/06.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/04.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/07.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/07.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/04.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }]
+      }, {
+        class: "info-card-grid__list--1",
+        items: [{
+          image: {
+            name: "news/01.png",
+            sizes: {
+              width: 540,
+              height: 662
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Как читать винную этикетку?",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/04.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/05.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/06.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/06.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/04.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/07.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/02.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/07.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }, {
+          image: {
+            name: "news/03.png",
+            sizes: {
+              width: 540,
+              height: 240
+            },
+            alt: ""
+          },
+          date: {
+            time: {
+              text: "21.03.2017",
+              datetime: "2017-03-21"
+            }
+          },
+          title: {
+            level: 2,
+            text: "Правильный коктейль",
+          }
+        }]
+      }]
+    }
+  } %}
+{% endblock %}

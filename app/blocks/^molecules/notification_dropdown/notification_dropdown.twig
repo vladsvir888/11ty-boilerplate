@@ -1,0 +1,61 @@
+<section class="notification-dropdown">
+  <div class="notification-dropdown__header">
+    {% include "../../@atoms/icon/icon.twig" with {
+      icon: {
+        class: "notification-dropdown__title-icon",
+        name: "sprite-multi.svg#bell"
+      }
+    } %}
+
+    {% include "../../@atoms/title/title.twig" with {
+      title: {
+        level: 2,
+        class: "notification-dropdown__title",
+        text: "Уведомления"
+      }
+    } %}
+  </div>
+
+  <ul class="notification-dropdown__list">
+    {% for i in 0..5 %}
+      <li
+        class="notification-dropdown__item{% if loop.index != 3 %} notification-dropdown__item--active{% endif %}"
+        >
+        <div class="notification-dropdown__info">
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              class: "btn--link notification-dropdown__link",
+              href: "#",
+              text: {
+                text: "Заказ №365 от 14.09.2023г."
+              }
+            }
+          } %} прибыл в пунк выдачи
+        </div>
+        <time datetime="3h" class="notification-dropdown__time">3 часа назад</time>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="notification-dropdown__btns">
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--outline notification-dropdown__btn",
+        href: "#",
+        text: {
+          text: "Прочитать все"
+        }
+      }
+    } %}
+
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "btn--btn btn--tertiary notification-dropdown__btn",
+        href: "#",
+        text: {
+          text: "Посмотреть все"
+        }
+      }
+    } %}
+  </div>
+</section>

@@ -1,0 +1,102 @@
+{% set filename = image.name|split(".")|first %}
+{% set filename_2 = image.name_2|split(".")|first %}
+{% set path = "./assets/images/" %}
+{% set image_lazy = image.lazy|default(true) %}
+
+{% if image_lazy and not image.adaptive %}
+  <picture
+    {% if image.picture.class %}
+      class="{{ image.picture.class }}"
+    {% endif %}
+  >
+    <source
+      type="image/webp"
+      srcset="{{ path ~ filename ~ '.webp' }}"
+    >
+    <img
+      class="img {% if image.class %}{{ image.class }}{% endif %}"
+      src="{{ path ~ image.name }}"
+      loading="lazy"
+      {% if image.alt is defined %}alt="{{ image.alt }}"{% endif %}
+      {% if image.sizes.width %}width="{{ image.sizes.width }}"{% endif %}
+      {% if image.sizes.height %}height="{{ image.sizes.height }}"{% endif %}
+      {% if image.attrs %}{{ image.attrs }}{% endif %}
+    >
+  </picture>
+{% elseif not image_lazy and not image.adaptive %}
+  <picture
+    {% if image.picture.class %}
+      class="{{ image.picture.class }}"
+    {% endif %}
+  >
+    <source
+      type="image/webp"
+      srcset="{{ path ~ filename ~ '.webp' }}"
+    >
+    <img
+      class="img {% if image.class %}{{ image.class }}{% endif %}"
+      src="{{ path ~ image.name }}"
+      {% if image.alt is defined %}alt="{{ image.alt }}"{% endif %}
+      {% if image.sizes.width %}width="{{ image.sizes.width }}"{% endif %}
+      {% if image.sizes.height %}height="{{ image.sizes.height }}"{% endif %}
+      {% if image.attrs %}{{ image.attrs }}{% endif %}
+    >
+  </picture>
+{% elseif image_lazy and image.adaptive %}
+  <picture
+    {% if image.picture.class %}
+      class="{{ image.picture.class }}"
+    {% endif %}
+  >
+  <source
+    type="image/webp"
+    srcset="{{ path ~ filename_2 ~ '.webp' }}"
+    media="(max-width: {{ image.adaptive.media.value }}px)"
+  >
+  <source
+    type="image/webp"
+    srcset="{{ path ~ filename ~ '.webp' }}"
+  >
+  <source
+    srcset="{{ path ~ image.name_2 }}"
+    media="(max-width: {{ image.adaptive.media.value }}px)"
+  >
+  <img
+    class="img {% if image.class %}{{ image.class }}{% endif %}"
+    src="{{ path ~ image.name }}"
+    loading="lazy"
+    {% if image.alt is defined %}alt="{{ image.alt }}"{% endif %}
+    {% if image.sizes.width %}width="{{ image.sizes.width }}"{% endif %}
+    {% if image.sizes.height %}height="{{ image.sizes.height }}"{% endif %}
+    {% if image.attrs %}{{ image.attrs }}{% endif %}
+  >
+  </picture>
+{% elseif not image_lazy and image.adaptive %}
+  <picture
+    {% if image.picture.class %}
+      class="{{ image.picture.class }}"
+    {% endif %}
+  >
+  <source
+    type="image/webp"
+    srcset="{{ path ~ filename_2 ~ '.webp' }}"
+    media="(max-width: {{ image.adaptive.media.value }}px)"
+  >
+  <source
+    type="image/webp"
+    srcset="{{ path ~ filename ~ '.webp' }}"
+  >
+  <source
+    srcset="{{ path ~ image.name_2 }}"
+    media="(max-width: {{ image.adaptive.media.value }}px)"
+  >
+  <img
+    class="img {% if image.class %}{{ image.class }}{% endif %}"
+    src="{{ path ~ image.name }}"
+    {% if image.alt is defined %}alt="{{ image.alt }}"{% endif %}
+    {% if image.sizes.width %}width="{{ image.sizes.width }}"{% endif %}
+    {% if image.sizes.height %}height="{{ image.sizes.height }}"{% endif %}
+    {% if image.attrs %}{{ image.attrs }}{% endif %}
+  >
+  </picture>
+{% endif %}

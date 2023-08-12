@@ -1,0 +1,65 @@
+.choice-town {
+  --padding: #{rem(16)};
+
+  @include media('1200', max) {
+    display: none;
+  }
+
+  &__trigger {
+    @include flex-center-y;
+    @include font-size(16, 24);
+    column-gap: rem(5);
+    color: var(--pallette-biscay);
+    font-weight: 600;
+
+    &-icon {
+      width: rem(20);
+      height: rem(20);
+      fill: currentColor;
+    }
+  }
+
+  &__wrapper {
+    padding: var(--padding);
+    background-color: var(--pallette-white);
+    border-radius: var(--bdrs8);
+    border: rem(1) solid var(--pallette-athens-gray-2);
+  }
+
+  &__menu {
+    @include font-size(14, 21);
+    @include flex-column;
+    font-weight: 600;
+    row-gap: rem(12);
+    margin-top: rem(12);
+    max-height: rem(200);
+    overflow-y: auto;
+    width: calc(100% + var(--padding) * 2);
+    margin-left: calc(var(--padding) * -1);
+    scrollbar-color: var(--pallette-biscay) transparent;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: rem(3);
+      height: rem(3);
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pallette-biscay);
+      border-radius: rem(10);
+    }
+  }
+
+  &__btn {
+    @include flex-center-between;
+    padding: 0 var(--padding);
+
+    &-icon {
+      width: rem(16);
+      height: rem(16);
+      fill: var(--pallette-international-orange);
+    }
+  }
+}

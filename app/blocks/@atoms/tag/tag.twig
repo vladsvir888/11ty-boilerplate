@@ -1,0 +1,22 @@
+{% if tag.type == 'with_round' %}
+  <div class="tag {{ tag.class }}">
+    <span class="tag__text">
+      {{ tag.text }}
+    </span>
+    {# <div class="tag__round" aria-hidden="true"></div> #}
+  </div>
+{% else %}
+  <div class="tag {{ tag.class }}">
+    {% if tag.img %}
+      <img
+        src="./assets/images/icons/{{ tag.img }}"
+        alt=""
+        width="20"
+        height="20"
+        loading="lazy"
+      >
+    {% endif %}
+
+    {{ tag.text }}
+  </div>
+{% endif %}

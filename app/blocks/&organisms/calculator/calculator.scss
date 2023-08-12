@@ -1,0 +1,33 @@
+.calculator {
+  &__select {
+    &::part(form-control) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &::part(form-control-input) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: rem(8);
+
+    @include media('600', max) {
+      margin-top: rem(20);
+    }
+  }
+
+  &__form {
+    @include media('1024', max) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  .card-block {
+    &__title {
+      @include font-size(18, 27);
+    }
+  }
+}

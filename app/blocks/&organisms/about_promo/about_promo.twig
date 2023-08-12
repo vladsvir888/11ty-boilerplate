@@ -1,0 +1,57 @@
+<div class="about-promo" style="background-image: url('assets/images/about-promo/01.jpg')">
+  <div class="container about-promo__container">
+    {% include "../../^molecules/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        class: "about-promo__breadcrumbs",
+        items: [{
+          href: "#",
+          class: "btn--link",
+          text: {
+            text: "Главная"
+          }
+        }, {
+          text: "О компании"
+        }]
+      }
+    } %}
+
+    <div class="about-promo__content">
+      <div class="about-promo__header">
+        {% include "../../@atoms/title/title.twig" with {
+          title: {
+            class: "about-promo__title",
+            text: "О компании"
+          }
+        } %}
+
+        <div class="about-promo__header-text">
+          Vintegra.ru первый в России алкогольный маркетплейс с единственной на сегодня легальной доставкой
+        </div>
+      </div>
+
+      <div class="about-promo__middle">
+        <div class="about-promo__middle-text">
+          Компания является крупным импортером крепких напитков, тихих и игристых вин со всего мира, а также занимает лидирующие позиции в дистрибуции на рынке отечественных производителей алкоголя.
+        </div>
+
+        <div class="about-promo__benefits">
+          <div class="about-promo__benefit">
+            25 лет на рынке
+          </div>
+          <div class="about-promo__benefit">
+            > 3000 клиентов доверяют нам
+          </div>
+          <div class="about-promo__benefit">
+            легальная доставка алкоголя
+          </div>
+        </div>
+      </div>
+
+      <div class="about-promo__footer">
+        <div class="about-promo__footer-text">
+          Мы уверены в завтрашнем дне и идем в ногу со временем
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

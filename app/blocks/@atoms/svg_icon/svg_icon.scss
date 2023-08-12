@@ -1,0 +1,16 @@
+.svg-icon {
+  flex-shrink: 0;
+  transition:
+    fill var(--transition300ms),
+    stroke var(--transition300ms);
+
+  &--heart {
+    width: rem(30);
+    height: rem(30);
+    stroke: currentColor;
+
+    &:hover {
+      stroke: var(--pallette-atlantis);
+    }
+  }
+}

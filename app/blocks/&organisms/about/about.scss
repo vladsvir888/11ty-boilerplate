@@ -1,0 +1,96 @@
+.about {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(10);
+
+    @include media('1024', max) {
+      grid-template-columns: 1fr;
+    }
+
+    @include media('600', max) {
+      gap: rem(15);
+    }
+  }
+
+  &__card {
+    @include flex-column;
+    @include font-size(24, 34);
+    padding: rem(30);
+    min-height: rem(560);
+    font-weight: 600;
+    color: var(--pallette-white);
+    background-color: var(--pallette-international-orange);
+    border-radius: var(--bdrs15);
+    background-image: url('../assets/images/about/decorative-element.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    @include media('600', max) {
+      @include font-size(16, 24);
+      padding: rem(28) rem(16);
+      min-height: rem(474);
+      align-items: center;
+    }
+
+    &-text {
+      margin-top: auto;
+    }
+
+    &-logo {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__benefit {
+    @include flex-center-between;
+    flex-wrap: wrap;
+    gap: rem(10);
+    padding: rem(27) rem(48);
+    border-bottom: rem(1) solid var(--pallette-seashell);
+
+    @include media('600', max) {
+      padding: rem(17) var(--container-padding) rem(36);
+      flex-direction: column;
+      gap: rem(8);
+      width: calc(100% + var(--container-padding) * 2);
+      margin-left: calc(var(--container-padding) * -1);
+      text-align: center;
+    }
+
+    &:first-child {
+      border-top: rem(1) solid var(--pallette-seashell);
+
+      @include media('600', max) {
+        border-top: 0;
+      }
+    }
+
+    &-num {
+      @include font-size(40, 56);
+      color: var(--pallette-biscay);
+      font-weight: 600;
+
+      @include media('600', max) {
+        @include font-size(30, 42);
+      }
+
+      > span {
+        @include font-size(90, 126);
+
+        @include media('600', max) {
+          @include font-size(70, 98);
+        }
+      }
+    }
+
+    &-text {
+      max-width: rem(193);
+      margin-top: rem(40);
+
+      @include media('600', max) {
+        margin-top: 0;
+      }
+    }
+  }
+}

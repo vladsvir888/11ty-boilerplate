@@ -1,0 +1,90 @@
+.portal-burger-menu {
+  --size: #{rem(726)};
+  --sl-overlay-background-color: rgba(57, 57, 57, 0.2);
+
+  color: var(--pallette-white);
+
+  &::part(base) {
+    left: var(--portal-sidebar-size);
+  }
+
+  &::part(overlay) {
+    left: inherit;
+  }
+
+  &::part(panel) {
+    background-color: var(--pallette-biscay);
+  }
+
+  &::part(body) {
+    padding: 0;
+    border-left: rem(1) solid rgba(var(--pallette-white-rgb), 0.1);
+  }
+
+  &__top {
+    @include flex-between;
+    column-gap: rem(10);
+    padding: rem(32) rem(32) rem(68);
+  }
+
+  &__col {
+    &-item {
+      @include flex-column;
+      row-gap: rem(12);
+
+      &:not(:last-child) {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+
+  &__title {
+    @include font-size(18, 27);
+  }
+
+  &__link {
+    @include font-size(16, 24);
+    font-weight: 400;
+  }
+
+  &__bottom {
+    border-top: rem(1) solid rgba(var(--pallette-white-rgb), 0.1);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-areas:
+      'consultation mob-app'
+      'socials mob-app';
+    gap: rem(24) rem(56);
+    padding: rem(32);
+
+    &-title {
+      @include font-size(16, 24);
+      font-weight: 600;
+      margin-bottom: rem(12);
+    }
+
+    &-link {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: rem(24);
+      }
+    }
+
+    &-item {
+      &--consultation {
+        grid-area: consultation;
+      }
+
+      &--mobile-app {
+        grid-area: mob-app;
+      }
+
+      &--socials {
+        grid-area: socials;
+      }
+    }
+  }
+}

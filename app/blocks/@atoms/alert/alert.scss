@@ -1,0 +1,34 @@
+.alert {
+  @include media('600', max) {
+    --sl-spacing-large: #{rem(12)};
+  }
+
+  &--center {
+    &::part(base) {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      z-index: 100;
+      transform: translateX(-50%);
+    }
+  }
+
+  &::part(message) {
+    font-family: var(--font-primary);
+
+    @include media('600', max) {
+      font-size: rem(12);
+    }
+  }
+
+  &::part(close-button) {
+    --sl-color-primary-600: var(--pallette-mine-shaft);
+    --sl-color-primary-700: var(--pallette-mine-shaft);
+
+    color: var(--pallette-mine-shaft);
+
+    @include media('600', max) {
+      --sl-spacing-medium: #{rem(10)};
+    }
+  }
+}

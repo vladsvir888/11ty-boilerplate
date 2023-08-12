@@ -1,0 +1,433 @@
+<div class="submenu">
+  <div class="submenu__header">
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        class: "submenu__prev-button",
+        text: {
+          text: "Назад"
+        },
+        icon: {
+          class: "burger-menu__toggle-icon",
+          name: "sprite-mono.svg#arrow-prev"
+        }
+      }
+    } %}
+
+    {% if submenu.all_products_link %}
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          href: "#",
+          class: "submenu__all-products",
+          text: {
+            text: "Все товары"
+          },
+        }
+      } %}
+    {% endif %}
+  </div>
+
+  {% if submenu.towns %}
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        href: "#",
+        class: "submenu__town-link",
+        text: {
+          text: "Москва и МО"
+        }
+      }
+    } %}
+
+    {% include "../../@atoms/button/button.twig" with {
+      button: {
+        href: "#",
+        class: "submenu__town-link",
+        text: {
+          text: "Санкт-Петербург"
+        },
+        attrs: "aria-current='true'"
+      }
+    } %}
+  {% endif %}
+
+  {% if submenu.cards %}
+    <div class="submenu__card">
+      <div class="submenu__card-title">
+        Страна
+      </div>
+      <ul class="submenu__card-list">
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "Франция (41)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "Италия (69)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "Испания (168)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "Россия (256)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "Грузия (143)"
+              }
+            }
+          } %}
+        </li>
+      </ul>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "submenu__card-more btn--btn btn--fouternary",
+          text: {
+            text: "Показать все"
+          }
+        }
+      } %}
+    </div>
+
+    <div class="submenu__card">
+      <div class="submenu__card-title">
+        Стоимость
+      </div>
+      <ul class="submenu__card-list">
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "До 500 руб. (99)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "От 500 до 1000 руб. (350)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "От 1000 до 2000 руб. (41)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "От 2000 до 3000 руб. (13)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "От 2000 до 3000 руб. (4)"
+              }
+            }
+          } %}
+        </li>
+      </ul>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "submenu__card-more btn--btn btn--fouternary",
+          text: {
+            text: "Показать все"
+          }
+        }
+      } %}
+    </div>
+
+    <div class="submenu__card">
+      <div class="submenu__card-title">
+        Крепость
+      </div>
+      <ul class="submenu__card-list">
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "14% (16)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "15% (45)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "16% (40)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "17% (198)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "18% (28)"
+              }
+            }
+          } %}
+        </li>
+      </ul>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "submenu__card-more btn--btn btn--fouternary",
+          text: {
+            text: "Показать все"
+          }
+        }
+      } %}
+    </div>
+
+    <div class="submenu__card">
+      <div class="submenu__card-title">
+        Объем
+      </div>
+      <ul class="submenu__card-list">
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "0.187л (184)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "0.25л (90)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "0.2л (34)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "0.375л (66)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "0.5л (4)"
+              }
+            }
+          } %}
+        </li>
+      </ul>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "submenu__card-more btn--btn btn--fouternary",
+          text: {
+            text: "Показать все"
+          }
+        }
+      } %}
+    </div>
+
+    <div class="submenu__card">
+      <div class="submenu__card-title">
+        Бренд
+      </div>
+      <ul class="submenu__card-list">
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "SENSI (10)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "TOSTI (69)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "ALDO MARENCO (71)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "August Eser (33)"
+              }
+            }
+          } %}
+        </li>
+
+        <li>
+          {% include "../../@atoms/button/button.twig" with {
+            button: {
+              href: "#",
+              class: "submenu__card-link",
+              text: {
+                text: "Balbi Soprani (2)"
+              }
+            }
+          } %}
+        </li>
+      </ul>
+
+      {% include "../../@atoms/button/button.twig" with {
+        button: {
+          class: "submenu__card-more btn--btn btn--fouternary",
+          text: {
+            text: "Показать все"
+          }
+        }
+      } %}
+    </div>
+  {% endif %}
+</div>

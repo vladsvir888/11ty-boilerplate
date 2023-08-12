@@ -1,0 +1,95 @@
+.catalog-table {
+  $this: &;
+  overflow-x: auto;
+
+  @at-root {
+    #{$this}-wrap {
+      @include flex-column;
+      row-gap: rem(20);
+
+      &__pagination {
+        @include flex-center-x;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    th {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    th, td {
+      @include font-size(13, 20);
+      padding: rem(9) rem(14);
+    }
+
+    td {
+      position: relative;
+      white-space: nowrap;
+      border: rem(1) solid var(--pallette-seashell);
+
+      &:first-child {
+        border-left: 0;
+        padding: rem(5);
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+  }
+
+  &__basket {
+    display: flex;
+    column-gap: rem(16);
+
+    &-item {
+      @include flex-center-y;
+      column-gap: rem(8);
+    }
+
+    &-icon {
+      width: rem(20);
+      height: rem(20);
+    }
+
+    &-text {
+      @include font-size(10, 13);
+      font-weight: 700;
+      letter-spacing: rem(0.1);
+    }
+  }
+
+  &__favorite {
+    min-width: rem(40);
+    min-height: rem(40);
+  }
+
+  &__rating {
+    padding-left: rem(16);
+    background-image: url('../assets/images/icons/star.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  &__link {
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: rem(30);
+      height: 100%;
+      background: linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0.96) 20.51%, rgba(255, 255, 255, 0.00) 100%);
+      content: '';
+    }
+  }
+}
