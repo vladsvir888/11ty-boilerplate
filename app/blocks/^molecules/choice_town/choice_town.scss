@@ -8,6 +8,7 @@
   &__trigger {
     @include flex-center-y;
     @include font-size(16, 24);
+
     column-gap: rem(5);
     color: var(--pallette-biscay);
     font-weight: 600;
@@ -15,7 +16,7 @@
     &-icon {
       width: rem(20);
       height: rem(20);
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
@@ -29,6 +30,7 @@
   &__menu {
     @include font-size(14, 21);
     @include flex-column;
+
     font-weight: 600;
     row-gap: rem(12);
     margin-top: rem(12);
@@ -54,6 +56,7 @@
 
   &__btn {
     @include flex-center-between;
+
     padding: 0 var(--padding);
 
     &-icon {

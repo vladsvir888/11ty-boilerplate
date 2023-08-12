@@ -35,6 +35,7 @@
 
   &__title {
     @include font-size(28, 42);
+
     font-weight: 600;
     transition: color var(--transition300ms);
 
@@ -50,6 +51,7 @@
 
     @include media('600', max) {
       @include font-size(14, 21);
+
       grid-template-columns: 1fr;
       gap: rem(12) rem(5);
     }

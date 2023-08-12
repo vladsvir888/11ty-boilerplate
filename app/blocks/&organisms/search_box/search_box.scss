@@ -60,6 +60,7 @@
 
     #{$this}__input {
       @include font-size(14, 21);
+
       padding: rem(14) rem(36);
       border: rem(1) solid var(--pallette-athens-gray-2);
     }
@@ -79,6 +80,7 @@
 
   &__input {
     @include font-size(16, 24);
+
     padding: rem(15) rem(220) rem(12) rem(48);
     border: none;
 
@@ -88,6 +90,7 @@
 
     @include media('600', max) {
       @include font-size(14, 21);
+
       padding: rem(10) rem(48);
     }
   }
@@ -133,6 +136,7 @@
 
     &-mobile {
       @include font-size(12, 18);
+
       color: var(--pallette-gray);
       margin-top: rem(4);
 
@@ -153,7 +157,7 @@
     &-icon {
       width: rem(16);
       height: rem(16);
-      stroke: currentColor;
+      stroke: currentcolor;
     }
   }
 }
@@ -187,6 +191,7 @@
 
   &__container {
     @include font-size(16, 22);
+
     position: relative;
     z-index: 10;
     font-weight: 600;
@@ -217,11 +222,14 @@
 
     &-btn {
       @include font-size(14, 20);
+
       font-weight: 600;
       padding: rem(10) rem(16);
       border-radius: var(--bdrs10);
       background-color: var(--pallette-athens-gray);
-      transition: color var(--transition300ms), background-color var(--transition300ms);
+      transition:
+        color var(--transition300ms),
+        background-color var(--transition300ms);
 
       @media (hover: hover) {
         &:hover {
@@ -234,6 +242,7 @@
 
   &__wrap {
     @include flex-center-between;
+
     flex-wrap: wrap;
     gap: rem(5);
 
@@ -244,6 +253,7 @@
 
   &__more {
     @include font-size(16, 22);
+
     color: var(--pallette-international-orange);
 
     @include media('600', max) {
@@ -279,6 +289,7 @@
 
   &__orders {
     @include flex-column;
+
     row-gap: rem(8);
 
     &:not(:last-child) {

@@ -16,6 +16,7 @@
   &__card {
     @include flex-column;
     @include font-size(24, 34);
+
     padding: rem(30);
     min-height: rem(560);
     font-weight: 600;
@@ -28,6 +29,7 @@
 
     @include media('600', max) {
       @include font-size(16, 24);
+
       padding: rem(28) rem(16);
       min-height: rem(474);
       align-items: center;
@@ -44,6 +46,7 @@
 
   &__benefit {
     @include flex-center-between;
+
     flex-wrap: wrap;
     gap: rem(10);
     padding: rem(27) rem(48);
@@ -68,6 +71,7 @@
 
     &-num {
       @include font-size(40, 56);
+
       color: var(--pallette-biscay);
       font-weight: 600;
 

@@ -100,6 +100,7 @@
 
   &__phone {
     @include font-size(30, 41);
+
     font-weight: 800;
     margin-bottom: rem(32);
   }
@@ -116,8 +117,10 @@
     margin-top: auto;
 
     @include media('600', max) {
-      .socials__text {
-        margin-bottom: rem(12);
+      .socials {
+        &__text {
+          margin-bottom: rem(12);
+        }
       }
     }
   }
@@ -133,6 +136,7 @@
 
   &__title {
     @include font-size(16, 22);
+
     margin-bottom: rem(20);
   }
 
@@ -142,15 +146,18 @@
     @include media('600', max) {
       margin-bottom: rem(48);
 
-      .logo__img {
-        width: rem(246);
-        height: rem(60);
+      .logo {
+        &__img {
+          width: rem(246);
+          height: rem(60);
+        }
       }
     }
   }
 
   &__bottom {
     @include font-size(14, 19);
+
     padding: rem(24) 0 rem(26);
     border-top: rem(1) solid var(--pallette-east-bay);
 
@@ -161,6 +168,7 @@
 
   &__container {
     @include flex-between;
+
     gap: rem(16);
     flex-wrap: wrap;
 

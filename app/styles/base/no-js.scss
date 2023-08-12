@@ -155,6 +155,7 @@
 
   .no-js-form {
     @include flex-center-y;
+
     gap: rem(10);
     flex-wrap: wrap;
 

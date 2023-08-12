@@ -16,6 +16,7 @@
 
   &__title {
     @include font-size(20, 27);
+
     font-weight: 600;
 
     @include media('600', max) {
@@ -41,6 +42,7 @@
   &__titles,
   &__discount {
     @include flex-between;
+
     gap: rem(10);
     flex-wrap: wrap;
 
@@ -67,6 +69,7 @@
 
     &-item {
       @include flex-between;
+
       align-items: flex-end;
       flex-wrap: wrap;
       gap: rem(10);
@@ -76,6 +79,7 @@
   &__total {
     &-num {
       @include font-size(32, 44);
+
       font-weight: 700;
 
       @include media('600', max) {
@@ -86,6 +90,7 @@
     &-text {
       &--big {
         @include font-size(32, 44);
+
         font-weight: 700;
 
         @include media('600', max) {
@@ -95,6 +100,7 @@
 
       &--small {
         @include font-size(14, 19);
+
         font-weight: 600;
         color: var(--pallette-silver);
 

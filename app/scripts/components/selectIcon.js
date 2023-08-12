@@ -7,8 +7,7 @@ const selectIcon = () => {
     const choiceIcon = select.querySelector('.select__choice-icon');
     const iconStr = select
       .querySelector(`.select__option[value="${select.value}"]`)
-      .querySelector('.select__option-icon')
-      .innerHTML;
+      .querySelector('.select__option-icon').innerHTML;
 
     choiceIcon.insertAdjacentHTML('afterbegin', iconStr);
 
@@ -17,8 +16,7 @@ const selectIcon = () => {
 
       const iconStrAfterChange = select
         .querySelector(`.select__option[value="${target.value}"]`)
-        .querySelector('.select__option-icon')
-        .innerHTML;
+        .querySelector('.select__option-icon').innerHTML;
 
       choiceIcon.innerHTML = '';
 

@@ -51,6 +51,7 @@
 
   &__title {
     @include font-size(45, 58.5);
+
     font-weight: 600;
 
     &:not(:last-child) {
@@ -65,6 +66,7 @@
   &__middle {
     @include flex-center-between;
     @include font-size(18, 27);
+
     font-weight: 600;
 
     @include media('1024', max) {
@@ -89,6 +91,7 @@
 
       @include media('600', max) {
         @include font-size(14, 21);
+
         margin-bottom: rem(200);
       }
     }
@@ -110,6 +113,7 @@
 
   &__benefits {
     @include flex-column;
+
     row-gap: rem(27);
 
     @include media('1024', max) {
@@ -118,6 +122,7 @@
 
     @include media('600', max) {
       @include font-size(16, 24);
+
       row-gap: rem(8);
     }
   }

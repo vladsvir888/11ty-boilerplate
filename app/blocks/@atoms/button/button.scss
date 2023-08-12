@@ -12,6 +12,7 @@
 
   &--btn {
     @include flex-center;
+
     column-gap: rem(8);
     padding: rem(19) rem(25);
     border-radius: var(--bdrs10);
@@ -26,7 +27,7 @@
     #{$this}__icon {
       width: rem(20);
       height: rem(20);
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
@@ -69,6 +70,7 @@
 
   &--fouternary {
     @include font-size(14, 20);
+
     padding: rem(14) rem(25);
     border: rem(1) solid var(--pallette-alto);
     color: var(--pallette-gray);
@@ -105,6 +107,7 @@
 
   &--icon {
     @include flex-center;
+
     min-width: rem(60);
     min-height: rem(60);
     border-radius: var(--bdrs10);
@@ -125,13 +128,14 @@
     #{$this}__icon {
       width: rem(20);
       height: rem(20);
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
   &--arrow {
     @include flex-center-y;
     @include font-size(18, 20);
+
     column-gap: rem(4);
     color: var(--pallette-gray);
     font-weight: 600;
@@ -143,7 +147,7 @@
     #{$this}__icon {
       width: rem(20);
       height: rem(20);
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
@@ -164,6 +168,7 @@
 
   &--low-visible {
     @include font-size(14, 20);
+
     padding: rem(14);
     background-color: var(--pallette-athens-gray);
     color: var(--pallette-gray);
@@ -178,8 +183,9 @@
 
   &--dotted {
     @include font-size(14, 19);
+
     font-weight: 600;
-    border-bottom: rem(1) dotted currentColor;
+    border-bottom: rem(1) dotted currentcolor;
   }
 
   #{$this}__text {

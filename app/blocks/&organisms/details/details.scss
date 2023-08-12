@@ -8,6 +8,7 @@
     #{$this} {
       &__summary {
         @include font-size(20, 27);
+
         font-weight: 600;
         padding: rem(20) rem(20) rem(20) rem(24);
       }
@@ -35,6 +36,7 @@
 
   &::part(header) {
     --sl-focus-ring: #{rem(2)} solid var(--pallette-international-orange);
+
     padding: rem(20) rem(20) rem(24) rem(24);
 
     @include media('600', max) {
@@ -57,6 +59,7 @@
 
   &__icon {
     @include flex-center;
+
     min-width: rem(36);
     min-height: rem(36);
     border-radius: 50%;
@@ -73,6 +76,7 @@
 
   &__summary {
     @include flex-center-between;
+
     flex-grow: 1;
     flex-wrap: wrap;
     gap: rem(12) rem(10);
@@ -84,6 +88,7 @@
 
     &-start {
       @include flex-center-y;
+
       gap: rem(12) rem(24);
       flex-wrap: wrap;
 
@@ -106,6 +111,7 @@
 
     &-end {
       @include flex-center-y;
+
       flex-wrap: wrap;
       gap: rem(16) rem(36);
 
@@ -129,6 +135,7 @@
 
   &__title {
     @include font-size(20, 27);
+
     font-weight: 600;
 
     @include media('600', max) {
@@ -145,6 +152,7 @@
   &__price {
     &-text {
       @include font-size(14, 21);
+
       color: var(--pallette-silver);
 
       @include media('600', max) {
@@ -154,6 +162,7 @@
 
     &-num {
       @include font-size(32, 45);
+
       font-weight: 700;
 
       @include media('600', max) {
@@ -164,6 +173,7 @@
 
   &__btn {
     @include font-size(14, 21);
+
     padding: rem(14) rem(30);
 
     @include media('600', max) {
@@ -185,6 +195,7 @@
 
   &__subtitle {
     @include font-size(18, 27);
+
     font-weight: 600;
     margin-bottom: rem(16);
 
@@ -208,6 +219,7 @@
 
     @include media('767', max) {
       --col-gap: 0;
+
       row-gap: rem(16);
       margin-bottom: rem(20);
       padding-bottom: rem(20);
@@ -228,6 +240,7 @@
 
   &__col {
     @include flex-column;
+
     row-gap: rem(20);
 
     @include media('767', max) {
@@ -236,6 +249,7 @@
 
     &-key {
       @include font-size(14, 21);
+
       color: var(--pallette-silver);
       font-weight: 600;
 
@@ -246,6 +260,7 @@
 
     &-value {
       @include font-size(16, 24);
+
       font-weight: 600;
 
       @include media('600', max) {

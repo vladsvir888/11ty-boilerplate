@@ -1,5 +1,6 @@
 .tooltip {
   @include font-size(12, 16);
+
   font-weight: 400;
   position: absolute;
   z-index: 1;

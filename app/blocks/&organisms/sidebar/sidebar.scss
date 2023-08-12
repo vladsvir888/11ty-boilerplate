@@ -2,6 +2,7 @@
   $this: &;
 
   @include flex-column;
+
   position: sticky;
   left: 0;
   top: 0;
@@ -13,6 +14,7 @@
 
   &__header {
     @include flex-center-between;
+
     padding: rem(22) rem(24) rem(22) rem(32);
     border-bottom: rem(1) solid rgba(var(--pallette-white-rgb), 0.1);
   }
@@ -38,19 +40,21 @@
 
       &--close {
         display: none;
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
   }
 
   &__list {
     @include flex-column;
+
     row-gap: rem(6);
   }
 
   &__btn {
     @include flex-center-y;
     @include font-size(16, 24);
+
     padding: rem(13) rem(16);
     column-gap: rem(12);
     border-radius: var(--bdrs8);
@@ -61,7 +65,7 @@
       }
     }
 
-    &[aria-current="true"] {
+    &[aria-current='true'] {
       background-color: var(--pallette-san-juan);
     }
   }
@@ -69,7 +73,7 @@
   &__icon {
     width: rem(20);
     height: rem(20);
-    fill: currentColor;
+    fill: currentcolor;
   }
 
   &__body {
@@ -88,6 +92,7 @@
 
   &__phone {
     @include font-size(24, 36);
+
     font-weight: 600;
     display: block;
     margin-bottom: rem(8);
@@ -102,6 +107,7 @@
 
   &__copyright {
     @include font-size(14, 21);
+
     color: var(--pallette-alto);
   }
 }

@@ -2,14 +2,16 @@
   $this: &;
 
   @include flex-center-y;
+
   column-gap: rem(32);
 
   &__toggle {
     @include flex-center;
+
     width: rem(48);
     height: rem(48);
     color: var(--pallette-mercury);
-    border: rem(1) solid currentColor;
+    border: rem(1) solid currentcolor;
     border-radius: 50%;
 
     @media (hover: hover) {
@@ -30,7 +32,7 @@
       cursor: default;
 
       #{$this}__toggle-icon {
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
   }
@@ -48,6 +50,7 @@
   &__btn {
     @include flex-center;
     @include font-size(14, 19);
+
     font-weight: 600;
     min-width: rem(60);
     min-height: rem(60);
@@ -57,13 +60,13 @@
 
     @media (hover: hover) {
       &:hover {
-        &:not([aria-current="page"]) {
+        &:not([aria-current='page']) {
           border-color: var(--pallette-international-orange);
         }
       }
     }
 
-    &[aria-current="page"] {
+    &[aria-current='page'] {
       border-color: var(--pallette-biscay);
       border-width: rem(2);
       cursor: default;

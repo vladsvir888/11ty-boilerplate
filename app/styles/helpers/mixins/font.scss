@@ -11,7 +11,7 @@
 @mixin font-size($fz, $lh: null) {
   font-size: rem($fz);
 
-  @if $lh != null {
+  @if $lh {
     line-height: $lh / $fz;
   }
 }

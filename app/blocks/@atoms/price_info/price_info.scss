@@ -1,5 +1,6 @@
 .price-info {
   @include flex-center-y;
+
   flex-wrap: wrap;
   column-gap: rem(12);
   font-weight: 700;
@@ -14,6 +15,7 @@
 
   &__old {
     @include font-size(24, 32);
+
     color: var(--pallette-alto);
     position: relative;
 
@@ -28,8 +30,8 @@
       width: 100%;
       height: rem(1);
       transform: translateY(-50%);
-      background-color: currentColor;
-      content: "";
+      background-color: currentcolor;
+      content: '';
     }
   }
 }

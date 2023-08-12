@@ -31,6 +31,7 @@
 
   &__start {
     @include flex-column;
+
     padding: rem(12) rem(12) rem(8);
     border-radius: var(--bdrs15);
     background-color: var(--pallette-athens-gray);
@@ -67,6 +68,7 @@
 
   &__content {
     @include flex-column;
+
     row-gap: rem(8);
 
     @include media('600', max) {
@@ -86,12 +88,14 @@
 
     &-text {
       @include font-size(14, 21);
+
       margin-bottom: rem(8);
     }
   }
 
   &__title {
     @include font-size(18, 25);
+
     font-weight: 600;
 
     @include media('600', max) {
@@ -101,6 +105,7 @@
 
   &__prop {
     @include font-size(14, 19);
+
     display: flex;
     column-gap: rem(8);
 
@@ -116,6 +121,7 @@
   &__total {
     &-text {
       @include font-size(14, 19);
+
       color: var(--pallette-silver);
 
       @include media('600', max) {
@@ -126,6 +132,7 @@
 
   &__actions {
     @include flex-center-y;
+
     flex-wrap: wrap;
     gap: rem(10) rem(20);
 
@@ -136,6 +143,7 @@
 
   &__btns {
     @include flex-center-y;
+
     position: relative;
     column-gap: rem(24);
 
@@ -190,6 +198,7 @@
   &__label {
     @include flex-column;
     @include font-size(12, 18);
+
     row-gap: rem(6);
     font-weight: 600;
     padding: rem(9) rem(26) rem(9) rem(16);
@@ -198,12 +207,14 @@
 
     @include media('600', max) {
       @include font-size(10, 15);
+
       padding: rem(10) rem(12);
       row-gap: rem(5);
     }
 
     &-item {
       @include flex-center-y;
+
       column-gap: rem(6);
     }
 
@@ -239,6 +250,7 @@
 
   &__price-block {
     @include flex-column;
+
     row-gap: rem(38);
     position: relative;
     padding: rem(20);

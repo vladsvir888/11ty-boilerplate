@@ -4,6 +4,7 @@
 
   @include flex-center-y;
   @include font-size(14, 21);
+
   column-gap: rem(8);
   padding: rem(14) rem(24) rem(14) rem(52);
   font-weight: 600;
@@ -13,21 +14,30 @@
 
   @include media('600', max) {
     @include font-size(12, 18);
+
     padding: rem(12) rem(12) rem(12) rem(36);
     background-position: center left rem(12);
     background-size: rem(16);
   }
 
   $statuses:
-    "awaiting-payment" #f7a609 #fff7e7, // ожидает заказа
-    "paid" #068923 #e9f9ed, // оплачен
-    "awaiting-manager" #00AE8F #EFFFFF, // ожидает менеджера
-    "sent" #0446AA #EFF7FF, // отправлен
-    "ready-delivery" #72008E #EFE9F9, // готов к выдаче
-    "cancelled" #B21628 #FFEDEB, // отменен
-    "returned" #C8C8C8 #F5F5F5, // возврат
-    "completed"#068923 #E1F4E8, // выполнен
-    "in-process" #15A6F8 #E8F7FF; // в процессе
+    'awaiting-payment' #f7a609 #fff7e7,
+    // ожидает заказа
+    'paid' #068923 #e9f9ed,
+    // оплачен
+    'awaiting-manager' #00ae8f #efffff,
+    // ожидает менеджера
+    'sent' #0446aa #eff7ff,
+    // отправлен
+    'ready-delivery' #72008e #efe9f9,
+    // готов к выдаче
+    'cancelled' #b21628 #ffedeb,
+    // отменен
+    'returned' #c8c8c8 #f5f5f5,
+    // возврат
+    'completed' #068923 #e1f4e8,
+    // выполнен
+    'in-process' #15a6f8 #e8f7ff; // в процессе
 
   @each $name, $color, $bgc in $statuses {
     @at-root {

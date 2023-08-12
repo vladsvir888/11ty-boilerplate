@@ -10,6 +10,7 @@
   &__item {
     &--1 {
       @include flex-column;
+
       grid-column: 1 / 9;
     }
 

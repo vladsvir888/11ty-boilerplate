@@ -13,6 +13,6 @@ if (typeof importScripts === 'function') {
     new RegExp('/*'),
     new workbox.strategies.StaleWhileRevalidate({
       cacheName: CACHE,
-    })
+    }),
   );
 }

@@ -2,6 +2,7 @@
   $this: &;
 
   @include flex-column;
+
   align-items: flex-start;
   position: relative;
   padding: rem(25) rem(20);
@@ -23,6 +24,7 @@
 
   &__title {
     @include font-size(20, 30);
+
     font-weight: 600;
     margin-bottom: rem(10);
     transition: color var(--transition300ms);
@@ -30,11 +32,13 @@
 
   &__text {
     @include font-size(14, 21);
+
     margin-bottom: rem(12);
   }
 
   &__btn {
     @include font-size(14, 21);
+
     position: relative;
     padding: rem(14) rem(25);
     margin-top: auto;

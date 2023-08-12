@@ -1,4 +1,5 @@
-import Swiper, { Pagination, Navigation, Autoplay } from 'swiper';
+import Swiper from 'swiper';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 const heroBannerSlider = () => {
   new Swiper('.hero__slider', {

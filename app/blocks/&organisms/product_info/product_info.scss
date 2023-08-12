@@ -70,6 +70,7 @@
 
     &-wrap {
       @include flex-center-y;
+
       margin-bottom: rem(12);
     }
 
@@ -96,11 +97,13 @@
 
   &__title {
     @include font-size(35, 48);
+
     font-weight: 700;
     margin-bottom: rem(16);
 
     @include media('600', max) {
       @include font-size(24, 36);
+
       font-weight: 600;
       margin-bottom: rem(12);
     }
@@ -158,6 +161,7 @@
 
   &__price {
     @include flex-center-y;
+
     flex-wrap: wrap;
     gap: rem(10) rem(33);
     margin-bottom: rem(22);
@@ -190,6 +194,7 @@
 
     &-note {
       @include font-size(14, 19);
+
       padding: rem(9) rem(18);
       border-radius: var(--bdrs10);
       background-color: var(--pallette-whisper);
@@ -232,11 +237,13 @@
 
     &-title {
       @include font-size(45, 59);
+
       font-weight: 600;
       margin-bottom: rem(24);
 
       @include media('600', max) {
         @include font-size(24, 36);
+
         margin-bottom: rem(16);
       }
     }
@@ -257,11 +264,13 @@
 
     @include media('600', max) {
       @include font-size(14, 20);
+
       margin-bottom: rem(32);
     }
 
     &-item {
       @include flex-between;
+
       flex-wrap: wrap;
       gap: rem(10);
       padding: rem(16) 0;
@@ -296,11 +305,13 @@
 
     &-title {
       @include font-size(32, 48);
+
       font-weight: 600;
       margin-bottom: rem(12);
 
       @include media('900', max) {
         @include font-size(24, 36);
+
         margin-bottom: rem(16);
       }
     }
@@ -311,6 +322,7 @@
 
       @include media('900', max) {
         @include font-size(14, 20);
+
         margin-top: rem(24);
       }
 
@@ -337,6 +349,7 @@
 
       @include media('600', max) {
         @include font-size(14, 20);
+
         min-width: unset;
         width: 100%;
       }
@@ -346,6 +359,7 @@
   &__tab {
     &:not(:defined) {
       @include font-size(20, 27);
+
       font-weight: 600;
     }
   }

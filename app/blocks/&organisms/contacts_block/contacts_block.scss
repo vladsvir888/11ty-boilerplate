@@ -28,6 +28,7 @@
 
   &__title {
     @include font-size(36, 54);
+
     font-weight: 600;
 
     @include media('600', max) {
@@ -99,6 +100,7 @@
 
     &-title {
       @include font-size(20, 30);
+
       font-weight: 600;
       margin-bottom: rem(17);
     }
@@ -115,6 +117,7 @@
 
   &__key {
     @include font-size(14, 21);
+
     font-weight: 600;
     color: var(--pallette-silver);
   }

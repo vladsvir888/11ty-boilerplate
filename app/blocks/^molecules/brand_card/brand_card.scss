@@ -2,6 +2,7 @@
   $this: &;
 
   @include flex-center-column;
+
   row-gap: rem(46);
   position: relative;
   padding: rem(59) rem(10) rem(32);
@@ -23,6 +24,7 @@
 
   &__title {
     @include font-size(18, 27);
+
     font-weight: 600;
     transition: color var(--transition300ms);
 

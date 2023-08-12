@@ -42,8 +42,10 @@
       #{$this}__banner-wrap {
         position: relative;
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         grid-area: banner;
-        background: linear-gradient(180deg, var(--pallette-biscay) 0%, var(--pallette-tory-blue) 100%), var(--pallette-biscay);
+        background: linear-gradient(180deg, var(--pallette-biscay) 0%, var(--pallette-tory-blue) 100%),
+          var(--pallette-biscay);
         border-radius: var(--bdrs15);
       }
     }
@@ -136,7 +138,7 @@
       &-icon {
         width: rem(20);
         height: rem(20);
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
   }
@@ -148,6 +150,7 @@
 
     &-content {
       @include flex-column;
+
       height: 100%;
       padding: rem(57) rem(104);
 
@@ -171,6 +174,7 @@
 
     &-title {
       @include font-size(57, 74);
+
       margin-bottom: rem(16);
       max-width: rem(610);
 
@@ -180,6 +184,7 @@
 
       @include media('600', max) {
         @include font-size(20, 26);
+
         max-width: rem(229);
         margin-bottom: rem(8);
       }
@@ -187,11 +192,13 @@
 
     &-text {
       @include font-size(14, 20);
+
       margin-bottom: rem(32);
       max-width: rem(383);
 
       @include media('600', max) {
         @include font-size(12, 18);
+
         max-width: rem(229);
         margin-bottom: rem(16);
       }
@@ -203,6 +210,7 @@
 
       @include media('600', max) {
         @include font-size(12, 17);
+
         padding: rem(12) rem(28);
         min-width: unset;
       }
@@ -211,6 +219,7 @@
 
   &__pagination {
     @include flex-center-x;
+
     column-gap: rem(4);
 
     @include media('600', max) {

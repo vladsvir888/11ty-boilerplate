@@ -1,5 +1,6 @@
 .text-card {
   @include flex-column;
+
   padding: rem(24) rem(32) rem(32);
   height: 100%;
   background-image: url('../assets/images/text-card/decorative-element.svg');
@@ -14,6 +15,7 @@
 
   &__title {
     @include font-size(18, 27);
+
     margin-bottom: rem(12);
     font-weight: 600;
 

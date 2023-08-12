@@ -1,4 +1,5 @@
-import Swiper, { Grid, Navigation } from 'swiper';
+import Swiper from 'swiper';
+import { Grid, Navigation } from 'swiper/modules';
 
 const categoryProductsSliderPortal = () => {
   new Swiper('.category-products-portal__slider', {

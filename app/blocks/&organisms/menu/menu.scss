@@ -27,6 +27,7 @@
 
   &__item {
     @include flex-column;
+
     padding: rem(24);
     border-radius: var(--bdrs15);
     background-color: var(--pallette-athens-gray);
@@ -46,6 +47,7 @@
 
     &-text {
       @include font-size(20, 27);
+
       font-weight: 700;
       color: var(--pallette-biscay);
       margin-bottom: rem(16);
@@ -59,6 +61,7 @@
 
     &-link {
       @include font-size(14, 20);
+
       font-weight: 600;
 
       &--all {

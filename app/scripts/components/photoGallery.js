@@ -1,4 +1,5 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 const photoGallery = () => {
   new Swiper('.photo-gallery .swiper', {

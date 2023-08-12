@@ -24,6 +24,7 @@
 
   &__header {
     @include flex-center-between;
+
     padding: rem(16);
     border-bottom: rem(1) solid var(--pallette-athens-gray-2);
     font-weight: 600;
@@ -31,6 +32,7 @@
 
   &__prev-button {
     @include flex-center-y;
+
     column-gap: rem(4);
     color: var(--pallette-biscay);
   }
@@ -45,6 +47,7 @@
 
     &-title {
       @include font-size(18, 27);
+
       font-weight: 600;
       margin-bottom: rem(12);
     }
@@ -66,7 +69,7 @@
     border-bottom: rem(1) solid var(--pallette-athens-gray-2);
     color: var(--pallette-mine-shaft);
 
-    &[aria-current="true"] {
+    &[aria-current='true'] {
       color: var(--pallette-biscay);
     }
   }

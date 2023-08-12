@@ -34,6 +34,7 @@
     &::before,
     &::after {
       @include font-size(14, 20);
+
       font-weight: 600;
       position: absolute;
       top: 50%;
@@ -60,6 +61,7 @@
   &__input {
     padding: rem(14) rem(30) rem(14) rem(44);
     font-weight: 600;
+
     // width: 100%;
   }
 

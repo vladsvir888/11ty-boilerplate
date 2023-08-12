@@ -1,4 +1,5 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 const categoryProductsSlider = () => {
   new Swiper('.category-products__slider', {

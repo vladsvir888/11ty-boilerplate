@@ -25,6 +25,7 @@
 
   &__title {
     @include font-size(32, 48);
+
     font-weight: 600;
     color: var(--pallette-white);
     margin-top: auto;

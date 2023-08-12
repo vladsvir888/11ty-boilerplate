@@ -2,6 +2,7 @@
   $this: &;
 
   @include flex-center-between;
+
   position: relative;
   padding: rem(10) rem(20);
   border-radius: var(--bdrs15);
@@ -17,16 +18,19 @@
 
   &__left {
     @include flex-center-y;
+
     column-gap: rem(24);
   }
 
   &__right {
     @include flex-center-y;
+
     column-gap: rem(36);
   }
 
   &__title {
     @include font-size(20, 30);
+
     font-weight: 600;
     transition: color var(--transition300ms);
   }
@@ -34,6 +38,7 @@
   &__price {
     &-text {
       @include font-size(14, 21);
+
       font-weight: 600;
       color: var(--pallette-silver);
     }
@@ -41,6 +46,7 @@
 
   &__btn {
     @include font-size(14, 19);
+
     position: relative;
     font-weight: 600;
     color: var(--pallette-biscay);

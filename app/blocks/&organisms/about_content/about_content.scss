@@ -1,6 +1,7 @@
 .about-content {
   &__title {
     @include font-size(36, 54);
+
     font-weight: 600;
     max-width: rem(1280);
     margin: 0 auto rem(36);
@@ -12,6 +13,7 @@
 
     @include media('600', max) {
       @include font-size(20, 30);
+
       margin: 0 auto rem(24);
     }
   }
@@ -36,6 +38,7 @@
 
   &__info {
     @include flex-column;
+
     padding: rem(36);
     color: var(--pallette-white);
     border-radius: var(--bdrs15);
@@ -55,6 +58,7 @@
 
     &-title {
       @include font-size(32, 48);
+
       margin-bottom: rem(16);
       font-weight: 600;
 
@@ -65,10 +69,12 @@
 
     &-text {
       @include font-size(20, 30);
+
       font-weight: 600;
 
       @include media('600', max) {
         @include font-size(14, 21);
+
         font-weight: 400;
       }
 
@@ -125,6 +131,7 @@
 
   &__properties {
     @include font-size(20, 30);
+
     font-weight: 600;
     display: grid;
     row-gap: rem(12);
@@ -132,6 +139,7 @@
 
     @include media('600', max) {
       @include font-size(14, 21);
+
       font-weight: 400;
       margin-bottom: rem(32);
     }

@@ -3,11 +3,13 @@
 
   &__slide {
     @include flex-center;
+
     width: 100% !important;
   }
 
   &__pagination {
     @include flex-center-x;
+
     column-gap: rem(4);
 
     &-bullet {

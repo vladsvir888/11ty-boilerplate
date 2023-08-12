@@ -31,7 +31,7 @@
       &-icon {
         width: rem(20);
         height: rem(20);
-        fill: currentColor;
+        fill: currentcolor;
 
         @include media('600', max) {
           width: rem(15);

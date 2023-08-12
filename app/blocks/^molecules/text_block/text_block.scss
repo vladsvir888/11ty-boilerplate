@@ -19,7 +19,7 @@
   h6 {
     font-weight: 600;
 
-    &:not([class]):not(:first-child) {
+    &:not([class], :first-child) {
       margin-top: rem(40);
 
       @include media('600', max) {
@@ -27,7 +27,7 @@
       }
     }
 
-    &:not([class]):not(:last-child) {
+    &:not([class], :last-child) {
       margin-bottom: rem(10);
     }
   }
@@ -99,16 +99,19 @@
   ol {
     &:not([class]) {
       @include font-size(16, 24);
+
       display: grid;
       row-gap: rem(12);
 
       @include media('600', max) {
         @include font-size(14, 21);
+
         row-gap: rem(8);
       }
 
       li {
         @include flex-center-y;
+
         column-gap: rem(8);
       }
     }
@@ -146,6 +149,7 @@
 
   blockquote {
     @include font-size(20, 30);
+
     padding-top: rem(32);
     margin-top: rem(32);
     font-style: italic;
@@ -156,6 +160,7 @@
 
     @include media('600', max) {
       @include font-size(16, 24);
+
       padding-top: rem(16);
       margin-top: rem(16);
     }
@@ -222,6 +227,7 @@
   .photo-gallery {
     > p {
       @include font-size(14, 21);
+
       margin-top: rem(14);
       color: var(--pallette-gray);
     }
@@ -268,7 +274,7 @@
       &-icon {
         width: rem(20);
         height: rem(20);
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
 
@@ -316,6 +322,7 @@
 
     &__item {
       @include flex-center-y;
+
       column-gap: rem(8);
       padding: rem(20) rem(30);
       background-color: var(--pallette-athens-gray);
@@ -339,6 +346,7 @@
 
     + p {
       @include font-size(14, 21);
+
       margin-top: rem(14);
       color: var(--pallette-gray);
     }
@@ -346,6 +354,7 @@
 
   table {
     @include font-size(14, 21);
+
     width: 100%;
     border-collapse: collapse;
     white-space: nowrap;

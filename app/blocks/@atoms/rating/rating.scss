@@ -1,5 +1,6 @@
 .rating {
   @include font-size(16, 22);
+
   width: max-content;
   display: inline-flex;
   align-items: center;

@@ -9,9 +9,9 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
-      "select select select select toggle-group toggle-group toggle-group toggle-group pagination-top pagination-top pagination-top pagination-top"
-      "content content content content content content content content content content content content"
-      ". . . . more more more more pagination-bottom pagination-bottom pagination-bottom pagination-bottom";
+      'select select select select toggle-group toggle-group toggle-group toggle-group pagination-top pagination-top pagination-top pagination-top'
+      'content content content content content content content content content content content content'
+      '. . . . more more more more pagination-bottom pagination-bottom pagination-bottom pagination-bottom';
     gap: rem(40) rem(10);
     align-items: center;
 
@@ -127,6 +127,7 @@
 
   &__text {
     @include font-size(20, 27);
+
     margin-bottom: rem(18);
     font-weight: 600;
   }

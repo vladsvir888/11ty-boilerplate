@@ -1,7 +1,7 @@
 <sl-drawer class="burger-menu" placement="top" no-header>
-  <div class="container burger-menu__container">
-    <div class="burger-menu__btns">
-      {% include "../../@atoms/button/button.twig" with {
+	<div class="container burger-menu__container">
+		<div class="burger-menu__btns">
+			{% include "../../@atoms/button/button.twig" with {
         button: {
           class: "burger-menu__auth-btn",
           text: {
@@ -11,7 +11,7 @@
         }
       } %}
 
-      {% include "../../@atoms/button/button.twig" with {
+			{% include "../../@atoms/button/button.twig" with {
         button: {
           class: "burger-menu__auth-btn",
           text: {
@@ -20,28 +20,28 @@
           attrs: 'data-dialog="registration"'
         }
       } %}
-    </div>
+		</div>
 
-    <!-- Этот блок должен появиться после авторизации пользователя
-    {% include "../../@atoms/button/button.twig" with {
-      button: {
-        href: "#",
-        class: "burger-menu__user-link",
-        text: {
-          text: "Добро пожаловать, Александр"
-        },
-        right_icon: {
-          class: "burger-menu__toggle-icon",
-          name: "sprite-mono.svg#arrow-right"
-        }
-      }
-    } %}
-    -->
+		<!-- Этот блок должен появиться после авторизации пользователя
+				    {% include "../../@atoms/button/button.twig" with {
+				      button: {
+				        href: "#",
+				        class: "burger-menu__user-link",
+				        text: {
+				          text: "Добро пожаловать, Александр"
+				        },
+				        right_icon: {
+				          class: "burger-menu__toggle-icon",
+				          name: "sprite-mono.svg#arrow-right"
+				        }
+				      }
+				    } %}
+				    -->
 
-    <div class="burger-menu__town">
-      <div class="burger-menu__town-text">Санкт-Петербург</div>
+		<div class="burger-menu__town">
+			<div class="burger-menu__town-text">Санкт-Петербург</div>
 
-      {% include "../../@atoms/button/button.twig" with {
+			{% include "../../@atoms/button/button.twig" with {
         button: {
           class: "burger-menu__toggle",
           icon: {
@@ -51,14 +51,14 @@
         }
       } %}
 
-      {% include "../../&organisms/submenu/submenu.twig" with {
+			{% include "../../&organisms/submenu/submenu.twig" with {
         submenu: {
           towns: true
         }
       } %}
-    </div>
+		</div>
 
-    {% set sections = [{
+		{% set sections = [{
       class: "burger-menu__section--menu",
       cols: [{
         title: {
@@ -365,31 +365,31 @@
       }]
     }] %}
 
-    {% for section in sections %}
-      <section class="burger-menu__section {{ section.class }}">
-        {% for col in section.cols %}
-          <div class="burger-menu__col">
-            {% if col.title %}
-              {% include "../../@atoms/title/title.twig" with {
+		{% for section in sections %}
+			<section class="burger-menu__section {{ section.class }}">
+				{% for col in section.cols %}
+					<div class="burger-menu__col">
+						{% if col.title %}
+							{% include "../../@atoms/title/title.twig" with {
                 title: col.title|default({})|merge({
                   level: 2,
                   class: "burger-menu__title"
                 })
               } %}
-            {% endif %}
+						{% endif %}
 
-            <ul class="burger-menu__list">
-              {% for item in col.items %}
-                <li class="burger-menu__item">
-                  {% include "../../@atoms/button/button.twig" with {
+						<ul class="burger-menu__list">
+							{% for item in col.items %}
+								<li class="burger-menu__item">
+									{% include "../../@atoms/button/button.twig" with {
                     button: item.button|default({})|merge({
                       href: "#",
                       class: "btn--link burger-menu__link"
                     })
                   } %}
 
-                  {% if item.arrow_button %}
-                    {% include "../../@atoms/button/button.twig" with {
+									{% if item.arrow_button %}
+										{% include "../../@atoms/button/button.twig" with {
                       button: {
                         class: "burger-menu__toggle",
                         icon: {
@@ -399,25 +399,25 @@
                       }
                     } %}
 
-                    {% include "../../&organisms/submenu/submenu.twig" with {
+										{% include "../../&organisms/submenu/submenu.twig" with {
                       submenu: {
                         all_products_link: true,
                         cards: true
                       }
                     } %}
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endfor %}
-      </section>
-    {% endfor %}
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endfor %}
+			</section>
+		{% endfor %}
 
-    <section class="burger-menu__section">
-      <div class="burger-menu__col burger-menu__col--last">
-        <div class="burger-menu__item">
-          {% include "../../@atoms/title/title.twig" with {
+		<section class="burger-menu__section">
+			<div class="burger-menu__col burger-menu__col--last">
+				<div class="burger-menu__item">
+					{% include "../../@atoms/title/title.twig" with {
             title: {
               level: 2,
               class: "burger-menu__title",
@@ -425,7 +425,7 @@
             }
           } %}
 
-          {% include "../../@atoms/button/button.twig" with {
+					{% include "../../@atoms/button/button.twig" with {
             button: {
               href: "#",
               class: "btn--btn btn--primary burger-menu__btn",
@@ -434,10 +434,10 @@
               }
             }
           } %}
-        </div>
+				</div>
 
-        <div class="burger-menu__item">
-          {% include "../../@atoms/title/title.twig" with {
+				<div class="burger-menu__item">
+					{% include "../../@atoms/title/title.twig" with {
             title: {
               level: 2,
               class: "burger-menu__title",
@@ -445,7 +445,7 @@
             }
           } %}
 
-          {% include "../../@atoms/button/button.twig" with {
+					{% include "../../@atoms/button/button.twig" with {
             button: {
               href: "#",
               class: "btn--btn btn--secondary btn--quinary burger-menu__btn",
@@ -458,7 +458,7 @@
             }
           } %}
 
-          {% include "../../@atoms/button/button.twig" with {
+					{% include "../../@atoms/button/button.twig" with {
             button: {
               href: "#",
               class: "btn--btn btn--secondary btn--quinary burger-menu__btn",
@@ -470,8 +470,8 @@
               }
             }
           } %}
-        </div>
-      </div>
-    </section>
-  </div>
+				</div>
+			</div>
+		</section>
+	</div>
 </sl-drawer>

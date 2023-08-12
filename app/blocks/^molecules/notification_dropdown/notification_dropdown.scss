@@ -2,6 +2,7 @@
   --width: #{rem(403)};
 
   @include flex-column;
+
   row-gap: rem(20);
   position: absolute;
   top: rem(73);
@@ -18,11 +19,13 @@
 
   &__header {
     @include flex-center-y;
+
     column-gap: rem(10);
   }
 
   &__title {
     @include font-size(18, 27);
+
     font-weight: 600;
   }
 
@@ -34,6 +37,7 @@
   &__list {
     @include flex-column;
     @include font-size(14, 21);
+
     row-gap: rem(10);
   }
 
@@ -65,6 +69,7 @@
 
   &__time {
     @include font-size(12, 16);
+
     color: var(--pallette-gray);
   }
 
@@ -79,6 +84,7 @@
 
   &__btn {
     @include font-size(14, 21);
+
     padding: rem(14) rem(25);
   }
 }

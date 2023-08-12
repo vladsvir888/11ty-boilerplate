@@ -10,6 +10,7 @@
       &::before {
         @include font-size(20, 27);
         @include flex-center;
+
         flex-shrink: 0;
         font-weight: 600;
         min-width: rem(36);
@@ -37,6 +38,7 @@
 
     &-end {
       @include flex-center-y;
+
       gap: rem(28) rem(32);
 
       @include media('600', max) {
@@ -47,6 +49,7 @@
 
     &--toggle-group {
       @include flex-center-between;
+
       gap: rem(10);
       padding: rem(14) rem(24);
       flex-wrap: wrap;
@@ -107,6 +110,7 @@
 
     &--file {
       @include flex-center-column;
+
       padding: rem(36) rem(90);
 
       @include media('1400', max) {
@@ -118,11 +122,13 @@
   &__title {
     @include font-size(20, 27);
     @include flex-center-y;
+
     column-gap: rem(16);
     font-weight: 600;
 
     @include media('600', max) {
       @include font-size(16, 24);
+
       column-gap: rem(12);
     }
   }
@@ -162,6 +168,7 @@
       .form-check {
         &__label {
           @include font-size(16, 24);
+
           font-weight: 600;
         }
       }
@@ -174,6 +181,7 @@
 
   &__text {
     @include font-size(14, 20);
+
     margin: rem(10) 0 0 rem(30);
 
     @include media('600', max) {
@@ -189,12 +197,13 @@
   &__toggle-btn {
     @include flex-center-y;
     @include font-size(14, 19);
+
     padding: rem(12);
     column-gap: rem(8);
     border: rem(1) solid var(--pallette-athens-gray-2);
     border-radius: var(--bdrs10);
 
-    &[aria-pressed="true"] {
+    &[aria-pressed='true'] {
       background-color: transparent;
       border: rem(2) solid var(--pallette-biscay);
       color: var(--pallette-biscay);
@@ -262,6 +271,7 @@
 
     &-btn {
       @include font-size(14, 19);
+
       padding: rem(14);
       border-color: var(--pallette-biscay);
       color: var(--pallette-biscay);
@@ -281,6 +291,7 @@
 
     &-prop {
       @include font-size(14, 19);
+
       display: flex;
       flex-wrap: wrap;
       gap: rem(4);
@@ -298,6 +309,7 @@
 
     &-input {
       @include font-size(14, 19);
+
       width: 100%;
       padding: rem(14) rem(14) rem(14) rem(42);
       border: none;
@@ -343,6 +355,7 @@
   &__box {
     &-label {
       @include font-size(14, 19);
+
       font-weight: 600;
       margin-bottom: rem(8);
     }
@@ -372,6 +385,7 @@
     &-num {
       @include flex-center;
       @include font-size(56, 84);
+
       font-weight: 700;
       color: var(--pallette-biscay);
       min-height: rem(144);
@@ -382,6 +396,7 @@
 
     &-text {
       @include font-size(14, 21);
+
       font-weight: 600;
       margin-bottom: rem(8);
       text-align: center;
@@ -398,6 +413,7 @@
 
   &__info {
     @include font-size(14, 21);
+
     padding: rem(14) rem(15) rem(14) rem(50);
     margin-bottom: rem(20);
     color: var(--pallette-biscay);

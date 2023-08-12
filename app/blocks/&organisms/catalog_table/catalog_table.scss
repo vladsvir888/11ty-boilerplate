@@ -1,10 +1,12 @@
 .catalog-table {
   $this: &;
+
   overflow-x: auto;
 
   @at-root {
     #{$this}-wrap {
       @include flex-column;
+
       row-gap: rem(20);
 
       &__pagination {
@@ -23,8 +25,10 @@
       font-weight: 600;
     }
 
-    th, td {
+    th,
+    td {
       @include font-size(13, 20);
+
       padding: rem(9) rem(14);
     }
 
@@ -54,6 +58,7 @@
 
     &-item {
       @include flex-center-y;
+
       column-gap: rem(8);
     }
 
@@ -64,6 +69,7 @@
 
     &-text {
       @include font-size(10, 13);
+
       font-weight: 700;
       letter-spacing: rem(0.1);
     }
@@ -88,7 +94,7 @@
       right: 0;
       width: rem(30);
       height: 100%;
-      background: linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0.96) 20.51%, rgba(255, 255, 255, 0.00) 100%);
+      background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0.96) 20.51%, rgba(255, 255, 255, 0) 100%);
       content: '';
     }
   }

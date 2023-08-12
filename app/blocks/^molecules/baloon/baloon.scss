@@ -12,12 +12,14 @@
 
   &__title {
     @include font-size(16, 24);
+
     margin-bottom: rem(12);
     font-weight: 600;
     padding-right: rem(20);
 
     @include media('600', max) {
       @include font-size(14, 21);
+
       margin-bottom: rem(10);
     }
   }
@@ -38,6 +40,7 @@
   &__property {
     @include font-size(14, 21);
     @include flex-center-y;
+
     gap: rem(4);
     flex-wrap: wrap;
   }
@@ -48,6 +51,7 @@
 
   &__btn {
     @include font-size(14, 21);
+
     padding: rem(14) rem(25);
     width: 100%;
   }

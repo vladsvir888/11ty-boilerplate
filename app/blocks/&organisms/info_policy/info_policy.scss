@@ -4,6 +4,7 @@
 
   &__container {
     @include flex-column;
+
     align-items: flex-start;
   }
 

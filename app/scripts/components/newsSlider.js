@@ -1,4 +1,5 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 const newsSlider = () => {
   const sliders = document.querySelectorAll('.news-slider__slider');

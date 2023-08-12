@@ -23,6 +23,7 @@
 
   &__top {
     @include flex-between;
+
     column-gap: rem(10);
     padding: rem(32) rem(32) rem(68);
   }
@@ -30,6 +31,7 @@
   &__col {
     &-item {
       @include flex-column;
+
       row-gap: rem(12);
 
       &:not(:last-child) {
@@ -44,6 +46,7 @@
 
   &__link {
     @include font-size(16, 24);
+
     font-weight: 400;
   }
 
@@ -61,6 +64,7 @@
 
     &-title {
       @include font-size(16, 24);
+
       font-weight: 600;
       margin-bottom: rem(12);
     }

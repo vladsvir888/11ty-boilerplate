@@ -3,6 +3,7 @@
 
   &__title {
     @include font-size(36, 54);
+
     font-weight: 600;
 
     @include media('600', max) {
@@ -12,7 +13,7 @@
     &-icon {
       width: rem(20);
       height: rem(20);
-      fill: currentColor;
+      fill: currentcolor;
 
       @include media('601', min) {
         display: none;
@@ -22,6 +23,7 @@
     @at-root {
       #{$this}__title-wrap {
         @include flex-center-y;
+
         position: relative;
         margin-bottom: rem(16);
         column-gap: rem(16);
@@ -40,6 +42,7 @@
 
   &__header {
     @include flex-center-between;
+
     width: calc(100% + var(--container-padding) * 2);
     margin-left: calc(var(--container-padding) * -1);
     padding: 0 var(--container-padding) rem(15);
@@ -52,6 +55,7 @@
     &-text {
       @include flex-center-y;
       @include font-size(20, 30);
+
       column-gap: rem(12);
       font-weight: 600;
       color: var(--pallette-biscay);
@@ -60,7 +64,7 @@
     &-icon {
       width: rem(20);
       height: rem(20);
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
@@ -95,6 +99,7 @@
 
       #{$this}__summary {
         @include font-size(20, 27);
+
         margin-bottom: rem(18);
         font-weight: 600;
       }
@@ -130,6 +135,7 @@
 
     &::part(summary) {
       @include font-size(20, 27);
+
       font-weight: 600;
       pointer-events: none;
 
@@ -186,11 +192,13 @@
 
   &__summary {
     @include flex-center-y;
+
     column-gap: rem(8);
   }
 
   &__counter {
     @include font-size(12, 16);
+
     min-width: rem(20);
     min-height: rem(20);
     flex-shrink: 0;
@@ -208,6 +216,7 @@
   &__result {
     @include flex-column;
     @include font-size(12, 17);
+
     row-gap: rem(3);
     padding: rem(6);
     position: absolute;

@@ -11,6 +11,7 @@
 
 @mixin flex-center-column {
   @include flex-center;
+
   flex-direction: column;
 }
 
@@ -26,6 +27,7 @@
 
 @mixin flex-center-between {
   @include flex-center-y;
+
   justify-content: space-between;
 }
 

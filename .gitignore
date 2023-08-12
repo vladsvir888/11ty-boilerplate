@@ -8,6 +8,10 @@ yarn-error.log*
 # Dependency directory
 node_modules/
 
+# Build files
+build/
+dist/
+
 # Optional npm cache directory
 .npm
 # Optional REPL history

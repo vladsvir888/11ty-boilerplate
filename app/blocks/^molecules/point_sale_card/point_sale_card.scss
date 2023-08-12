@@ -23,6 +23,7 @@
 
   &__title {
     @include font-size(16, 24);
+
     font-weight: 600;
     margin-bottom: rem(12);
     transition: color var(--transition300ms);
@@ -30,6 +31,7 @@
 
   &__list {
     @include font-size(14, 21);
+
     display: grid;
     row-gap: rem(8);
     font-weight: 400;

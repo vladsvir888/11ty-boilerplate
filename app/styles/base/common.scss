@@ -48,11 +48,11 @@ img {
 
 a {
   text-decoration: none;
-  color: currentColor;
+  color: currentcolor;
 }
 
 button {
-  color: currentColor;
+  color: currentcolor;
 }
 
 fieldset {
@@ -62,23 +62,23 @@ fieldset {
   min-width: 0;
 }
 
-input[type="search"] {
+input[type='search'] {
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,
   &::-webkit-search-results-decoration {
-    -webkit-appearance: none;
+    appearance: none;
   }
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
-input[type=number] {
-  -moz-appearance: textfield;
+input[type='number'] {
+  appearance: textfield;
 }
 
 :focus-visible {
@@ -115,6 +115,7 @@ html {
 
 body {
   @include flex-column;
+
   height: 100%;
   font-family: var(--font-primary);
   color: var(--pallette-mine-shaft);
@@ -205,6 +206,7 @@ a {
 
   &__wrap {
     @include flex-center-column;
+
     gap: rem(20);
   }
 
@@ -232,6 +234,7 @@ a {
 
 .text-warning {
   @include font-size(18, 27);
+
   position: fixed;
   bottom: 0;
   left: 0;
@@ -244,6 +247,7 @@ a {
 
   @include media('1200', max) {
     @include font-size(16, 21);
+
     padding: rem(10);
   }
 
@@ -254,6 +258,7 @@ a {
 
 noscript label {
   @include font-size(14, 19);
+
   font-weight: 600;
 }
 
@@ -263,6 +268,7 @@ noscript label {
 
 .fake-element {
   @include font-size(14, 19);
+
   font-weight: 600;
   display: block;
   height: rem(19);
@@ -287,6 +293,7 @@ noscript label {
 
   &__preloader {
     @include pos-center(xy);
+
     z-index: 10;
   }
 }
@@ -330,6 +337,7 @@ noscript label {
   &__text {
     @include flex-center-y;
     @include font-size(10, 13);
+
     column-gap: rem(8);
     font-weight: 700;
     letter-spacing: rem(0.1);

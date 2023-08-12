@@ -1,4 +1,5 @@
-import Swiper, { Pagination } from 'swiper';
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
 
 const productCardSlider = () => {
   new Swiper('.product-slider', {

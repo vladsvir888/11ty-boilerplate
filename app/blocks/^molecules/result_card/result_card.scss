@@ -13,6 +13,7 @@
 
   &__picture {
     @include flex-center;
+
     width: rem(100);
     height: rem(100);
     border-radius: var(--bdrs10);
@@ -29,6 +30,7 @@
 
   &__rating {
     @include font-size(12, 17);
+
     padding: rem(1.5) rem(3.5) rem(1.5) rem(18.5);
     border-radius: var(--bdrs5);
     background-color: var(--pallette-whisper);
@@ -50,6 +52,7 @@
 
   &__link {
     @include font-size(14, 19);
+
     display: flex;
     margin-bottom: rem(4);
 
@@ -63,6 +66,7 @@
 
   &__text {
     @include font-size(12, 17);
+
     font-weight: 400;
     margin-bottom: rem(8);
   }
@@ -81,6 +85,7 @@
 
   &__end {
     @include flex-center-y;
+
     column-gap: rem(24);
     position: relative;
     z-index: 2;
@@ -88,6 +93,7 @@
 
   &__basket-btn {
     @include font-size(14, 19);
+
     flex-grow: 1;
     padding: rem(15);
   }

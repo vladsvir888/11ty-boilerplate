@@ -1,11 +1,9 @@
 @mixin img($fit: null) {
-  @if $fit != null {
+  @if $fit {
     width: 100%;
     height: 100%;
     object-fit: $fit;
-  }
-
-  @else {
+  } @else {
     @warn 'Missing argument - $fit.';
   }
 }

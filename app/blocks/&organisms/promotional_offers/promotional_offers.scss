@@ -32,6 +32,7 @@
 
   &__card {
     @include flex-center-column;
+
     grid-row: span 2;
     padding: rem(48) rem(20);
     background-color: var(--pallette-biscay);
@@ -53,11 +54,13 @@
 
     &-title {
       @include font-size(32, 45);
+
       font-weight: 600;
       margin-bottom: rem(48);
 
       @include media('600', max) {
         @include font-size(20, 30);
+
         margin-bottom: rem(32);
       }
     }
@@ -68,6 +71,7 @@
 
       @include media('600', max) {
         @include font-size(14, 21);
+
         margin-bottom: rem(32);
       }
 

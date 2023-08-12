@@ -11,6 +11,7 @@
 
   &__header {
     @include flex-center-y;
+
     column-gap: rem(16);
     margin-bottom: rem(6);
 
@@ -35,6 +36,7 @@
 
   &__title {
     @include font-size(18, 25);
+
     font-weight: 600;
 
     @include media('900', max) {
