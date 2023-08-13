@@ -4,10 +4,10 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 const heroBannerSlider = () => {
   new Swiper('.hero__slider', {
     modules: [Pagination, Navigation, Autoplay],
-    // autoplay: {
-    //   delay: 2000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.hero__pagination',
       clickable: true,

@@ -35,7 +35,10 @@ module.exports = function (config) {
         minify: isProd,
         bundle: true,
         write: false,
+        metafile: true,
       });
+
+      this.addDependencies(inputPath, Object.keys(esbuildCompiledResult.metafile.inputs));
 
       return async (data) => {
         return esbuildCompiledResult.outputFiles[0].text;

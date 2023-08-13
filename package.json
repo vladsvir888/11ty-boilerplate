@@ -1,5 +1,8 @@
 {
-  "name": "11ty-project",
+  "name": "11ty-boilerplate",
+  "version": "0.0.1",
+  "author": "Vladislav Svirydovich",
+  "license": "ISC",
   "scripts": {
     "start": "npx @11ty/eleventy --serve --incremental",
     "build": "npx @11ty/eleventy",
@@ -7,10 +10,7 @@
     "lint:js": "npx eslint --fix app/**/*.js",
     "lint:css": "npx stylelint app/**/*.scss"
   },
-  "author": "Vladislav Svirydovich",
-  "license": "ISC",
   "devDependencies": {
-    "@11ty/dependency-tree": "^2.0.1",
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.0",
     "@shopify/browserslist-config": "^3.0.0",
@@ -27,7 +27,6 @@
     "postcss": "^8.4.27",
     "postcss-sort-media-queries": "^4.4.1",
     "prettier": "^3.0.1",
-    "sass": "^1.65.1",
     "stylelint": "^15.10.2",
     "stylelint-config-standard-scss": "^10.0.0",
     "svg-sprite": "^2.0.2",
@@ -45,5 +44,8 @@
     "nouislider": "^15.7.1",
     "pristinejs": "^1.1.0",
     "swiper": "^10.1.0"
+  },
+  "engines": {
+    "node": ">= 18.10.0"
   }
 }
