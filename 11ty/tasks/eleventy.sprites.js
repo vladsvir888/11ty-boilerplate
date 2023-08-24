@@ -107,11 +107,14 @@ module.exports = function (config) {
 
     compileOptions: {
       cache: false,
+      permalink: function () {
+        return false;
+      },
     },
   });
 
   config.on('eleventy.after', async (event) => {
-    svgSpriteMono.compile((error, result, data) => {
+    svgSpriteMono?.compile((error, result, data) => {
       for (const mode of Object.values(result)) {
         for (const resource of Object.values(mode)) {
           fs.mkdirSync(path.dirname(resource.path), { recursive: true });
@@ -120,7 +123,7 @@ module.exports = function (config) {
       }
     });
 
-    svgSpriteMulti.compile((error, result, data) => {
+    svgSpriteMulti?.compile((error, result, data) => {
       for (const mode of Object.values(result)) {
         for (const resource of Object.values(mode)) {
           fs.mkdirSync(path.dirname(resource.path), { recursive: true });

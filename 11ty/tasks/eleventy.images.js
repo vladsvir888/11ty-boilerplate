@@ -27,6 +27,9 @@ module.exports = function (config) {
 
     compileOptions: {
       cache: false,
+      permalink: function () {
+        return false;
+      },
     },
   });
 };

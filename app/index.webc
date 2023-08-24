@@ -1,0 +1,7 @@
+<app-base webc:nokeep>
+  <div>
+    <b>
+      WebC *is* HTML.
+    </b>
+  </div>
+</app-base>

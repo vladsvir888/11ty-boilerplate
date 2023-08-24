@@ -27,7 +27,7 @@ module.exports = function (eleventy, options = {}) {
     compile: async function (inputContent, inputPath) {
       const parsed = path.parse(inputPath);
 
-      if (parsed.name !== 'styles') return;
+      if (parsed.name !== 'main') return;
 
       const sassCompileResult = sass.renderSync({
         file: inputPath,

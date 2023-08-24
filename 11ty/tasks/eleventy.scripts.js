@@ -1,6 +1,5 @@
 const path = require('node:path');
 const esbuild = require('esbuild');
-const DependencyTree = require("@11ty/dependency-tree");
 
 module.exports = function (config) {
   const isProd = process.env.ELEVENTY_RUN_MODE === 'build';

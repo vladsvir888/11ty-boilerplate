@@ -1,70 +1,14 @@
 :root {
-  // pallette
-  --pallette-mine-shaft: #393939; // текст
-  --pallette-athens-gray: #f5f5f8; // фон карточек, секций
-  --pallette-athens-gray-2: #e7e7f0;
-  --pallette-seashell: #f1f1f1; // границы
-  --pallette-biscay: #1e3d65;
-  --pallette-international-orange: #f50;
-  --pallette-sorbus: #fd8003;
-  --pallette-white: #fff;
-  --pallette-white-rgb: 255, 255, 255;
-  --pallette-black-rgb: 0, 0, 0;
-  --pallette-alto: #d4d4d4;
-  --pallette-mercury: #e8e8e8;
-  --pallette-gray: #8f8f8f;
-  --pallette-geyser: #dde2e8;
-  --pallette-thunderbird: #b31628;
-  --pallette-cotton-candy: #ffc0e0;
-  --pallette-buff: #f2d189;
-  --pallette-san-juan: #324e73;
-  --pallette-tory-blue: #14498e;
-  --pallette-dusty-gray: #959595;
-  --pallette-fair-pink: #ffeee6;
-  --pallette-dove-gray: #707070;
-  --pallette-cod-gray: #131313;
-  --pallette-whisper: #f3f3f8;
-  --pallette-alabaster: #f7f7f7;
-  --pallette-alabaster-2: #fafafa;
-  --pallette-silver: #c8c8c8;
-  --pallette-silver-chalice: #acacac;
-  --pallette-cadet-blue: #a5b1c1;
-  --pallette-wild-sand: #f5f5f5;
-  --pallette-green-haze: #00a154;
-  --pallette-east-bay: #405a7c;
-  --pallette-early-dawn: #fff7e7;
+  // palette
+  --palette-mine-shaft: #393939;
 
   // containers
   --container-width: #{rem(1660)};
   --container-padding: #{rem(10)};
 
-  @include media('600', max) {
-    --container-padding: #{rem(16)};
-  }
-
   // transitions
   --transition300ms: 0.3s;
-  --transition500ms: 0.5s;
 
   // fonts
   --font-primary: 'Open Sans', sans-serif;
-
-  // bdrs
-  --bdrs3: #{rem(3)};
-  --bdrs5: #{rem(5)};
-  --bdrs8: #{rem(8)};
-  --bdrs10: #{rem(10)};
-  --bdrs15: #{rem(15)};
-  --bdrs30: #{rem(30)};
-  --bdrs100: #{rem(100)};
-
-  // header-size
-  --header-size: #{rem(75)};
-
-  @include media('600', max) {
-    --header-size: #{rem(60)};
-  }
-
-  --portal-sidebar-size: #{rem(320)};
-  --portal-header-size: #{rem(80)};
 }
