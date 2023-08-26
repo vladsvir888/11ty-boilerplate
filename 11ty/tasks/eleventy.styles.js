@@ -15,6 +15,7 @@ module.exports = function (eleventy, options = {}) {
     outputFileExtension: 'css',
 
     compileOptions: {
+      cache: false, // todo: fix problem without cache: false
       permalink: function (contents, inputPath) {
         const parsed = path.parse(inputPath);
 

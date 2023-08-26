@@ -12,7 +12,7 @@ module.exports = function (config) {
     compileOptions: {
       permalink: function (inputContent, inputPath) {
         const resolvedInputPath = path.resolve(inputPath);
-        const resolvedScriptPath = path.resolve(path.join('./', config.dir.input, 'scripts/index.js'));
+        const resolvedScriptPath = path.resolve(path.join('./', config.dir.input, '_scripts/index.js'));
 
         if (resolvedInputPath !== resolvedScriptPath) return;
 
@@ -24,7 +24,7 @@ module.exports = function (config) {
 
     compile: async function (inputContent, inputPath) {
       const resolvedInputPath = path.resolve(inputPath);
-      const resolvedScriptPath = path.resolve(path.join('./', config.dir.input, 'scripts/index.js'));
+      const resolvedScriptPath = path.resolve(path.join('./', config.dir.input, '_scripts/index.js'));
 
       if (resolvedInputPath !== resolvedScriptPath) return;
 

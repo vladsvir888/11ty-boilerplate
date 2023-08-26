@@ -28,3 +28,5 @@ dist/
 
 # WebStorm
 .idea
+
+.cache

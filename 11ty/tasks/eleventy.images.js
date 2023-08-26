@@ -8,14 +8,14 @@ module.exports = function (config) {
     read: false,
 
     compile: async function (inputContent, inputPath) {
-      if (inputPath.includes('app/resources')) return;
+      if (inputPath.includes('app/_resources')) return;
 
       const parsed = path.parse(inputPath);
 
       await Image(inputPath, {
         width: ['auto'],
         formats: ['auto', 'webp'],
-        outputDir: parsed.dir.replace('app', 'build/assets'),
+        outputDir: parsed.dir.replace('app/_images', 'build/assets/images'),
         filenameFormat: function (id, src, width, format, options) {
           format = format === 'jpeg' ? 'jpg' : format;
 

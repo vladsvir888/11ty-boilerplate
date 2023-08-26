@@ -47,11 +47,11 @@ module.exports = function (config) {
     },
 
     compile: async function (inputContent, inputPath) {
-      if (inputPath.includes('app/resources')) return;
+      if (inputPath.includes('app/_resources')) return;
 
       const parsed = path.parse(inputPath);
 
-      if (inputPath.includes('app/icons/mono')) {
+      if (inputPath.includes('app/_icons/mono')) {
         inputContent = svgo.optimize(inputContent, {
           plugins: [
             'preset-default',
@@ -69,7 +69,7 @@ module.exports = function (config) {
         return;
       }
 
-      if (inputPath.includes('app/icons/multi')) {
+      if (inputPath.includes('app/_icons/multi')) {
         inputContent = svgo.optimize(inputContent, {
           plugins: [
             {
@@ -97,7 +97,7 @@ module.exports = function (config) {
 
       await Image(inputPath, {
         formats: ['svg'],
-        outputDir: path.parse(inputPath).dir.replace('app', 'build/assets'),
+        outputDir: path.parse(inputPath).dir.replace('app/_images', 'build/assets/images'),
         filenameFormat: function (id, src, width, format, options) {
           return `${path.parse(src).name}.${format}`;
         },

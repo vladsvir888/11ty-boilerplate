@@ -1,0 +1,15 @@
+<button
+  webc:if="isButton"
+  class="button button--button"
+  webc:root="override"
+>
+  <slot></slot>
+</button>
+
+<a
+  webc:else
+  class="button"
+  webc:root="override"
+>
+  <slot></slot>
+</a>
