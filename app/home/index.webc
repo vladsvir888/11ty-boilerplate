@@ -2,7 +2,4 @@
 permalink: "home.html"
 ---
 
-<app-base title="Главная" webc:nokeep>
-  <img src="assets/images/example-folder/11ty-logo.png" alt="">
-  <eleventy-image src="app/_images/example-folder/11ty-logo.png" alt=""></eleventy-image>
-</app-base>
+<app-base title="Главная" webc:nokeep></app-base>

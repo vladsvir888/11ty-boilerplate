@@ -1,3 +1,5 @@
+<!--- <eleventy-image src="app/_images/example-folder/11ty-logo.png" alt="" loading="lazy"></eleventy-image> --->
+
 <script webc:setup>
   const PROJECT_NAME = 'Название проекта';
   const links = [
