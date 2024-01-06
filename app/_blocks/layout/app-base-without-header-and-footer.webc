@@ -14,18 +14,14 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" webc:keep>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin webc:keep>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" webc:keep>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link webc:keep href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/main.css" webc:keep>
-  <script src="scripts/main.js" defer webc:keep></script>
+  <link webc:keep rel="stylesheet" href="styles/main.css">
+  <script webc:keep src="scripts/main.js" defer></script>
 </head>
 <body>
-  <app-header></app-header>
-  <main>
-    <slot></slot>
-  </main>
-  <app-footer></app-footer>
+  <slot></slot>
 </body>
 </html>

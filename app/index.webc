@@ -1,7 +1,104 @@
-<app-base webc:nokeep>
-  <div>
-    <b>
-      WebC *is* HTML.
-    </b>
+<script webc:setup>
+  const PROJECT_NAME = 'Название проекта';
+  const links = [
+    {
+      href: "home.html",
+      text: 'Главная'
+    },
+  ];
+  const date = new Date();
+  const localeDate = date.toLocaleDateString();
+
+  function getTimeForUsers() {
+    return localeDate;
+  }
+
+  function getTimeForMachine() {
+    const [day, month, year] = localeDate.split('.');
+
+    return `${year}-${month}-${day}`;
+  }
+</script>
+
+<app-base-without-header-and-footer title="Разводная" webc:nokeep>
+  <style webc:keep>
+    body {
+      max-width: 120rem;
+      margin: 0 auto;
+      color: #fff;
+      background-color: #131313;
+    }
+
+    .common-block {
+      padding: 0 1.25rem;
+
+      .common-block__title {
+        padding-top: 1.875rem;
+        padding-left: 2.5rem;
+        font-size: 3.75rem;
+
+        @media (width <= 768px) {
+          font-size: 2rem;
+        }
+
+        @media (width <= 600px) {
+          padding-left: 0;
+        }
+      }
+
+      .common-block__text {
+        padding-left: 5rem;
+
+        @media (width <= 600px) {
+          padding-left: 0;
+        }
+
+        > span {
+          opacity: 0.25;
+        }
+      }
+
+      .common-block__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem 2.5rem;
+        max-width: 80rem;
+        margin: 3.75rem auto 0;
+        padding: 1.875rem;
+        border: 0.0625rem solid #3a3a3a;
+        background-color: #181818;
+        border-radius: 1.25rem;
+
+        @media (width <= 768px) {
+          margin: 2rem auto 0;
+        }
+      }
+
+      .common-block__link {
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 0.3125rem;
+        }
+      }
+    }
+  </style>
+
+  <div class="common-block">
+    <h1 @text="PROJECT_NAME" class="common-block__title"></h1>
+    <p class="common-block__text">
+      <span>Последнее обновление:</span>
+      <time :datetime="getTimeForMachine()" @text="getTimeForUsers()"></time>
+    </p>
+    <ul class="common-block__list" role="list">
+      <li webc:for="link of links">
+        <app-link
+          :href="link.href"
+          @text="link.text"
+          webc:nokeep
+          class="common-block__link"
+        ></app-link>
+      </li>
+    </ul>
   </div>
-</app-base>
+
+</app-base-without-header-and-footer>

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve --incremental",
     "build": "npx @11ty/eleventy",
-    "prettier": "prettier --write **/*.{js,scss}",
+    "format": "prettier --write **/*.{js,scss}",
     "lint:js": "npx eslint --fix app/**/*.js",
     "lint:css": "npx stylelint app/**/*.scss"
   },
@@ -27,9 +27,7 @@
     "postcss-sort-media-queries": "^4.4.1",
     "prettier": "^3.0.1",
     "stylelint": "^15.10.2",
-    "stylelint-config-standard-scss": "^10.0.0",
-    "svg-sprite": "^2.0.2",
-    "svgo": "^3.0.2"
+    "stylelint-config-standard-scss": "^10.0.0"
   },
   "browserslist": [
     "extends @shopify/browserslist-config"
