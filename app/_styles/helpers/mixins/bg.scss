@@ -1,9 +1,0 @@
-@mixin bg($bg-size: null) {
-  @if $bg-size {
-    background-size: $bg-size;
-    background-position: center;
-    background-repeat: no-repeat;
-  } @else {
-    @warn 'Missing argument - $bg-size.';
-  }
-}

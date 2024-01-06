@@ -1,27 +1,26 @@
-// @use "sass:math";
+@use 'sass:math';
 
-// @mixin font-size($fz, $lh: null) {
-//   font-size: rem($fz);
+@mixin font(
+  $font-size,
+  $line-height: null,
+  $font-weight: null,
+  $font-style: null
+) {
+  font-size: rem($font-size);
 
-//   @if $lh != null {
-//     line-height: math.div($lh, $fz);
-//   }
-// }
+  @if $line-height {
+    line-height: math.div($line-height, $font-size);
+  }
 
-@mixin font-size($fz, $lh: null) {
-  font-size: rem($fz);
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
 
-  @if $lh {
-    line-height: $lh / $fz;
+  @if $font-style {
+    font-style: $font-style;
   }
 }
 
 //  ===== Usage =====
 
-/*
-
-  .block {
-    @include font-size(20, 16);
-  }
-
-*/
+// @include font-size(20, 16, 700, italic);

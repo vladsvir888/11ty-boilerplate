@@ -1,4 +1,5 @@
+/* stylelint-disable scss/at-import-partial-extension */
 @import 'vendors/*.scss';
 @import 'helpers/**/*.scss';
-@import 'base/common';
+@import 'base/common.scss';
 @import '../_blocks/**/*.scss';

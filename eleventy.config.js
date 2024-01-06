@@ -11,7 +11,7 @@ module.exports = function (config) {
 
   config.setServerOptions({
     domDiff: false,
-    showAllHosts: true
+    showAllHosts: true,
   });
 
   config.addPlugin(resourcesPlugin);

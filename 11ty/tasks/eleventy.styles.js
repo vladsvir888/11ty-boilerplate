@@ -1,5 +1,5 @@
 const path = require('node:path');
-const sass = require('node-sass');
+const sass = require('sass');
 const sassGlobImporter = require('node-sass-glob-importer');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
