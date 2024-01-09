@@ -1,11 +1,6 @@
 @use 'sass:math';
 
-@mixin font(
-  $font-size,
-  $line-height: null,
-  $font-weight: null,
-  $font-style: null
-) {
+@mixin font($font-size, $line-height: null, $font-weight: null, $font-style: null) {
   font-size: rem($font-size);
 
   @if $line-height {

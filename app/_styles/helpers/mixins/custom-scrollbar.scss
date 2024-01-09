@@ -1,9 +1,4 @@
-@mixin custom-scrollbar(
-  $size: rem(10),
-  $track-color: transparent,
-  $thumb-color: #c1c1c1,
-  $border-radius: rem(10)
-) {
+@mixin custom-scrollbar($size: rem(10), $track-color: transparent, $thumb-color: #c1c1c1, $border-radius: rem(10)) {
   scrollbar-color: $thumb-color $track-color; // The first applies to the thumb of the scrollbar, the second to the track.
   scrollbar-width: thin;
 

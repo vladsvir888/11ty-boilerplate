@@ -1,5 +1,30 @@
 /* stylelint-disable scss/at-import-partial-extension */
-@import 'vendors/*.scss';
-@import 'helpers/**/*.scss';
+
+// @import 'vendors/*.scss';
+// @import 'helpers/**/*.scss';
+// @import 'base/common.scss';
+// @import '../_blocks/**/*.scss';
+
+// vendors
+@import 'vendors/vendors.scss';
+
+// functions
+@import 'helpers/functions/rem.scss';
+
+// mixins
+@import 'helpers/mixins/custom-scrollbar.scss';
+@import 'helpers/mixins/font.scss';
+@import 'helpers/mixins/hover.scss';
+
+// custom properties
+@import 'helpers/variables/properties.scss';
+
+// base styles
 @import 'base/common.scss';
-@import '../_blocks/**/*.scss';
+
+// atoms
+@import '../_blocks/atoms/app-button/app-button.scss';
+
+// molecules
+
+// organisms

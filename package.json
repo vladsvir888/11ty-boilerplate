@@ -7,7 +7,8 @@
     "build": "npx @11ty/eleventy",
     "format": "prettier --write **/*.{js,scss}",
     "lint:script": "npx eslint --fix app/**/*.js",
-    "lint:style": "npx stylelint app/**/*.scss"
+    "lint:style": "npx stylelint app/**/*.scss",
+    "component": "node component.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
